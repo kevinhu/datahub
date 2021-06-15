@@ -1,4 +1,1 @@
-<svg viewBox="0 0 24 24" width="24px" height="24px" x="0" y="0" preserveAspectRatio="xMinYMin meet" focusable="false">
-  <path d="M14,2V6H10V2h4ZM10,14h4V10H10v4Zm0,8h4V18H10v4Z" class="large-icon" style="fill: currentColor">
-  </path>
-</svg>
+<svg width="24" height="24" x="0" y="0" focusable="false" preserveAspectRatio="xMinYMin meet" viewBox="0 0 24 24"><path d="M14,2V6H10V2h4ZM10,14h4V10H10v4Zm0,8h4V18H10v4Z" class="large-icon" style="fill:currentColor"/></svg>
