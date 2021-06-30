@@ -3,6 +3,9 @@ import json
 
 
 def init_lambda_role(iam_client: boto3.client, role_name: str):
+    """
+    Create role for Lambda functions.
+    """
 
     policy_doc = {
         "Statement": [
@@ -34,6 +37,9 @@ def init_lambda_role(iam_client: boto3.client, role_name: str):
 
 
 def init_events_role(iam_client: boto3.client, role_name: str):
+    """
+    Create role for EventBridge.
+    """
 
     policy_doc = {
         "Statement": [
