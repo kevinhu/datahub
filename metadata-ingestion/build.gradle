@@ -59,6 +59,16 @@ task testFull(type: Exec, dependsOn: [testQuick, installDevTest]) {
     "source ${venv_name}/bin/activate && pytest -vv --continue-on-collection-errors --junit-xml=junit.full.xml"
 }
 
+task generateDocScaffolds(type: Exec, dependsOn: [installDev]) {
+  commandLine 'bash', '-x', '-c',
+    "source ${venv_name}/bin/activate && sphinx-apidoc -o ./framework_docs/generated ./src/datahub"
+}
+
+task makeDocSite(type: Exec, dependsOn: [generateDocScaffolds]) {
+  commandLine 'bash', '-x', '-c',
+    "source ${venv_name}/bin/activate &&  sphinx-build -M clean ./framework_docs ./framework_docs_build && sphinx-build -M html ./framework_docs ./framework_docs/_build"
+}
+
 task cleanPythonCache(type: Exec) {
   commandLine 'bash', '-x', '-c',
     "find src -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete -o -type d -empty -delete"

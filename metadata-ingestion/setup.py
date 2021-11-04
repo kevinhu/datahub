@@ -177,6 +177,8 @@ base_dev_requirements = {
     "jsonpickle",
     "build",
     "twine",
+    "sphinx>=4.1.2",
+    "sphinx-rtd-theme",
     *list(
         dependency
         for plugin in [
