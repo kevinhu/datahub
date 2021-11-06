@@ -48,16 +48,24 @@ jobs:
         run: |
           ./gradlew --info :metadata-ingestion:makeDocSite
       - name: Deploy
-        # if: github.event_name == 'push' && github.repository == 'linkedin/datahub'
-        if: github.event_name == 'push' && github.repository == 'kevinhu/datahub'
-        uses: github-actions-x/commit@v2.7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          push-branch: "ingestion-docs"
-          commit-message: "Update ingestion docs: ${{ env.DATE }}"
-          force-add: "true"
-          name: github-actions
-          email: github-actions@github.com
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: git@github.com:kevinhu/datahub-ingestion-docs.git
+          BRANCH: read-the-docs
+          FOLDER: metadata-ingestion/framework_docs
+          SSH_PRIVATE_KEY: ${{ secrets.INGESTION_DOCS_DEPLOY_PRIVATE_KEY }}
+
+      # - name: Deploy
+      #   # if: github.event_name == 'push' && github.repository == 'linkedin/datahub'
+      #   if: github.event_name == 'push' && github.repository == 'kevinhu/datahub'
+      #   uses: github-actions-x/commit@v2.7
+      #   with:
+      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+      #     push-branch: "ingestion-docs"
+      #     commit-message: "Update ingestion docs: ${{ env.DATE }}"
+      #     force-add: "true"
+      #     name: github-actions
+      #     email: github-actions@github.com
         # uses: actions/checkout@v2
         # with:
         #   ref: "ingestion-docs"
