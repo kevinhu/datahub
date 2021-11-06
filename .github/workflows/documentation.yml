@@ -54,6 +54,7 @@ jobs:
           BRANCH: read-the-docs
           FOLDER: metadata-ingestion/framework_docs
           SSH_PRIVATE_KEY: ${{ secrets.INGESTION_DOCS_DEPLOY_PRIVATE_KEY }}
+          MESSAGE: "Update site to commit https://github.com/linkedin/datahub/commit/{long-sha} [{msg}]"
 
       # - name: Deploy
       #   # if: github.event_name == 'push' && github.repository == 'linkedin/datahub'

@@ -1,3 +1,10 @@
+# metadata ingestion docs
+framework_docs/_build
+framework_docs/_static
+framework_docs/_templates
+framework_docs/_generated
+framework_docs/generated
+
 .envrc
 .vscode/
 output
