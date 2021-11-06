@@ -52,7 +52,7 @@ jobs:
         env:
           REPO: git@github.com:kevinhu/datahub-ingestion-docs.git
           BRANCH: read-the-docs
-          FOLDER: metadata-ingestion/framework_docs
+          FOLDER: metadata-ingestion/framework_docs/_build
           SSH_PRIVATE_KEY: ${{ secrets.INGESTION_DOCS_DEPLOY_PRIVATE_KEY }}
 
       # - name: Deploy
