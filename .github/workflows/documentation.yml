@@ -48,7 +48,8 @@ jobs:
         run: |
           ./gradlew --info :metadata-ingestion:makeDocSite
       - name: Deploy
-        if: github.event_name == 'push' && github.repository == 'linkedin/datahub'
+        # if: github.event_name == 'push' && github.repository == 'linkedin/datahub'
+        if: github.event_name == 'push' && github.repository == 'kevinhu/datahub'
         uses: github-actions-x/commit@v2.7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
