@@ -59,7 +59,7 @@ task testFull(type: Exec, dependsOn: [testQuick, installDevTest]) {
     "source ${venv_name}/bin/activate && pytest -vv --continue-on-collection-errors --junit-xml=junit.full.xml"
 }
 
-task generateDocScaffolds(type: Exec, dependsOn: [installDev]) {
+task generateDocScaffolds(type: Exec, dependsOn: [installDev, codegen]) {
   commandLine 'bash', '-x', '-c',
     "source ${venv_name}/bin/activate && sphinx-apidoc -o ./framework_docs/generated ./src/datahub"
 }

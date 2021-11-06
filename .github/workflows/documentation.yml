@@ -7,7 +7,7 @@ on:
   push:
     branches:
       - master
-      - ingestion-sphinx-docs
+      - ingestion-sphinx-docs # NOTE: remove this
   # release:
   #   types: [published, edited]
 
