@@ -49,8 +49,25 @@ jobs:
           ./gradlew --info :metadata-ingestion:makeDocSite
       - name: Deploy
         if: github.event_name == 'push' && github.repository == 'linkedin/datahub'
-        uses: peaceiris/actions-gh-pages@v3
+        uses: github-actions-x/commit@v2.7
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs-website/build
-          cname: datahubproject.io
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: "ingestion-docs"
+          commit-message: "Update ingestion docs: ${{ env.DATE }}"
+          force-add: "true"
+          name: github-actions
+          email: github-actions@github.com
+        # uses: actions/checkout@v2
+        # with:
+        #   ref: "ingestion-docs"
+        # run: |
+        #   git config user.name github-actions
+        #   git config user.email github-actions@github.com
+        #   git add .
+        #   git commit -m "generated"
+        #   git push
+        # uses: peaceiris/actions-gh-pages@v3
+        # with:
+        #   github_token: ${{ secrets.GITHUB_TOKEN }}
+        #   publish_dir: ./docs-website/build
+        #   cname: datahubproject.io
