@@ -1,0 +1,25 @@
+{
+  "type" : "record",
+  "name" : "IngestionRunSummaryList",
+  "namespace" : "com.linkedin.metadata.run",
+  "fields" : [ {
+    "name" : "ingestionRunSummaries",
+    "type" : {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "IngestionRunSummary",
+        "fields" : [ {
+          "name" : "runId",
+          "type" : "string"
+        }, {
+          "name" : "timestamp",
+          "type" : "long"
+        }, {
+          "name" : "rows",
+          "type" : "long"
+        } ]
+      }
+    }
+  } ]
+}

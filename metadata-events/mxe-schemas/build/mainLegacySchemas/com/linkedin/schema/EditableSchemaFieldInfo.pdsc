@@ -1,0 +1,45 @@
+{
+  "type" : "record",
+  "name" : "EditableSchemaFieldInfo",
+  "namespace" : "com.linkedin.schema",
+  "doc" : "SchemaField to describe metadata related to dataset schema.",
+  "fields" : [ {
+    "name" : "fieldPath",
+    "type" : "string",
+    "doc" : "FieldPath uniquely identifying the SchemaField this metadata is associated with"
+  }, {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Description",
+    "optional" : true,
+    "Searchable" : {
+      "boostScore" : 0.1,
+      "fieldName" : "editedFieldDescriptions",
+      "fieldType" : "TEXT"
+    }
+  }, {
+    "name" : "globalTags",
+    "type" : "com.linkedin.common.GlobalTags",
+    "doc" : "Tags associated with the field",
+    "optional" : true,
+    "Searchable" : {
+      "/tags/*/tag" : {
+        "boostScore" : 0.5,
+        "fieldName" : "editedFieldTags",
+        "fieldType" : "URN_PARTIAL"
+      }
+    }
+  }, {
+    "name" : "glossaryTerms",
+    "type" : "com.linkedin.common.GlossaryTerms",
+    "doc" : "Glossary terms associated with the field",
+    "optional" : true,
+    "Searchable" : {
+      "/terms/*/urn" : {
+        "boostScore" : 0.5,
+        "fieldName" : "editedFieldGlossaryTerms",
+        "fieldType" : "URN_PARTIAL"
+      }
+    }
+  } ]
+}

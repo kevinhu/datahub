@@ -1,0 +1,11 @@
+{
+  "type" : "enum",
+  "name" : "AccessLevel",
+  "namespace" : "com.linkedin.common",
+  "doc" : "The various access levels",
+  "symbols" : [ "PUBLIC", "PRIVATE" ],
+  "symbolDocs" : {
+    "PRIVATE" : "Private availability to certain set of users",
+    "PUBLIC" : "Publicly available access level"
+  }
+}

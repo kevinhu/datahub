@@ -1,0 +1,13 @@
+{
+  "type" : "record",
+  "name" : "BrowsePath",
+  "namespace" : "com.linkedin.common",
+  "fields" : [ {
+    "name" : "path",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "An array of strings comprising the path"
+  } ]
+}

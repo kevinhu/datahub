@@ -1,0 +1,7 @@
+{
+  "type" : "record",
+  "name" : "FixedType",
+  "namespace" : "com.linkedin.pegasus2avro.schema",
+  "doc" : "Fixed field type.",
+  "fields" : [ ]
+}

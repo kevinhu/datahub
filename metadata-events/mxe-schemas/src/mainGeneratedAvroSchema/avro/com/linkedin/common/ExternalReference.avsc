@@ -1,0 +1,16 @@
+{
+  "type" : "record",
+  "name" : "ExternalReference",
+  "namespace" : "com.linkedin.common",
+  "doc" : "A reference to an external platform.",
+  "fields" : [ {
+    "name" : "externalUrl",
+    "type" : [ "null", "string" ],
+    "doc" : "URL where the reference exist",
+    "default" : null,
+    "java" : {
+      "class" : "com.linkedin.common.url.Url",
+      "coercerClass" : "com.linkedin.common.url.UrlCoercer"
+    }
+  } ]
+}

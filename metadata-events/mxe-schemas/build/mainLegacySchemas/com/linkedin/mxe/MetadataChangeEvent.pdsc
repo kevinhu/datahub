@@ -1,0 +1,26 @@
+{
+  "type" : "record",
+  "name" : "MetadataChangeEvent",
+  "namespace" : "com.linkedin.mxe",
+  "doc" : "Kafka event for proposing a metadata change for an entity. A corresponding MetadataAuditEvent is emitted when the change is accepted and committed, otherwise a FailedMetadataChangeEvent will be emitted instead.",
+  "fields" : [ {
+    "name" : "auditHeader",
+    "type" : "com.linkedin.avro2pegasus.events.KafkaAuditHeader",
+    "doc" : "Kafka audit header. See go/kafkaauditheader for more info.",
+    "optional" : true
+  }, {
+    "name" : "proposedSnapshot",
+    "type" : "com.linkedin.metadata.snapshot.Snapshot",
+    "doc" : "Snapshot of the proposed metadata change. Include only the aspects affected by the change in the snapshot."
+  }, {
+    "name" : "proposedDelta",
+    "type" : "com.linkedin.metadata.delta.Delta",
+    "doc" : "Delta of the proposed metadata partial update.",
+    "optional" : true
+  }, {
+    "name" : "systemMetadata",
+    "type" : "SystemMetadata",
+    "doc" : "Metadata around how the snapshot was ingested",
+    "optional" : true
+  } ]
+}

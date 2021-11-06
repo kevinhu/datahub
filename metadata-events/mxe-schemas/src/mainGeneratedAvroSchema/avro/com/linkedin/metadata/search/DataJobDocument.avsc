@@ -1,0 +1,98 @@
+{
+  "type" : "record",
+  "name" : "DataJobDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for DataJob entity search",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "browsePaths",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "All paths representing the hierarchy of this entity. This is essential for browsing various paths leading to this entity.",
+    "default" : null
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "java" : {
+      "class" : "com.linkedin.common.urn.DataJobUrn"
+    }
+  }, {
+    "name" : "description",
+    "type" : [ "null", "string" ],
+    "doc" : "Optional description of the job",
+    "default" : null
+  }, {
+    "name" : "name",
+    "type" : [ "null", "string" ],
+    "doc" : "Optional name of the job",
+    "default" : null
+  }, {
+    "name" : "dataFlow",
+    "type" : [ "null", "string" ],
+    "doc" : "Name of the associated data flow",
+    "default" : null
+  }, {
+    "name" : "jobId",
+    "type" : [ "null", "string" ],
+    "doc" : "Id of the job",
+    "default" : null
+  }, {
+    "name" : "owners",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "LDAP usernames of corp users who are the owners of this job",
+    "default" : null
+  }, {
+    "name" : "hasOwners",
+    "type" : [ "null", "boolean" ],
+    "doc" : "Flag to indicate if the job has non empty corp users as owners or not.",
+    "default" : null
+  }, {
+    "name" : "numInputDatasets",
+    "type" : [ "null", "long" ],
+    "doc" : "Lineage information represented by the number of immediate input datasets of this job.",
+    "default" : null
+  }, {
+    "name" : "numOutputDatasets",
+    "type" : [ "null", "long" ],
+    "doc" : "Lineage information represented by the number of immediate output datasets of this job.",
+    "default" : null
+  }, {
+    "name" : "inputs",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "List of inputs for this job",
+    "default" : null
+  }, {
+    "name" : "outputs",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "List of outputs for this job",
+    "default" : null
+  }, {
+    "name" : "orchestrator",
+    "type" : [ "null", "string" ],
+    "doc" : "Workflow orchestrator ex: Azkaban, Airflow",
+    "default" : null
+  }, {
+    "name" : "tags",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "List of tags for this dataset",
+    "default" : null
+  } ]
+}

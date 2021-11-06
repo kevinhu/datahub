@@ -1,0 +1,28 @@
+{
+  "type" : "typeref",
+  "name" : "GlossaryNodeUrn",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Business Node",
+  "ref" : "string",
+  "java" : {
+    "class" : "com.linkedin.common.urn.GlossaryNodeUrn"
+  },
+  "validate" : {
+    "com.linkedin.common.validator.TypedUrnValidator" : {
+      "accessible" : true,
+      "constructable" : true,
+      "doc" : "Standardized business node identifier",
+      "entityType" : "glossaryNode",
+      "fields" : [ {
+        "doc" : "The name of business node with hierarchy.",
+        "name" : "name",
+        "type" : "string"
+      } ],
+      "maxLength" : 56,
+      "name" : "GlossaryNode",
+      "namespace" : "li",
+      "owners" : [ "urn:li:corpuser:fbar", "urn:li:corpuser:bfoo" ],
+      "owningTeam" : "urn:li:internalTeam:datahub"
+    }
+  }
+}

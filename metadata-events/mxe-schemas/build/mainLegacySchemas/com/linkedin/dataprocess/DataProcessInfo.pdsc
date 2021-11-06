@@ -1,0 +1,54 @@
+{
+  "type" : "record",
+  "name" : "DataProcessInfo",
+  "namespace" : "com.linkedin.dataprocess",
+  "doc" : "The inputs and outputs of this data process",
+  "fields" : [ {
+    "name" : "inputs",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.DatasetUrn"
+    },
+    "doc" : "the inputs of the data process",
+    "optional" : true,
+    "Relationship" : {
+      "/*" : {
+        "entityTypes" : [ "dataset" ],
+        "name" : "Consumes"
+      }
+    },
+    "Searchable" : {
+      "/*" : {
+        "fieldName" : "inputs",
+        "fieldType" : "URN",
+        "numValuesFieldName" : "numInputDatasets",
+        "queryByDefault" : false
+      }
+    }
+  }, {
+    "name" : "outputs",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.DatasetUrn"
+    },
+    "doc" : "the outputs of the data process",
+    "optional" : true,
+    "Relationship" : {
+      "/*" : {
+        "entityTypes" : [ "dataset" ],
+        "name" : "Consumes"
+      }
+    },
+    "Searchable" : {
+      "/*" : {
+        "fieldName" : "outputs",
+        "fieldType" : "URN",
+        "numValuesFieldName" : "numOutputDatasets",
+        "queryByDefault" : false
+      }
+    }
+  } ],
+  "Aspect" : {
+    "name" : "dataProcessInfo"
+  }
+}

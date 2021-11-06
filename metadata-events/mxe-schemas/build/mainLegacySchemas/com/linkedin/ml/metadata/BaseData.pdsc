@@ -1,0 +1,24 @@
+{
+  "type" : "record",
+  "name" : "BaseData",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "BaseData record",
+  "fields" : [ {
+    "name" : "dataset",
+    "type" : "com.linkedin.common.DatasetUrn",
+    "doc" : "What dataset were used in the MLModel?"
+  }, {
+    "name" : "motivation",
+    "type" : "string",
+    "doc" : "Why was this dataset chosen?",
+    "optional" : true
+  }, {
+    "name" : "preProcessing",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "How was the data preprocessed (e.g., tokenization of sentences, cropping of images, any filtering such as dropping images without faces)?",
+    "optional" : true
+  } ]
+}

@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "TagAspect",
+  "namespace" : "com.linkedin.metadata.aspect",
+  "doc" : "A union of all supported metadata aspects for a tag",
+  "ref" : [ "com.linkedin.metadata.key.TagKey", "com.linkedin.common.Ownership", "com.linkedin.tag.TagProperties", "com.linkedin.common.Status" ]
+}

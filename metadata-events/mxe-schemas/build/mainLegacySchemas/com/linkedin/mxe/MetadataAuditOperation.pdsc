@@ -1,0 +1,6 @@
+{
+  "type" : "enum",
+  "name" : "MetadataAuditOperation",
+  "namespace" : "com.linkedin.mxe",
+  "symbols" : [ "UPDATE", "DELETE" ]
+}

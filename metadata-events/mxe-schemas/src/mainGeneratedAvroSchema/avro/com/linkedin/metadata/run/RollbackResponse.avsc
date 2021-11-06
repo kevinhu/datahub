@@ -1,0 +1,43 @@
+{
+  "type" : "record",
+  "name" : "RollbackResponse",
+  "namespace" : "com.linkedin.metadata.run",
+  "fields" : [ {
+    "name" : "aspectRowSummaries",
+    "type" : {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "AspectRowSummary",
+        "fields" : [ {
+          "name" : "runId",
+          "type" : "string"
+        }, {
+          "name" : "aspectName",
+          "type" : "string"
+        }, {
+          "name" : "urn",
+          "type" : "string"
+        }, {
+          "name" : "timestamp",
+          "type" : "long"
+        }, {
+          "name" : "metadata",
+          "type" : "string"
+        }, {
+          "name" : "version",
+          "type" : "long"
+        }, {
+          "name" : "keyAspect",
+          "type" : "boolean"
+        } ]
+      }
+    }
+  }, {
+    "name" : "entitiesAffected",
+    "type" : "long"
+  }, {
+    "name" : "aspectsAffected",
+    "type" : "long"
+  } ]
+}

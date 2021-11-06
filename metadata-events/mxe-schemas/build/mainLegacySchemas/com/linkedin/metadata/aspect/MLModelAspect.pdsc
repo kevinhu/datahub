@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "MLModelAspect",
+  "namespace" : "com.linkedin.metadata.aspect",
+  "doc" : "A union of all supported metadata aspects for a ML Model",
+  "ref" : [ "com.linkedin.metadata.key.MLModelKey", "com.linkedin.common.Ownership", "com.linkedin.ml.metadata.MLModelProperties", "com.linkedin.ml.metadata.IntendedUse", "com.linkedin.ml.metadata.MLModelFactorPrompts", "com.linkedin.ml.metadata.Metrics", "com.linkedin.ml.metadata.EvaluationData", "com.linkedin.ml.metadata.TrainingData", "com.linkedin.ml.metadata.QuantitativeAnalyses", "com.linkedin.ml.metadata.EthicalConsiderations", "com.linkedin.ml.metadata.CaveatsAndRecommendations", "com.linkedin.common.InstitutionalMemory", "com.linkedin.ml.metadata.SourceCode", "com.linkedin.common.Status", "com.linkedin.common.Cost", "com.linkedin.common.Deprecation", "com.linkedin.common.BrowsePaths", "com.linkedin.common.GlobalTags", "com.linkedin.common.DataPlatformInstance" ]
+}

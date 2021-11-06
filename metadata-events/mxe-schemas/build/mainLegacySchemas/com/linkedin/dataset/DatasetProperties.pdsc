@@ -1,0 +1,33 @@
+{
+  "type" : "record",
+  "name" : "DatasetProperties",
+  "namespace" : "com.linkedin.dataset",
+  "doc" : "Properties associated with a Dataset",
+  "include" : [ "com.linkedin.common.CustomProperties", "com.linkedin.common.ExternalReference" ],
+  "fields" : [ {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Documentation of the dataset",
+    "optional" : true,
+    "Searchable" : {
+      "fieldType" : "TEXT",
+      "hasValuesFieldName" : "hasDescription"
+    }
+  }, {
+    "name" : "uri",
+    "type" : "com.linkedin.common.Uri",
+    "doc" : "The abstracted URI such as hdfs:///data/tracking/PageViewEvent, file:///dir/file_name. Uri should not include any environment specific properties. Some datasets might not have a standardized uri, which makes this field optional (i.e. kafka topic).",
+    "optional" : true
+  }, {
+    "name" : "tags",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "[Legacy] Unstructured tags for the dataset. Structured tags can be applied via the `GlobalTags` aspect.",
+    "default" : [ ]
+  } ],
+  "Aspect" : {
+    "name" : "datasetProperties"
+  }
+}

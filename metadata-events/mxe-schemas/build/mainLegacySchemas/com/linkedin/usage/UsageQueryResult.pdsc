@@ -1,0 +1,45 @@
+{
+  "type" : "record",
+  "name" : "UsageQueryResult",
+  "namespace" : "com.linkedin.usage",
+  "doc" : "Results of a query for usage data.",
+  "fields" : [ {
+    "name" : "buckets",
+    "type" : {
+      "type" : "array",
+      "items" : "UsageAggregation"
+    },
+    "doc" : " Raw buckets ",
+    "optional" : true
+  }, {
+    "name" : "aggregations",
+    "type" : {
+      "type" : "record",
+      "name" : "UsageQueryResultAggregations",
+      "fields" : [ {
+        "name" : "uniqueUserCount",
+        "type" : "int",
+        "optional" : true
+      }, {
+        "name" : "totalSqlQueries",
+        "type" : "int",
+        "optional" : true
+      }, {
+        "name" : "users",
+        "type" : {
+          "type" : "array",
+          "items" : "UserUsageCounts"
+        },
+        "optional" : true
+      }, {
+        "name" : "fields",
+        "type" : {
+          "type" : "array",
+          "items" : "FieldUsageCounts"
+        },
+        "optional" : true
+      } ]
+    },
+    "doc" : "Aggregated metrics. All fields are optional here, since they will be populated\nonly if the underlying buckets contain the data required to generate that aggregation."
+  } ]
+}

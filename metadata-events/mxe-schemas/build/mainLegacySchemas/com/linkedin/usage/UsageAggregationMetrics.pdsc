@@ -1,0 +1,41 @@
+{
+  "type" : "record",
+  "name" : "UsageAggregationMetrics",
+  "namespace" : "com.linkedin.usage",
+  "doc" : "Metrics for usage data for a given resource and bucket. Not all fields\nmake sense for all buckets, so every field is optional.",
+  "fields" : [ {
+    "name" : "uniqueUserCount",
+    "type" : "int",
+    "doc" : " Unique user count ",
+    "optional" : true
+  }, {
+    "name" : "users",
+    "type" : {
+      "type" : "array",
+      "items" : "UserUsageCounts"
+    },
+    "doc" : " Users within this bucket, with frequency counts ",
+    "optional" : true
+  }, {
+    "name" : "totalSqlQueries",
+    "type" : "int",
+    "doc" : " Total SQL query count ",
+    "optional" : true
+  }, {
+    "name" : "topSqlQueries",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : " Frequent SQL queries; mostly makes sense for datasets in SQL databases ",
+    "optional" : true
+  }, {
+    "name" : "fields",
+    "type" : {
+      "type" : "array",
+      "items" : "FieldUsageCounts"
+    },
+    "doc" : " Field-level usage stats ",
+    "optional" : true
+  } ]
+}

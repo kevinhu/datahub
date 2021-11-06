@@ -1,0 +1,34 @@
+{
+  "type" : "typeref",
+  "name" : "DashboardUrn",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Standardized dashboard identifier",
+  "ref" : "string",
+  "java" : {
+    "class" : "com.linkedin.common.urn.DashboardUrn"
+  },
+  "validate" : {
+    "com.linkedin.common.validator.TypedUrnValidator" : {
+      "accessible" : true,
+      "constructable" : true,
+      "doc" : "Standardized dashboard identifier",
+      "entityType" : "dashboard",
+      "fields" : [ {
+        "doc" : "The name of the dashboard tool such as looker, redash etc.",
+        "maxLength" : 20,
+        "name" : "dashboardTool",
+        "type" : "string"
+      }, {
+        "doc" : "Unique id for the dashboard. This id should be globally unique for a dashboarding tool even when there are multiple deployments of it. As an example, dashboard URL could be used here for Looker such as 'looker.linkedin.com/dashboards/1234'",
+        "maxLength" : 200,
+        "name" : "dashboardId",
+        "type" : "string"
+      } ],
+      "maxLength" : 240,
+      "name" : "Dashboard",
+      "namespace" : "li",
+      "owners" : [ "urn:li:corpuser:fbar", "urn:li:corpuser:bfoo" ],
+      "owningTeam" : "urn:li:internalTeam:datahub"
+    }
+  }
+}

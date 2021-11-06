@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "DataJobAspect",
+  "namespace" : "com.linkedin.metadata.aspect",
+  "doc" : "A union of all supported metadata aspects for a Data job",
+  "ref" : [ "com.linkedin.metadata.key.DataJobKey", "com.linkedin.datajob.DataJobInfo", "com.linkedin.datajob.DataJobInputOutput", "com.linkedin.datajob.EditableDataJobProperties", "com.linkedin.common.Ownership", "com.linkedin.common.Status", "com.linkedin.common.GlobalTags", "com.linkedin.common.BrowsePaths", "com.linkedin.common.GlossaryTerms", "com.linkedin.common.InstitutionalMemory", "com.linkedin.common.DataPlatformInstance" ]
+}

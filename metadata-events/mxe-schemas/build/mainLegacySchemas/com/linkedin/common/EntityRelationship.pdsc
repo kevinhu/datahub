@@ -1,0 +1,20 @@
+{
+  "type" : "record",
+  "name" : "EntityRelationship",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Downstream lineage information about a dataset including the source reporting the lineage",
+  "fields" : [ {
+    "name" : "created",
+    "type" : "AuditStamp",
+    "doc" : "Audit stamp containing who reported the lineage and when",
+    "optional" : true
+  }, {
+    "name" : "entity",
+    "type" : "Urn",
+    "doc" : "The downstream dataset the lineage points to"
+  }, {
+    "name" : "type",
+    "type" : "string",
+    "doc" : "The type of the relationship"
+  } ]
+}

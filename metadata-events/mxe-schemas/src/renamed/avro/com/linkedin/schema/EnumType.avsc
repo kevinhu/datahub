@@ -1,0 +1,7 @@
+{
+  "type" : "record",
+  "name" : "EnumType",
+  "namespace" : "com.linkedin.pegasus2avro.schema",
+  "doc" : "Enum field type.",
+  "fields" : [ ]
+}

@@ -1,0 +1,21 @@
+{
+  "type" : "record",
+  "name" : "GlossaryTerms",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Related business terms information",
+  "fields" : [ {
+    "name" : "terms",
+    "type" : {
+      "type" : "array",
+      "items" : "GlossaryTermAssociation"
+    },
+    "doc" : "The related business terms"
+  }, {
+    "name" : "auditStamp",
+    "type" : "AuditStamp",
+    "doc" : "Audit stamp containing who reported the related business term"
+  } ],
+  "Aspect" : {
+    "name" : "glossaryTerms"
+  }
+}

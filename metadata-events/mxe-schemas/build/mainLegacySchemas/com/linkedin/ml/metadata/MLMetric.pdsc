@@ -1,0 +1,29 @@
+{
+  "type" : "record",
+  "name" : "MLMetric",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "Properties associated with an ML Metric",
+  "fields" : [ {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Name of the mlMetric"
+  }, {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Documentation of the mlMetric",
+    "optional" : true
+  }, {
+    "name" : "value",
+    "type" : "string",
+    "doc" : "The value of the mlMetric",
+    "optional" : true
+  }, {
+    "name" : "createdAt",
+    "type" : "com.linkedin.common.Time",
+    "doc" : "Date when the mlMetric was developed",
+    "optional" : true
+  } ],
+  "Aspect" : {
+    "name" : "mlMetric"
+  }
+}

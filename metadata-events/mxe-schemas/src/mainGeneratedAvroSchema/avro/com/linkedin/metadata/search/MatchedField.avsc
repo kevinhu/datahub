@@ -1,0 +1,14 @@
+{
+  "type" : "record",
+  "name" : "MatchedField",
+  "namespace" : "com.linkedin.metadata.search",
+  "fields" : [ {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Matched field name"
+  }, {
+    "name" : "value",
+    "type" : "string",
+    "doc" : "Matched field value"
+  } ]
+}

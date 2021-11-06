@@ -1,0 +1,22 @@
+{
+  "type" : "record",
+  "name" : "ChartEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a Chart entity",
+  "include" : [ "BaseEntity" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.ChartUrn",
+    "doc" : "Urn for the chart"
+  }, {
+    "name" : "dashboardTool",
+    "type" : "string",
+    "doc" : "Dashboard tool",
+    "optional" : true
+  }, {
+    "name" : "chartId",
+    "type" : "string",
+    "doc" : "Chart Id",
+    "optional" : true
+  } ]
+}

@@ -1,0 +1,25 @@
+{
+  "type" : "record",
+  "name" : "DataHubResourceFilter",
+  "namespace" : "com.linkedin.policy",
+  "doc" : "Information used to filter DataHub resource.",
+  "fields" : [ {
+    "name" : "type",
+    "type" : "string",
+    "doc" : "The type of resource that the policy applies to. This will most often be a data asset entity name, for\nexample 'dataset'. It is not strictly required because in the future we will want to support filtering a resource\nby domain, as well.",
+    "optional" : true
+  }, {
+    "name" : "resources",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "A specific set of resources to apply the policy to, e.g. asset urns",
+    "optional" : true
+  }, {
+    "name" : "allResources",
+    "type" : "boolean",
+    "doc" : "Whether the policy should be applied to all assets matching the filter.",
+    "default" : false
+  } ]
+}

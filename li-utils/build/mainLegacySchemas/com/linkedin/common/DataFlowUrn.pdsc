@@ -1,0 +1,39 @@
+{
+  "type" : "typeref",
+  "name" : "DataFlowUrn",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Standardized data processing flow identifier.",
+  "ref" : "string",
+  "java" : {
+    "class" : "com.linkedin.common.urn.DataFlowUrn"
+  },
+  "validate" : {
+    "com.linkedin.common.validator.TypedUrnValidator" : {
+      "accessible" : true,
+      "constructable" : true,
+      "doc" : "Standardized data processing flow identifier.",
+      "entityType" : "dataFlow",
+      "fields" : [ {
+        "doc" : "Workflow manager like azkaban, airflow which orchestrates the flow",
+        "maxLength" : 50,
+        "name" : "orchestrator",
+        "type" : "string"
+      }, {
+        "doc" : "Unique Identifier of the data flow",
+        "maxLength" : 200,
+        "name" : "flowId",
+        "type" : "string"
+      }, {
+        "doc" : "Cluster where the flow is executed",
+        "maxLength" : 100,
+        "name" : "cluster",
+        "type" : "string"
+      } ],
+      "maxLength" : 373,
+      "name" : "DataFlow",
+      "namespace" : "li",
+      "owners" : [ "urn:li:corpuser:fbar", "urn:li:corpuser:bfoo" ],
+      "owningTeam" : "urn:li:internalTeam:datahub"
+    }
+  }
+}

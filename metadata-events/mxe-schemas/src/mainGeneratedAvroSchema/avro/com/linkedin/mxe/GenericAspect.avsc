@@ -1,0 +1,13 @@
+{
+  "type" : "record",
+  "name" : "GenericAspect",
+  "namespace" : "com.linkedin.mxe",
+  "doc" : "Generic record structure for serializing an Aspect\n",
+  "fields" : [ {
+    "name" : "value",
+    "type" : "bytes"
+  }, {
+    "name" : "contentType",
+    "type" : "string"
+  } ]
+}

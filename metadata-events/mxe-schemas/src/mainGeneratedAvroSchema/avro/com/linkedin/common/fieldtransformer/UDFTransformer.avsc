@@ -1,0 +1,11 @@
+{
+  "type" : "record",
+  "name" : "UDFTransformer",
+  "namespace" : "com.linkedin.common.fieldtransformer",
+  "doc" : "Field transformation expressed in UDF",
+  "fields" : [ {
+    "name" : "udf",
+    "type" : "string",
+    "doc" : "A UDF mentioning how the source fields got transformed to destination field. This is the FQCN(Fully Qualified Class Name) of the udf."
+  } ]
+}

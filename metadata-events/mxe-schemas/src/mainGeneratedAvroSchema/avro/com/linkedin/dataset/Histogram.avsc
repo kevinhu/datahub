@@ -1,0 +1,18 @@
+{
+  "type" : "record",
+  "name" : "Histogram",
+  "namespace" : "com.linkedin.dataset",
+  "fields" : [ {
+    "name" : "boundaries",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    }
+  }, {
+    "name" : "heights",
+    "type" : {
+      "type" : "array",
+      "items" : "float"
+    }
+  } ]
+}

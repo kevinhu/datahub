@@ -1,0 +1,107 @@
+{
+  "type" : "record",
+  "name" : "DatasetFieldProfile",
+  "namespace" : "com.linkedin.dataset",
+  "doc" : "Stats corresponding to fields in a dataset",
+  "fields" : [ {
+    "name" : "fieldPath",
+    "type" : "string"
+  }, {
+    "name" : "uniqueCount",
+    "type" : "long",
+    "optional" : true
+  }, {
+    "name" : "uniqueProportion",
+    "type" : "float",
+    "optional" : true
+  }, {
+    "name" : "nullCount",
+    "type" : "long",
+    "optional" : true
+  }, {
+    "name" : "nullProportion",
+    "type" : "float",
+    "optional" : true
+  }, {
+    "name" : "min",
+    "type" : "string",
+    "optional" : true
+  }, {
+    "name" : "max",
+    "type" : "string",
+    "optional" : true
+  }, {
+    "name" : "mean",
+    "type" : "string",
+    "optional" : true
+  }, {
+    "name" : "median",
+    "type" : "string",
+    "optional" : true
+  }, {
+    "name" : "stdev",
+    "type" : "string",
+    "optional" : true
+  }, {
+    "name" : "quantiles",
+    "type" : {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "Quantile",
+        "fields" : [ {
+          "name" : "quantile",
+          "type" : "string"
+        }, {
+          "name" : "value",
+          "type" : "string"
+        } ]
+      }
+    },
+    "optional" : true
+  }, {
+    "name" : "distinctValueFrequencies",
+    "type" : {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "ValueFrequency",
+        "fields" : [ {
+          "name" : "value",
+          "type" : "string"
+        }, {
+          "name" : "frequency",
+          "type" : "long"
+        } ]
+      }
+    },
+    "optional" : true
+  }, {
+    "name" : "histogram",
+    "type" : {
+      "type" : "record",
+      "name" : "Histogram",
+      "fields" : [ {
+        "name" : "boundaries",
+        "type" : {
+          "type" : "array",
+          "items" : "string"
+        }
+      }, {
+        "name" : "heights",
+        "type" : {
+          "type" : "array",
+          "items" : "float"
+        }
+      } ]
+    },
+    "optional" : true
+  }, {
+    "name" : "sampleValues",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "optional" : true
+  } ]
+}

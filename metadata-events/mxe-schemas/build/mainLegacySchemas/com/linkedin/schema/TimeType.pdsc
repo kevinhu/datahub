@@ -1,0 +1,7 @@
+{
+  "type" : "record",
+  "name" : "TimeType",
+  "namespace" : "com.linkedin.schema",
+  "doc" : "Time field type. This should also be used for datetimes.",
+  "fields" : [ ]
+}

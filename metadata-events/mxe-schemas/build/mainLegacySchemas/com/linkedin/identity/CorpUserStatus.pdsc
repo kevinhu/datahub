@@ -1,0 +1,21 @@
+{
+  "type" : "record",
+  "name" : "CorpUserStatus",
+  "namespace" : "com.linkedin.identity",
+  "doc" : "The status of the user, e.g. provisioned, active, suspended, etc.",
+  "fields" : [ {
+    "name" : "status",
+    "type" : "string",
+    "doc" : "Status of the user, e.g. PROVISIONED / ACTIVE / SUSPENDED",
+    "Searchable" : {
+      "fieldType" : "KEYWORD"
+    }
+  }, {
+    "name" : "lastModified",
+    "type" : "com.linkedin.common.AuditStamp",
+    "doc" : "Audit stamp containing who last modified the status and when."
+  } ],
+  "Aspect" : {
+    "name" : "corpUserStatus"
+  }
+}

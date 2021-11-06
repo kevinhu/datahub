@@ -1,0 +1,45 @@
+{
+  "type" : "record",
+  "name" : "GlossaryNodeInfoDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for GlossaryNodeInfo entity search",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "browsePaths",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "All paths representing the hierarchy of this entity. This is essential for browsing various paths leading to this entity.",
+    "default" : null
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn for the GlossaryNode.",
+    "java" : {
+      "class" : "com.linkedin.common.urn.GlossaryNodeUrn"
+    }
+  }, {
+    "name" : "name",
+    "type" : [ "null", "string" ],
+    "doc" : "Name of business node",
+    "default" : null
+  }, {
+    "name" : "definition",
+    "type" : [ "null", "string" ],
+    "doc" : "Definition of business node",
+    "default" : null
+  }, {
+    "name" : "owners",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "LDAP usernames of corp users who are the owners of this business node",
+    "default" : null
+  } ]
+}

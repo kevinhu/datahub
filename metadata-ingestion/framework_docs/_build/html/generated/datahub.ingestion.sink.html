@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>datahub.ingestion.sink package &mdash; DataHub 0.0.0.dev0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="datahub.ingestion.source package" href="datahub.ingestion.source.html" />
+    <link rel="prev" title="datahub.ingestion.run package" href="datahub.ingestion.run.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DataHub
+          </a>
+              <div class="version">
+                0.0.0.dev0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="datahub.emitter.html">Emitters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.metadata.html">Metadata Schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.integrations.html">Integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.cli.html">CLI</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="datahub.ingestion.html">Ingestion</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="datahub.ingestion.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.api.html">datahub.ingestion.api package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.extractor.html">datahub.ingestion.extractor package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.graph.html">datahub.ingestion.graph package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.run.html">datahub.ingestion.run package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">datahub.ingestion.sink package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-datahub.ingestion.sink.console">datahub.ingestion.sink.console module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-datahub.ingestion.sink.datahub_kafka">datahub.ingestion.sink.datahub_kafka module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-datahub.ingestion.sink.datahub_rest">datahub.ingestion.sink.datahub_rest module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-datahub.ingestion.sink.file">datahub.ingestion.sink.file module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-datahub.ingestion.sink.sink_registry">datahub.ingestion.sink.sink_registry module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-datahub.ingestion.sink">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.source.html">datahub.ingestion.source package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.transformer.html">datahub.ingestion.transformer package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.ingestion.html#module-datahub.ingestion">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.configuration.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DataHub</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="datahub.ingestion.html">datahub.ingestion package</a> &raquo;</li>
+      <li>datahub.ingestion.sink package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/datahub.ingestion.sink.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="datahub-ingestion-sink-package">
+<h1>datahub.ingestion.sink package<a class="headerlink" href="#datahub-ingestion-sink-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-datahub.ingestion.sink.console">
+<span id="datahub-ingestion-sink-console-module"></span><h2>datahub.ingestion.sink.console module<a class="headerlink" href="#module-datahub.ingestion.sink.console" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.console.ConsoleSink">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.sink.console.</span></span><span class="sig-name descname"><span class="pre">ConsoleSink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ctx:</span> <span class="pre">datahub.ingestion.api.common.PipelineContext</span></em>, <em class="sig-param"><span class="pre">report:</span> <span class="pre">datahub.ingestion.api.sink.SinkReport</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/console.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.console.ConsoleSink" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.Sink" title="datahub.ingestion.api.sink.Sink"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.api.sink.Sink</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.console.ConsoleSink.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/console.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.console.ConsoleSink.close" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.console.ConsoleSink.create">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/console.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.console.ConsoleSink.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.console.ConsoleSink.get_report">
+<span class="sig-name descname"><span class="pre">get_report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/console.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.console.ConsoleSink.get_report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.console.ConsoleSink.handle_work_unit_end">
+<span class="sig-name descname"><span class="pre">handle_work_unit_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wu</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/console.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.console.ConsoleSink.handle_work_unit_end" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.console.ConsoleSink.handle_work_unit_start">
+<span class="sig-name descname"><span class="pre">handle_work_unit_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wu</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/console.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.console.ConsoleSink.handle_work_unit_start" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.console.ConsoleSink.report">
+<span class="sig-name descname"><span class="pre">report</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.SinkReport" title="datahub.ingestion.api.sink.SinkReport"><span class="pre">datahub.ingestion.api.sink.SinkReport</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/console.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.console.ConsoleSink.report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.console.ConsoleSink.write_record_async">
+<span class="sig-name descname"><span class="pre">write_record_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record_envelope</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.RecordEnvelope" title="datahub.ingestion.api.common.RecordEnvelope"><span class="pre">datahub.ingestion.api.common.RecordEnvelope</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_callback</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.WriteCallback" title="datahub.ingestion.api.sink.WriteCallback"><span class="pre">datahub.ingestion.api.sink.WriteCallback</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/console.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.console.ConsoleSink.write_record_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.ingestion.sink.datahub_kafka">
+<span id="datahub-ingestion-sink-datahub-kafka-module"></span><h2>datahub.ingestion.sink.datahub_kafka module<a class="headerlink" href="#module-datahub.ingestion.sink.datahub_kafka" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.sink.datahub_kafka.</span></span><span class="sig-name descname"><span class="pre">DatahubKafkaSink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig" title="datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig"><span class="pre">datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.Sink" title="datahub.ingestion.api.sink.Sink"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.api.sink.Sink</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.close" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.config">
+<span class="sig-name descname"><span class="pre">config</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="#datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig" title="datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig"><span class="pre">datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.create">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink" title="datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink"><span class="pre">datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink</span></a></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.emitter">
+<span class="sig-name descname"><span class="pre">emitter</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.emitter.html#datahub.emitter.kafka_emitter.DatahubKafkaEmitter" title="datahub.emitter.kafka_emitter.DatahubKafkaEmitter"><span class="pre">datahub.emitter.kafka_emitter.DatahubKafkaEmitter</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.emitter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.get_report">
+<span class="sig-name descname"><span class="pre">get_report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.get_report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.handle_work_unit_end">
+<span class="sig-name descname"><span class="pre">handle_work_unit_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workunit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.WorkUnit" title="datahub.ingestion.api.common.WorkUnit"><span class="pre">datahub.ingestion.api.common.WorkUnit</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.handle_work_unit_end" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.handle_work_unit_start">
+<span class="sig-name descname"><span class="pre">handle_work_unit_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workunit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.WorkUnit" title="datahub.ingestion.api.common.WorkUnit"><span class="pre">datahub.ingestion.api.common.WorkUnit</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.handle_work_unit_start" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.report">
+<span class="sig-name descname"><span class="pre">report</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.SinkReport" title="datahub.ingestion.api.sink.SinkReport"><span class="pre">datahub.ingestion.api.sink.SinkReport</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.write_record_async">
+<span class="sig-name descname"><span class="pre">write_record_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record_envelope</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.RecordEnvelope" title="datahub.ingestion.api.common.RecordEnvelope"><span class="pre">datahub.ingestion.api.common.RecordEnvelope</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.MetadataChangeEventClass" title="datahub.metadata.schema_classes.MetadataChangeEventClass"><span class="pre">datahub.metadata.schema_classes.MetadataChangeEventClass</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.MetadataChangeProposalClass" title="datahub.metadata.schema_classes.MetadataChangeProposalClass"><span class="pre">datahub.metadata.schema_classes.MetadataChangeProposalClass</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="datahub.emitter.html#datahub.emitter.mcp.MetadataChangeProposalWrapper" title="datahub.emitter.mcp.MetadataChangeProposalWrapper"><span class="pre">datahub.emitter.mcp.MetadataChangeProposalWrapper</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_callback</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.WriteCallback" title="datahub.ingestion.api.sink.WriteCallback"><span class="pre">datahub.ingestion.api.sink.WriteCallback</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.DatahubKafkaSink.write_record_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.sink.datahub_kafka.</span></span><span class="sig-name descname"><span class="pre">KafkaSinkConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connection</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.configuration.html#datahub.configuration.kafka.KafkaProducerConnectionConfig" title="datahub.configuration.kafka.KafkaProducerConnectionConfig"><span class="pre">datahub.configuration.kafka.KafkaProducerConnectionConfig</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topic</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'MetadataChangeEvent_v4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topic_routes</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">{'MetadataChangeEvent':</span> <span class="pre">'MetadataChangeEvent_v4',</span> <span class="pre">'MetadataChangeProposal':</span> <span class="pre">'MetadataChangeProposal_v1'}</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.emitter.html#datahub.emitter.kafka_emitter.KafkaEmitterConfig" title="datahub.emitter.kafka_emitter.KafkaEmitterConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.emitter.kafka_emitter.KafkaEmitterConfig</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig.connection">
+<span class="sig-name descname"><span class="pre">connection</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.configuration.html#datahub.configuration.kafka.KafkaProducerConnectionConfig" title="datahub.configuration.kafka.KafkaProducerConnectionConfig"><span class="pre">datahub.configuration.kafka.KafkaProducerConnectionConfig</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig.connection" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig.topic">
+<span class="sig-name descname"><span class="pre">topic</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig.topic" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig.topic_routes">
+<span class="sig-name descname"><span class="pre">topic_routes</span></span><em class="property"><span class="pre">:</span> <span class="pre">dict</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_kafka.KafkaSinkConfig.topic_routes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.ingestion.sink.datahub_rest">
+<span id="datahub-ingestion-sink-datahub-rest-module"></span><h2>datahub.ingestion.sink.datahub_rest module<a class="headerlink" href="#module-datahub.ingestion.sink.datahub_rest" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSink">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.sink.datahub_rest.</span></span><span class="sig-name descname"><span class="pre">DatahubRestSink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig" title="datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig"><span class="pre">datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSink" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.Sink" title="datahub.ingestion.api.sink.Sink"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.api.sink.Sink</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSink.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSink.close" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSink.config">
+<span class="sig-name descname"><span class="pre">config</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig" title="datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig"><span class="pre">datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSink.config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSink.create">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSink" title="datahub.ingestion.sink.datahub_rest.DatahubRestSink"><span class="pre">datahub.ingestion.sink.datahub_rest.DatahubRestSink</span></a></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSink.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSink.emitter">
+<span class="sig-name descname"><span class="pre">emitter</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.emitter.html#datahub.emitter.rest_emitter.DatahubRestEmitter" title="datahub.emitter.rest_emitter.DatahubRestEmitter"><span class="pre">datahub.emitter.rest_emitter.DatahubRestEmitter</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSink.emitter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSink.get_report">
+<span class="sig-name descname"><span class="pre">get_report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.SinkReport" title="datahub.ingestion.api.sink.SinkReport"><span class="pre">datahub.ingestion.api.sink.SinkReport</span></a></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSink.get_report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSink.handle_work_unit_end">
+<span class="sig-name descname"><span class="pre">handle_work_unit_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workunit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.WorkUnit" title="datahub.ingestion.api.common.WorkUnit"><span class="pre">datahub.ingestion.api.common.WorkUnit</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSink.handle_work_unit_end" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSink.handle_work_unit_start">
+<span class="sig-name descname"><span class="pre">handle_work_unit_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workunit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.WorkUnit" title="datahub.ingestion.api.common.WorkUnit"><span class="pre">datahub.ingestion.api.common.WorkUnit</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSink.handle_work_unit_start" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSink.report">
+<span class="sig-name descname"><span class="pre">report</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.SinkReport" title="datahub.ingestion.api.sink.SinkReport"><span class="pre">datahub.ingestion.api.sink.SinkReport</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSink.report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSink.treat_errors_as_warnings">
+<span class="sig-name descname"><span class="pre">treat_errors_as_warnings</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSink.treat_errors_as_warnings" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSink.write_record_async">
+<span class="sig-name descname"><span class="pre">write_record_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record_envelope</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.RecordEnvelope" title="datahub.ingestion.api.common.RecordEnvelope"><span class="pre">datahub.ingestion.api.common.RecordEnvelope</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.MetadataChangeEventClass" title="datahub.metadata.schema_classes.MetadataChangeEventClass"><span class="pre">datahub.metadata.schema_classes.MetadataChangeEventClass</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.MetadataChangeProposalClass" title="datahub.metadata.schema_classes.MetadataChangeProposalClass"><span class="pre">datahub.metadata.schema_classes.MetadataChangeProposalClass</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="datahub.emitter.html#datahub.emitter.mcp.MetadataChangeProposalWrapper" title="datahub.emitter.mcp.MetadataChangeProposalWrapper"><span class="pre">datahub.emitter.mcp.MetadataChangeProposalWrapper</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.UsageAggregationClass" title="datahub.metadata.schema_classes.UsageAggregationClass"><span class="pre">datahub.metadata.schema_classes.UsageAggregationClass</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_callback</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.WriteCallback" title="datahub.ingestion.api.sink.WriteCallback"><span class="pre">datahub.ingestion.api.sink.WriteCallback</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSink.write_record_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.sink.datahub_rest.</span></span><span class="sig-name descname"><span class="pre">DatahubRestSinkConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'http://localhost:8080'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout_sec</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_headers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_threads</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.ingestion.graph.html#datahub.ingestion.graph.client.DatahubClientConfig" title="datahub.ingestion.graph.client.DatahubClientConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.graph.client.DatahubClientConfig</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig.extra_headers">
+<span class="sig-name descname"><span class="pre">extra_headers</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig.extra_headers" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig.max_threads">
+<span class="sig-name descname"><span class="pre">max_threads</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig.max_threads" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig.server">
+<span class="sig-name descname"><span class="pre">server</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig.server" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig.timeout_sec">
+<span class="sig-name descname"><span class="pre">timeout_sec</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig.timeout_sec" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig.token">
+<span class="sig-name descname"><span class="pre">token</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/datahub_rest.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.datahub_rest.DatahubRestSinkConfig.token" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.ingestion.sink.file">
+<span id="datahub-ingestion-sink-file-module"></span><h2>datahub.ingestion.sink.file module<a class="headerlink" href="#module-datahub.ingestion.sink.file" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.file.FileSink">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.sink.file.</span></span><span class="sig-name descname"><span class="pre">FileSink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.ingestion.sink.file.FileSinkConfig" title="datahub.ingestion.sink.file.FileSinkConfig"><span class="pre">datahub.ingestion.sink.file.FileSinkConfig</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/file.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.file.FileSink" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.Sink" title="datahub.ingestion.api.sink.Sink"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.api.sink.Sink</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.file.FileSink.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/file.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.file.FileSink.close" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.file.FileSink.config">
+<span class="sig-name descname"><span class="pre">config</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="#datahub.ingestion.sink.file.FileSinkConfig" title="datahub.ingestion.sink.file.FileSinkConfig"><span class="pre">datahub.ingestion.sink.file.FileSinkConfig</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/file.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.file.FileSink.config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.file.FileSink.create">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#datahub.ingestion.sink.file.FileSink" title="datahub.ingestion.sink.file.FileSink"><span class="pre">datahub.ingestion.sink.file.FileSink</span></a></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/file.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.file.FileSink.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.file.FileSink.get_report">
+<span class="sig-name descname"><span class="pre">get_report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/file.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.file.FileSink.get_report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.file.FileSink.handle_work_unit_end">
+<span class="sig-name descname"><span class="pre">handle_work_unit_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wu</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/file.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.file.FileSink.handle_work_unit_end" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.file.FileSink.handle_work_unit_start">
+<span class="sig-name descname"><span class="pre">handle_work_unit_start</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wu</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/file.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.file.FileSink.handle_work_unit_start" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.file.FileSink.report">
+<span class="sig-name descname"><span class="pre">report</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.SinkReport" title="datahub.ingestion.api.sink.SinkReport"><span class="pre">datahub.ingestion.api.sink.SinkReport</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/file.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.file.FileSink.report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.file.FileSink.write_record_async">
+<span class="sig-name descname"><span class="pre">write_record_async</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record_envelope</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.RecordEnvelope" title="datahub.ingestion.api.common.RecordEnvelope"><span class="pre">datahub.ingestion.api.common.RecordEnvelope</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.MetadataChangeEventClass" title="datahub.metadata.schema_classes.MetadataChangeEventClass"><span class="pre">datahub.metadata.schema_classes.MetadataChangeEventClass</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.MetadataChangeProposalClass" title="datahub.metadata.schema_classes.MetadataChangeProposalClass"><span class="pre">datahub.metadata.schema_classes.MetadataChangeProposalClass</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="datahub.emitter.html#datahub.emitter.mcp.MetadataChangeProposalWrapper" title="datahub.emitter.mcp.MetadataChangeProposalWrapper"><span class="pre">datahub.emitter.mcp.MetadataChangeProposalWrapper</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.UsageAggregationClass" title="datahub.metadata.schema_classes.UsageAggregationClass"><span class="pre">datahub.metadata.schema_classes.UsageAggregationClass</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_callback</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.WriteCallback" title="datahub.ingestion.api.sink.WriteCallback"><span class="pre">datahub.ingestion.api.sink.WriteCallback</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/file.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.file.FileSink.write_record_async" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.file.FileSinkConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.sink.file.</span></span><span class="sig-name descname"><span class="pre">FileSinkConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/file.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.file.FileSinkConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.ConfigModel" title="datahub.configuration.common.ConfigModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.ConfigModel</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.sink.file.FileSinkConfig.filename">
+<span class="sig-name descname"><span class="pre">filename</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/sink/file.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.sink.file.FileSinkConfig.filename" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.ingestion.sink.sink_registry">
+<span id="datahub-ingestion-sink-sink-registry-module"></span><h2>datahub.ingestion.sink.sink_registry module<a class="headerlink" href="#module-datahub.ingestion.sink.sink_registry" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-datahub.ingestion.sink">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datahub.ingestion.sink" title="Permalink to this headline"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datahub.ingestion.run.html" class="btn btn-neutral float-left" title="datahub.ingestion.run package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datahub.ingestion.source.html" class="btn btn-neutral float-right" title="datahub.ingestion.source package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, DataHub Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "DataHubPolicyAspect",
+  "namespace" : "com.linkedin.metadata.aspect",
+  "doc" : "A union of all supported metadata aspects for a DataHub access policy.",
+  "ref" : [ "com.linkedin.metadata.key.DataHubPolicyKey", "com.linkedin.policy.DataHubPolicyInfo" ]
+}

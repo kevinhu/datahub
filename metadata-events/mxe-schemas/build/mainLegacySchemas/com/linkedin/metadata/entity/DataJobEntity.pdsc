@@ -1,0 +1,22 @@
+{
+  "type" : "record",
+  "name" : "DataJobEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a DataJob entity",
+  "include" : [ "BaseEntity" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.DataJobUrn",
+    "doc" : "Urn for the DataJob"
+  }, {
+    "name" : "flow",
+    "type" : "com.linkedin.common.DataFlowUrn",
+    "doc" : "Urn of the associated DataFlow",
+    "optional" : true
+  }, {
+    "name" : "jobId",
+    "type" : "string",
+    "doc" : "Id of the job",
+    "optional" : true
+  } ]
+}

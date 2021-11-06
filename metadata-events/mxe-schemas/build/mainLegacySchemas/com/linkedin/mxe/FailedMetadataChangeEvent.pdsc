@@ -1,0 +1,20 @@
+{
+  "type" : "record",
+  "name" : "FailedMetadataChangeEvent",
+  "namespace" : "com.linkedin.mxe",
+  "doc" : "Kafka event for capturing a failure to process a specific MetadataChangeEvent.",
+  "fields" : [ {
+    "name" : "auditHeader",
+    "type" : "com.linkedin.avro2pegasus.events.KafkaAuditHeader",
+    "doc" : "Kafka audit header. See go/kafkaauditheader for more info.",
+    "optional" : true
+  }, {
+    "name" : "metadataChangeEvent",
+    "type" : "MetadataChangeEvent",
+    "doc" : "The even that failed to be processed."
+  }, {
+    "name" : "error",
+    "type" : "string",
+    "doc" : "The error message or the stacktrace for the failure."
+  } ]
+}

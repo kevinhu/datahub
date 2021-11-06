@@ -1,0 +1,7 @@
+{
+  "type" : "record",
+  "name" : "BooleanType",
+  "namespace" : "com.linkedin.pegasus2avro.schema",
+  "doc" : "Boolean field type.",
+  "fields" : [ ]
+}

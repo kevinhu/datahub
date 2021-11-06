@@ -1,0 +1,10 @@
+{
+  "type" : "enum",
+  "name" : "CostType",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Type of Cost Code",
+  "symbols" : [ "ORG_COST_TYPE" ],
+  "symbolDocs" : {
+    "ORG_COST_TYPE" : "Org Cost Type to which the Cost of this entity should be attributed to"
+  }
+}

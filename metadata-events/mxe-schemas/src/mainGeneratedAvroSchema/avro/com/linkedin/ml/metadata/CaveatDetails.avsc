@@ -1,0 +1,25 @@
+{
+  "type" : "record",
+  "name" : "CaveatDetails",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "This section should list additional concerns that were not covered in the previous sections. For example, did the results suggest any further testing? Were there any relevant groups that were not represented in the evaluation dataset? Are there additional recommendations for model use?",
+  "fields" : [ {
+    "name" : "needsFurtherTesting",
+    "type" : [ "null", "boolean" ],
+    "doc" : "Did the results suggest any further testing?",
+    "default" : null
+  }, {
+    "name" : "caveatDescription",
+    "type" : [ "null", "string" ],
+    "doc" : "Caveat Description\nFor ex: Given gender classes are binary (male/not male), which we include as male/female. Further work needed to evaluate across a spectrum of genders.",
+    "default" : null
+  }, {
+    "name" : "groupsNotRepresented",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "Relevant groups that were not represented in the evaluation dataset?",
+    "default" : null
+  } ]
+}

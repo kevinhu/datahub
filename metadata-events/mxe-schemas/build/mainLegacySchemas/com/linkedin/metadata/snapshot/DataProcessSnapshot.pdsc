@@ -1,0 +1,23 @@
+{
+  "type" : "record",
+  "name" : "DataProcessSnapshot",
+  "namespace" : "com.linkedin.metadata.snapshot",
+  "doc" : "A metadata snapshot for a specific Data process entity.",
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.DataProcessUrn",
+    "doc" : "URN for the entity the metadata snapshot is associated with."
+  }, {
+    "name" : "aspects",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.metadata.aspect.DataProcessAspect"
+    },
+    "doc" : "The list of metadata aspects associated with the data process. Depending on the use case, this can either be all, or a selection, of supported aspects."
+  } ],
+  "Entity" : {
+    "keyAspect" : "dataProcessKey",
+    "name" : "dataProcess"
+  },
+  "deprecated" : "Use DataJob instead."
+}

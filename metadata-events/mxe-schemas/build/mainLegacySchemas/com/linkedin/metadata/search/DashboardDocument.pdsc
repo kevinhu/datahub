@@ -1,0 +1,48 @@
+{
+  "type" : "record",
+  "name" : "DashboardDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for Chart entity search",
+  "include" : [ "BaseDocument" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.DashboardUrn",
+    "doc" : "Urn for the Dashboard"
+  }, {
+    "name" : "title",
+    "type" : "string",
+    "doc" : "Title of the dashboard",
+    "optional" : true
+  }, {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Detailed description about the dashboard",
+    "optional" : true
+  }, {
+    "name" : "tool",
+    "type" : "string",
+    "doc" : "Dashboard tool ex: Looker, Redash",
+    "optional" : true
+  }, {
+    "name" : "owners",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "LDAP usernames of corp users who are the owners of this dashboard",
+    "optional" : true
+  }, {
+    "name" : "access",
+    "type" : "com.linkedin.common.AccessLevel",
+    "doc" : "Access level for the dashboard",
+    "optional" : true
+  }, {
+    "name" : "tags",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "List of tags for this dataset",
+    "optional" : true
+  } ]
+}

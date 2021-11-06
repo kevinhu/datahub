@@ -1,0 +1,17 @@
+{
+  "type" : "record",
+  "name" : "GlossaryTermEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a GlossaryTerm entity",
+  "include" : [ "BaseEntity" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.GlossaryTermUrn",
+    "doc" : "Urn for the GlossaryTerm"
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Business term name",
+    "optional" : true
+  } ]
+}

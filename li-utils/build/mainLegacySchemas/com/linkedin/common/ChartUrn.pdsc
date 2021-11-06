@@ -1,0 +1,34 @@
+{
+  "type" : "typeref",
+  "name" : "ChartUrn",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Standardized chart identifier",
+  "ref" : "string",
+  "java" : {
+    "class" : "com.linkedin.common.urn.ChartUrn"
+  },
+  "validate" : {
+    "com.linkedin.common.validator.TypedUrnValidator" : {
+      "accessible" : true,
+      "constructable" : true,
+      "doc" : "Standardized chart identifier",
+      "entityType" : "chart",
+      "fields" : [ {
+        "doc" : "The name of the dashboard tool such as looker, redash etc.",
+        "maxLength" : 20,
+        "name" : "dashboardTool",
+        "type" : "string"
+      }, {
+        "doc" : "Unique id for the chart. This id should be globally unique for a dashboarding tool even when there are multiple deployments of it. As an example, chart URL could be used here for Looker such as 'looker.linkedin.com/looks/1234'",
+        "maxLength" : 200,
+        "name" : "chartId",
+        "type" : "string"
+      } ],
+      "maxLength" : 236,
+      "name" : "Chart",
+      "namespace" : "li",
+      "owners" : [ "urn:li:corpuser:fbar", "urn:li:corpuser:bfoo" ],
+      "owningTeam" : "urn:li:internalTeam:datahub"
+    }
+  }
+}

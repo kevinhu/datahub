@@ -1,0 +1,44 @@
+{
+  "type" : "record",
+  "name" : "MetadataChangeProposal",
+  "namespace" : "com.linkedin.mxe",
+  "doc" : "Kafka event for proposing a metadata change for an entity. A corresponding MetadataChangeLog is emitted when the change is accepted and committed, otherwise a FailedMetadataChangeProposal will be emitted instead.",
+  "fields" : [ {
+    "name" : "auditHeader",
+    "type" : "com.linkedin.avro2pegasus.events.KafkaAuditHeader",
+    "doc" : "Kafka audit header. See go/kafkaauditheader for more info.",
+    "optional" : true
+  }, {
+    "name" : "entityType",
+    "type" : "string",
+    "doc" : "Type of the entity being written to"
+  }, {
+    "name" : "entityUrn",
+    "type" : "com.linkedin.common.Urn",
+    "doc" : "Urn of the entity being written\n",
+    "optional" : true
+  }, {
+    "name" : "entityKeyAspect",
+    "type" : "GenericAspect",
+    "doc" : "Key aspect of the entity being written",
+    "optional" : true
+  }, {
+    "name" : "changeType",
+    "type" : "com.linkedin.events.metadata.ChangeType",
+    "doc" : "Type of change being proposed"
+  }, {
+    "name" : "aspectName",
+    "type" : "string",
+    "doc" : "Aspect of the entity being written to\nNot filling this out implies that the writer wants to affect the entire entity\nNote: This is only valid for CREATE and DELETE operations.\n",
+    "optional" : true
+  }, {
+    "name" : "aspect",
+    "type" : "GenericAspect",
+    "optional" : true
+  }, {
+    "name" : "systemMetadata",
+    "type" : "SystemMetadata",
+    "doc" : "A string->string map of custom properties that one might want to attach to an event\n",
+    "optional" : true
+  } ]
+}

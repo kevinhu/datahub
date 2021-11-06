@@ -1,0 +1,27 @@
+{
+  "type" : "typeref",
+  "name" : "FabricUrn",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Should match the forms used in configs: envInfoFinder.envToEnvByteMap. PROD-ELA4, PROD-ECH3, EI, EI2, prod-lva1, etc",
+  "ref" : "string",
+  "java" : {
+    "class" : "com.linkedin.common.urn.FabricUrn"
+  },
+  "validate" : {
+    "com.linkedin.common.validator.TypedUrnValidator" : {
+      "doc" : "Should match the forms used in configs: envInfoFinder.envToEnvByteMap. PROD-ELA4, PROD-ECH3, EI, EI2, prod-lva1, etc",
+      "entityType" : "fabric",
+      "fields" : [ {
+        "doc" : "",
+        "maxLength" : 36,
+        "name" : "fabricName",
+        "type" : "string"
+      } ],
+      "maxLength" : 50,
+      "name" : "Fabric",
+      "namespace" : "li",
+      "owners" : [ "urn:li:corpuser:fbar", "urn:li:corpuser:bfoo" ],
+      "owningTeam" : "urn:li:internalTeam:Tools"
+    }
+  }
+}

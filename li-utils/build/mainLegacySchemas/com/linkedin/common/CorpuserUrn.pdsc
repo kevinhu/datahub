@@ -1,0 +1,29 @@
+{
+  "type" : "typeref",
+  "name" : "CorpuserUrn",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Corporate user's AD/LDAP login",
+  "ref" : "string",
+  "java" : {
+    "class" : "com.linkedin.common.urn.CorpuserUrn"
+  },
+  "validate" : {
+    "com.linkedin.common.validator.TypedUrnValidator" : {
+      "accessible" : true,
+      "constructable" : true,
+      "doc" : "Corporate user's AD/LDAP login",
+      "entityType" : "corpuser",
+      "fields" : [ {
+        "doc" : "The name of the AD/LDAP user.",
+        "maxLength" : 20,
+        "name" : "username",
+        "type" : "string"
+      } ],
+      "maxLength" : 36,
+      "name" : "Corpuser",
+      "namespace" : "li",
+      "owners" : [ "urn:li:corpuser:fbar", "urn:li:corpuser:bfoo" ],
+      "owningTeam" : "urn:li:internalTeam:security"
+    }
+  }
+}

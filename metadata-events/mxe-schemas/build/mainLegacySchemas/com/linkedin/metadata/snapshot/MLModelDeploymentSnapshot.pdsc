@@ -1,0 +1,21 @@
+{
+  "type" : "record",
+  "name" : "MLModelDeploymentSnapshot",
+  "namespace" : "com.linkedin.metadata.snapshot",
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.Urn",
+    "doc" : "URN for the entity the metadata snapshot is associated with."
+  }, {
+    "name" : "aspects",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.metadata.aspect.MLModelDeploymentAspect"
+    },
+    "doc" : "The list of metadata aspects associated with the MLModelDeployment. Depending on the use case, this can either be all, or a selection, of supported aspects."
+  } ],
+  "Entity" : {
+    "keyAspect" : "mlModelDeploymentKey",
+    "name" : "mlModelDeployment"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "type" : "record",
+  "name" : "MLModelGroupProperties",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "Properties associated with an ML Model Group",
+  "include" : [ "com.linkedin.common.CustomProperties" ],
+  "fields" : [ {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Documentation of the MLModelGroup",
+    "optional" : true,
+    "Searchable" : {
+      "fieldType" : "TEXT",
+      "hasValuesFieldName" : "hasDescription"
+    }
+  }, {
+    "name" : "createdAt",
+    "type" : "com.linkedin.common.Time",
+    "doc" : "Date when the MLModelGroup was developed",
+    "optional" : true
+  }, {
+    "name" : "version",
+    "type" : "com.linkedin.common.VersionTag",
+    "doc" : "Version of the MLModelGroup",
+    "optional" : true
+  } ],
+  "Aspect" : {
+    "name" : "mlModelGroupProperties"
+  }
+}

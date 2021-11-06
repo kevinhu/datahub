@@ -1,0 +1,29 @@
+{
+  "type" : "typeref",
+  "name" : "CorpGroupUrn",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Corporate group's AD/LDAP login",
+  "ref" : "string",
+  "java" : {
+    "class" : "com.linkedin.common.urn.CorpGroupUrn"
+  },
+  "validate" : {
+    "com.linkedin.common.validator.TypedUrnValidator" : {
+      "accessible" : true,
+      "constructable" : true,
+      "doc" : "Corporate group's AD/LDAP login",
+      "entityType" : "corpGroup",
+      "fields" : [ {
+        "doc" : "The name of the AD/LDAP group.",
+        "maxLength" : 64,
+        "name" : "groupName",
+        "type" : "string"
+      } ],
+      "maxLength" : 81,
+      "name" : "CorpGroup",
+      "namespace" : "li",
+      "owners" : [ "urn:li:corpuser:fbar", "urn:li:corpuser:bfoo" ],
+      "owningTeam" : "urn:li:internalTeam:security"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "type" : "record",
+  "name" : "DashboardDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for Chart entity search",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "browsePaths",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "All paths representing the hierarchy of this entity. This is essential for browsing various paths leading to this entity.",
+    "default" : null
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn for the Dashboard",
+    "java" : {
+      "class" : "com.linkedin.common.urn.DashboardUrn"
+    }
+  }, {
+    "name" : "title",
+    "type" : [ "null", "string" ],
+    "doc" : "Title of the dashboard",
+    "default" : null
+  }, {
+    "name" : "description",
+    "type" : [ "null", "string" ],
+    "doc" : "Detailed description about the dashboard",
+    "default" : null
+  }, {
+    "name" : "tool",
+    "type" : [ "null", "string" ],
+    "doc" : "Dashboard tool ex: Looker, Redash",
+    "default" : null
+  }, {
+    "name" : "owners",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "LDAP usernames of corp users who are the owners of this dashboard",
+    "default" : null
+  }, {
+    "name" : "access",
+    "type" : [ "null", {
+      "type" : "enum",
+      "name" : "AccessLevel",
+      "namespace" : "com.linkedin.common",
+      "doc" : "The various access levels",
+      "symbols" : [ "PUBLIC", "PRIVATE" ],
+      "symbolDocs" : {
+        "PRIVATE" : "Private availability to certain set of users",
+        "PUBLIC" : "Publicly available access level"
+      }
+    } ],
+    "doc" : "Access level for the dashboard",
+    "default" : null
+  }, {
+    "name" : "tags",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "List of tags for this dataset",
+    "default" : null
+  } ]
+}

@@ -1,0 +1,14 @@
+{
+  "type" : "enum",
+  "name" : "RecommendationRenderType",
+  "namespace" : "com.linkedin.metadata.recommendation",
+  "doc" : "Enum that defines how the modules should be rendered.\nThere should be two frontend implementation of large and small modules per type.",
+  "symbols" : [ "ENTITY_NAME_LIST", "PLATFORM_SEARCH_LIST", "TAG_SEARCH_LIST", "GLOSSARY_TERM_SEARCH_LIST", "SEARCH_QUERY_LIST" ],
+  "symbolDocs" : {
+    "ENTITY_NAME_LIST" : "Simple list of entities",
+    "GLOSSARY_TERM_SEARCH_LIST" : "Glossary term search list",
+    "PLATFORM_SEARCH_LIST" : "List of platforms to search",
+    "SEARCH_QUERY_LIST" : "A list of recommended searches",
+    "TAG_SEARCH_LIST" : "Tag search list"
+  }
+}

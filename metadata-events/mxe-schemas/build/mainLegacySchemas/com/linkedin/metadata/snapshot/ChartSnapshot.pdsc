@@ -1,0 +1,22 @@
+{
+  "type" : "record",
+  "name" : "ChartSnapshot",
+  "namespace" : "com.linkedin.metadata.snapshot",
+  "doc" : "A metadata snapshot for a specific Chart entity.",
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.ChartUrn",
+    "doc" : "URN for the entity the metadata snapshot is associated with."
+  }, {
+    "name" : "aspects",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.metadata.aspect.ChartAspect"
+    },
+    "doc" : "The list of metadata aspects associated with the chart. Depending on the use case, this can either be all, or a selection, of supported aspects."
+  } ],
+  "Entity" : {
+    "keyAspect" : "chartKey",
+    "name" : "chart"
+  }
+}

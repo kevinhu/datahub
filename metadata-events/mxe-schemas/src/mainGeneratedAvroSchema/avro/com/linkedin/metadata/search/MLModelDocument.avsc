@@ -1,0 +1,103 @@
+{
+  "type" : "record",
+  "name" : "MLModelDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for ML Model entity search",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "browsePaths",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "All paths representing the hierarchy of this entity. This is essential for browsing various paths leading to this entity.",
+    "default" : null
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn for the model",
+    "java" : {
+      "class" : "com.linkedin.common.urn.MLModelUrn"
+    }
+  }, {
+    "name" : "name",
+    "type" : [ "null", "string" ],
+    "doc" : "Name of model",
+    "default" : null
+  }, {
+    "name" : "platform",
+    "type" : [ "null", "string" ],
+    "doc" : "Platform name for the model",
+    "default" : null
+  }, {
+    "name" : "origin",
+    "type" : [ "null", {
+      "type" : "enum",
+      "name" : "FabricType",
+      "namespace" : "com.linkedin.common",
+      "doc" : "Fabric group type",
+      "symbols" : [ "DEV", "EI", "PROD", "CORP" ],
+      "symbolDocs" : {
+        "CORP" : "Designates corporation fabrics",
+        "DEV" : "Designates development fabrics",
+        "EI" : "Designates early-integration (staging) fabrics",
+        "PROD" : "Designates production fabrics"
+      }
+    } ],
+    "doc" : "Fabric type where model belongs to or where it was generated",
+    "default" : null
+  }, {
+    "name" : "description",
+    "type" : [ "null", "string" ],
+    "doc" : "Description of the model",
+    "default" : null
+  }, {
+    "name" : "createdTimestamp",
+    "type" : [ "null", "long" ],
+    "doc" : "Timestamp model was created",
+    "default" : null
+  }, {
+    "name" : "hasOwners",
+    "type" : [ "null", "boolean" ],
+    "doc" : "Whether or not the Model has owners",
+    "default" : null
+  }, {
+    "name" : "owners",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "LDAP usernames of corp users who are the owners of this model",
+    "default" : null
+  }, {
+    "name" : "type",
+    "type" : [ "null", "string" ],
+    "doc" : "Type of Algorithm or Model such as whether it is a Naive Bayes classifier, Convolutional Neural Network, etc",
+    "default" : null
+  }, {
+    "name" : "trainingDatasets",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "What datasets were used to train the model?",
+    "default" : null
+  }, {
+    "name" : "evaluationDatasets",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "What datasets were used to evaluate the model?",
+    "default" : null
+  }, {
+    "name" : "active",
+    "type" : [ "null", "boolean" ],
+    "doc" : "Whether or not the model is currently active",
+    "default" : null
+  } ]
+}

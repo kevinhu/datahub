@@ -1,0 +1,58 @@
+{
+  "type" : "record",
+  "name" : "ChartDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for Chart entity search",
+  "include" : [ "BaseDocument" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.ChartUrn",
+    "doc" : "Urn for the Chart"
+  }, {
+    "name" : "title",
+    "type" : "string",
+    "doc" : "Title of the chart",
+    "optional" : true
+  }, {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Detailed description about the chart",
+    "optional" : true
+  }, {
+    "name" : "tool",
+    "type" : "string",
+    "doc" : "Dashboard tool ex: Looker, Redash",
+    "optional" : true
+  }, {
+    "name" : "queryType",
+    "type" : "com.linkedin.chart.ChartQueryType",
+    "doc" : "Chart query type",
+    "optional" : true
+  }, {
+    "name" : "owners",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "LDAP usernames of corp users who are the owners of this chart",
+    "optional" : true
+  }, {
+    "name" : "type",
+    "type" : "com.linkedin.chart.ChartType",
+    "doc" : "Type of the chart",
+    "optional" : true
+  }, {
+    "name" : "access",
+    "type" : "com.linkedin.common.AccessLevel",
+    "doc" : "Access level for the chart",
+    "optional" : true
+  }, {
+    "name" : "tags",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "List of tags for this dataset",
+    "optional" : true
+  } ]
+}

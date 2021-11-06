@@ -1,0 +1,12 @@
+{
+  "type" : "record",
+  "name" : "AspectRowSummaryList",
+  "namespace" : "com.linkedin.metadata.run",
+  "fields" : [ {
+    "name" : "aspectRowSummaries",
+    "type" : {
+      "type" : "array",
+      "items" : "AspectRowSummary"
+    }
+  } ]
+}

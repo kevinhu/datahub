@@ -1,0 +1,19 @@
+{
+  "type" : "record",
+  "name" : "FilterValue",
+  "namespace" : "com.linkedin.pegasus2avro.metadata.search",
+  "fields" : [ {
+    "name" : "value",
+    "type" : "string"
+  }, {
+    "name" : "entity",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "java" : {
+      "class" : "com.linkedin.pegasus2avro.common.urn.Urn"
+    }
+  }, {
+    "name" : "facetCount",
+    "type" : "long"
+  } ]
+}

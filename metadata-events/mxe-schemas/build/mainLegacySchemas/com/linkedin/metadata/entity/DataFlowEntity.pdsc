@@ -1,0 +1,27 @@
+{
+  "type" : "record",
+  "name" : "DataFlowEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a DataFlow entity",
+  "include" : [ "BaseEntity" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.DataFlowUrn",
+    "doc" : "Urn for the DataFlow"
+  }, {
+    "name" : "orchestrator",
+    "type" : "string",
+    "doc" : "Workflow orchestrator ex: Azkaban, Airflow",
+    "optional" : true
+  }, {
+    "name" : "flowId",
+    "type" : "string",
+    "doc" : "Id of the flow",
+    "optional" : true
+  }, {
+    "name" : "cluster",
+    "type" : "string",
+    "doc" : "Cluster of the flow",
+    "optional" : true
+  } ]
+}

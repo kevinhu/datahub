@@ -1,0 +1,14 @@
+{
+  "type" : "record",
+  "name" : "EntityProfileParams",
+  "namespace" : "com.linkedin.pegasus2avro.metadata.recommendation",
+  "doc" : "Context to define the entity profile page",
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn of the entity being shown",
+    "java" : {
+      "class" : "com.linkedin.pegasus2avro.common.urn.Urn"
+    }
+  } ]
+}

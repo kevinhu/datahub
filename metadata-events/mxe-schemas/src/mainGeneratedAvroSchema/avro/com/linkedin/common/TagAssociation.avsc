@@ -1,0 +1,21 @@
+{
+  "type" : "record",
+  "name" : "TagAssociation",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Properties of an applied tag. For now, just an Urn. In the future we can extend this with other properties, e.g.\npropagation parameters.",
+  "fields" : [ {
+    "name" : "tag",
+    "type" : "string",
+    "doc" : "Urn of the applied tag",
+    "Searchable" : {
+      "addToFilters" : true,
+      "fieldName" : "tags",
+      "fieldType" : "URN_PARTIAL",
+      "filterNameOverride" : "Tag",
+      "hasValuesFieldName" : "hasTags"
+    },
+    "java" : {
+      "class" : "com.linkedin.common.urn.TagUrn"
+    }
+  } ]
+}

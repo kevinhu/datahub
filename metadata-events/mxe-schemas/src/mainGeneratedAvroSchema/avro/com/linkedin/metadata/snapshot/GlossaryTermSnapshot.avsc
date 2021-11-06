@@ -1,0 +1,311 @@
+{
+  "type" : "record",
+  "name" : "GlossaryTermSnapshot",
+  "namespace" : "com.linkedin.metadata.snapshot",
+  "doc" : "A metadata snapshot for a specific GlossaryTerm entity.",
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "URN for the entity the metadata snapshot is associated with.",
+    "java" : {
+      "class" : "com.linkedin.common.urn.GlossaryTermUrn"
+    }
+  }, {
+    "name" : "aspects",
+    "type" : {
+      "type" : "array",
+      "items" : [ {
+        "type" : "record",
+        "name" : "GlossaryTermKey",
+        "namespace" : "com.linkedin.metadata.key",
+        "doc" : "Key for a GlossaryTerm",
+        "fields" : [ {
+          "name" : "name",
+          "type" : "string",
+          "Searchable" : {
+            "enableAutocomplete" : true,
+            "fieldType" : "TEXT_PARTIAL"
+          }
+        } ],
+        "Aspect" : {
+          "name" : "glossaryTermKey"
+        }
+      }, {
+        "type" : "record",
+        "name" : "GlossaryTermInfo",
+        "namespace" : "com.linkedin.glossary",
+        "doc" : "Properties associated with a GlossaryTerm",
+        "fields" : [ {
+          "name" : "definition",
+          "type" : "string",
+          "doc" : "Definition of business term",
+          "Searchable" : { }
+        }, {
+          "name" : "parentNode",
+          "type" : [ "null", "string" ],
+          "doc" : "Parent node of the glossary term",
+          "default" : null,
+          "java" : {
+            "class" : "com.linkedin.common.urn.GlossaryNodeUrn"
+          }
+        }, {
+          "name" : "termSource",
+          "type" : "string",
+          "doc" : "Source of the Business Term (INTERNAL or EXTERNAL) with default value as INTERNAL",
+          "Searchable" : {
+            "fieldType" : "KEYWORD"
+          }
+        }, {
+          "name" : "sourceRef",
+          "type" : [ "null", "string" ],
+          "doc" : "External Reference to the business-term",
+          "default" : null,
+          "Searchable" : {
+            "fieldType" : "KEYWORD"
+          }
+        }, {
+          "name" : "sourceUrl",
+          "type" : [ "null", "string" ],
+          "doc" : "The abstracted URL such as https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/CashInstrument.",
+          "default" : null,
+          "java" : {
+            "class" : "com.linkedin.common.url.Url",
+            "coercerClass" : "com.linkedin.common.url.UrlCoercer"
+          }
+        }, {
+          "name" : "customProperties",
+          "type" : {
+            "type" : "map",
+            "values" : "string"
+          },
+          "doc" : "A key-value map to capture any other non-standardized properties for the glossary term",
+          "default" : { }
+        }, {
+          "name" : "rawSchema",
+          "type" : [ "null", "string" ],
+          "doc" : "Schema definition of the glossary term",
+          "default" : null
+        } ],
+        "Aspect" : {
+          "name" : "glossaryTermInfo"
+        }
+      }, {
+        "type" : "record",
+        "name" : "Ownership",
+        "namespace" : "com.linkedin.common",
+        "doc" : "Ownership information of an entity.",
+        "fields" : [ {
+          "name" : "owners",
+          "type" : {
+            "type" : "array",
+            "items" : {
+              "type" : "record",
+              "name" : "Owner",
+              "doc" : "Ownership information",
+              "fields" : [ {
+                "name" : "owner",
+                "type" : "string",
+                "doc" : "Owner URN, e.g. urn:li:corpuser:ldap, urn:li:corpGroup:group_name, and urn:li:multiProduct:mp_name\n(Caveat: only corpuser is currently supported in the frontend.)",
+                "Relationship" : {
+                  "entityTypes" : [ "corpUser", "corpGroup" ],
+                  "name" : "OwnedBy"
+                },
+                "Searchable" : {
+                  "fieldName" : "owners",
+                  "fieldType" : "URN",
+                  "hasValuesFieldName" : "hasOwners",
+                  "queryByDefault" : false
+                },
+                "java" : {
+                  "class" : "com.linkedin.common.urn.Urn"
+                }
+              }, {
+                "name" : "type",
+                "type" : {
+                  "type" : "enum",
+                  "name" : "OwnershipType",
+                  "doc" : "Owner category or owner role",
+                  "symbols" : [ "DEVELOPER", "DATAOWNER", "DELEGATE", "PRODUCER", "CONSUMER", "STAKEHOLDER" ],
+                  "symbolDocs" : {
+                    "CONSUMER" : "A person, group, or service that consumes the data",
+                    "DATAOWNER" : "A person or group that is owning the data",
+                    "DELEGATE" : "A person or a group that overseas the operation, e.g. a DBA or SRE.",
+                    "DEVELOPER" : "A person or group that is in charge of developing the code",
+                    "PRODUCER" : "A person, group, or service that produces/generates the data",
+                    "STAKEHOLDER" : "A person or a group that has direct business interest"
+                  }
+                },
+                "doc" : "The type of the ownership"
+              }, {
+                "name" : "source",
+                "type" : [ "null", {
+                  "type" : "record",
+                  "name" : "OwnershipSource",
+                  "doc" : "Source/provider of the ownership information",
+                  "fields" : [ {
+                    "name" : "type",
+                    "type" : {
+                      "type" : "enum",
+                      "name" : "OwnershipSourceType",
+                      "symbols" : [ "AUDIT", "DATABASE", "FILE_SYSTEM", "ISSUE_TRACKING_SYSTEM", "MANUAL", "SERVICE", "SOURCE_CONTROL", "OTHER" ],
+                      "symbolDocs" : {
+                        "AUDIT" : "Auditing system or audit logs",
+                        "DATABASE" : "Database, e.g. GRANTS table",
+                        "FILE_SYSTEM" : "File system, e.g. file/directory owner",
+                        "ISSUE_TRACKING_SYSTEM" : "Issue tracking system, e.g. Jira",
+                        "MANUAL" : "Manually provided by a user",
+                        "OTHER" : "Other sources",
+                        "SERVICE" : "Other ownership-like service, e.g. Nuage, ACL service etc",
+                        "SOURCE_CONTROL" : "SCM system, e.g. GIT, SVN"
+                      }
+                    },
+                    "doc" : "The type of the source"
+                  }, {
+                    "name" : "url",
+                    "type" : [ "null", "string" ],
+                    "doc" : "A reference URL for the source",
+                    "default" : null
+                  } ]
+                } ],
+                "doc" : "Source information for the ownership",
+                "default" : null
+              } ]
+            }
+          },
+          "doc" : "List of owners of the entity."
+        }, {
+          "name" : "lastModified",
+          "type" : {
+            "type" : "record",
+            "name" : "AuditStamp",
+            "doc" : "Data captured on a resource/association/sub-resource level giving insight into when that resource/association/sub-resource moved into a particular lifecycle stage, and who acted to move it into that specific lifecycle stage.",
+            "fields" : [ {
+              "name" : "time",
+              "type" : "long",
+              "doc" : "When did the resource/association/sub-resource move into the specific lifecycle stage represented by this AuditEvent."
+            }, {
+              "name" : "actor",
+              "type" : "string",
+              "doc" : "The entity (e.g. a member URN) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. It is also the one used to authorize the change.",
+              "java" : {
+                "class" : "com.linkedin.common.urn.Urn"
+              }
+            }, {
+              "name" : "impersonator",
+              "type" : [ "null", "string" ],
+              "doc" : "The entity (e.g. a service URN) which performs the change on behalf of the Actor and must be authorized to act as the Actor.",
+              "default" : null,
+              "java" : {
+                "class" : "com.linkedin.common.urn.Urn"
+              }
+            } ]
+          },
+          "doc" : "Audit stamp containing who last modified the record and when. A value of 0 in the time field indicates missing data.",
+          "default" : {
+            "actor" : "urn:li:corpuser:unknown",
+            "impersonator" : null,
+            "time" : 0
+          }
+        } ],
+        "Aspect" : {
+          "name" : "ownership"
+        }
+      }, {
+        "type" : "record",
+        "name" : "Status",
+        "namespace" : "com.linkedin.common",
+        "doc" : "The status metadata of an entity, e.g. dataset, metric, feature, etc.\nThis aspect is used to represent soft deletes conventionally.",
+        "fields" : [ {
+          "name" : "removed",
+          "type" : "boolean",
+          "doc" : "whether the entity is removed or not",
+          "default" : false,
+          "Searchable" : {
+            "fieldType" : "BOOLEAN"
+          }
+        } ],
+        "Aspect" : {
+          "name" : "status"
+        }
+      }, {
+        "type" : "record",
+        "name" : "BrowsePaths",
+        "namespace" : "com.linkedin.common",
+        "doc" : "Shared aspect containing Browse Paths to be indexed for an entity.",
+        "fields" : [ {
+          "name" : "paths",
+          "type" : {
+            "type" : "array",
+            "items" : "string"
+          },
+          "doc" : "A list of valid browse paths for the entity.\n\nBrowse paths are expected to be backslash-separated strings. For example: 'prod/snowflake/datasetName'",
+          "Searchable" : {
+            "/*" : {
+              "fieldName" : "browsePaths",
+              "fieldType" : "BROWSE_PATH"
+            }
+          }
+        } ],
+        "Aspect" : {
+          "name" : "browsePaths"
+        }
+      }, {
+        "type" : "record",
+        "name" : "GlossaryRelatedTerms",
+        "namespace" : "com.linkedin.glossary",
+        "doc" : "Has A / Is A lineage information about a glossary Term reporting the lineage",
+        "fields" : [ {
+          "name" : "isRelatedTerms",
+          "type" : [ "null", {
+            "type" : "array",
+            "items" : "string"
+          } ],
+          "doc" : "The relationship Is A with glossary term",
+          "default" : null,
+          "Relationship" : {
+            "/*" : {
+              "entityTypes" : [ "glossaryTerm" ],
+              "name" : "IsA"
+            }
+          },
+          "Searchable" : {
+            "/*" : {
+              "boostScore" : 2.0,
+              "fieldName" : "isRelatedTerms",
+              "fieldType" : "URN"
+            }
+          }
+        }, {
+          "name" : "hasRelatedTerms",
+          "type" : [ "null", {
+            "type" : "array",
+            "items" : "string"
+          } ],
+          "doc" : "The relationship Has A with glossary term",
+          "default" : null,
+          "Relationship" : {
+            "/*" : {
+              "entityTypes" : [ "glossaryTerm" ],
+              "name" : "HasA"
+            }
+          },
+          "Searchable" : {
+            "/*" : {
+              "boostScore" : 2.0,
+              "fieldName" : "hasRelatedTerms",
+              "fieldType" : "URN"
+            }
+          }
+        } ],
+        "Aspect" : {
+          "name" : "glossaryRelatedTerms"
+        }
+      } ]
+    },
+    "doc" : "The list of metadata aspects associated with the GlossaryTerm. Depending on the use case, this can either be all, or a selection, of supported aspects."
+  } ],
+  "Entity" : {
+    "keyAspect" : "glossaryTermKey",
+    "name" : "glossaryTerm"
+  }
+}

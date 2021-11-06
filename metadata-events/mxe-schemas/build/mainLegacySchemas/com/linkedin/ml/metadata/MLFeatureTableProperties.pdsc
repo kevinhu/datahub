@@ -1,0 +1,44 @@
+{
+  "type" : "record",
+  "name" : "MLFeatureTableProperties",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "Properties associated with a MLFeatureTable",
+  "include" : [ "com.linkedin.common.CustomProperties" ],
+  "fields" : [ {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Documentation of the MLFeatureTable",
+    "optional" : true
+  }, {
+    "name" : "mlFeatures",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.Urn"
+    },
+    "doc" : "List of features contained in the feature table",
+    "optional" : true,
+    "Relationship" : {
+      "/*" : {
+        "entityTypes" : [ "mlFeature" ],
+        "name" : "Contains"
+      }
+    }
+  }, {
+    "name" : "mlPrimaryKeys",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.Urn"
+    },
+    "doc" : "List of primary keys in the feature table (if multiple, assumed to act as a composite key)",
+    "optional" : true,
+    "Relationship" : {
+      "/*" : {
+        "entityTypes" : [ "mlPrimaryKey" ],
+        "name" : "KeyedBy"
+      }
+    }
+  } ],
+  "Aspect" : {
+    "name" : "mlFeatureTableProperties"
+  }
+}

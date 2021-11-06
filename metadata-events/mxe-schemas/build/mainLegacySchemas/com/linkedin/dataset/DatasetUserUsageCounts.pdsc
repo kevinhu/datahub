@@ -1,0 +1,22 @@
+{
+  "type" : "record",
+  "name" : "DatasetUserUsageCounts",
+  "namespace" : "com.linkedin.dataset",
+  "doc" : "Records a single user's usage counts for a given resource",
+  "fields" : [ {
+    "name" : "user",
+    "type" : "com.linkedin.common.Urn",
+    "doc" : "The unique id of the user."
+  }, {
+    "name" : "count",
+    "type" : "int",
+    "doc" : "Number of times the dataset has been used by the user.",
+    "TimeseriesField" : { }
+  }, {
+    "name" : "userEmail",
+    "type" : "string",
+    "doc" : "If user_email is set, we attempt to resolve the user's urn upon ingest",
+    "optional" : true,
+    "TimeseriesField" : { }
+  } ]
+}

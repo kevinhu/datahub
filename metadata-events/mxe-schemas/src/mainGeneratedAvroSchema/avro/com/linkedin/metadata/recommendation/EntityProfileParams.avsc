@@ -1,0 +1,14 @@
+{
+  "type" : "record",
+  "name" : "EntityProfileParams",
+  "namespace" : "com.linkedin.metadata.recommendation",
+  "doc" : "Context to define the entity profile page",
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn of the entity being shown",
+    "java" : {
+      "class" : "com.linkedin.common.urn.Urn"
+    }
+  } ]
+}

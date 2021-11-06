@@ -1,0 +1,21 @@
+{
+  "type" : "record",
+  "name" : "MLFeatureSnapshot",
+  "namespace" : "com.linkedin.metadata.snapshot",
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.MLFeatureUrn",
+    "doc" : "URN for the entity the metadata snapshot is associated with."
+  }, {
+    "name" : "aspects",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.metadata.aspect.MLFeatureAspect"
+    },
+    "doc" : "The list of metadata aspects associated with the MLFeature. Depending on the use case, this can either be all, or a selection, of supported aspects."
+  } ],
+  "Entity" : {
+    "keyAspect" : "mlFeatureKey",
+    "name" : "mlFeature"
+  }
+}

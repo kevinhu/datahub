@@ -1,0 +1,49 @@
+{
+  "type" : "record",
+  "name" : "MLModelEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a ML Model entity",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn for the ML Model",
+    "java" : {
+      "class" : "com.linkedin.common.urn.MLModelUrn"
+    }
+  }, {
+    "name" : "name",
+    "type" : [ "null", "string" ],
+    "doc" : "ML Model native name",
+    "default" : null
+  }, {
+    "name" : "platform",
+    "type" : [ "null", "string" ],
+    "doc" : "Platform urn for the ML Model in the form of urn:li:platform:{platform_name}",
+    "default" : null,
+    "java" : {
+      "class" : "com.linkedin.common.urn.DataPlatformUrn"
+    }
+  }, {
+    "name" : "origin",
+    "type" : [ "null", {
+      "type" : "enum",
+      "name" : "FabricType",
+      "namespace" : "com.linkedin.common",
+      "doc" : "Fabric group type",
+      "symbols" : [ "DEV", "EI", "PROD", "CORP" ],
+      "symbolDocs" : {
+        "CORP" : "Designates corporation fabrics",
+        "DEV" : "Designates development fabrics",
+        "EI" : "Designates early-integration (staging) fabrics",
+        "PROD" : "Designates production fabrics"
+      }
+    } ],
+    "doc" : "Fabric type where ML Model belongs to or where it was generated.",
+    "default" : null
+  } ]
+}

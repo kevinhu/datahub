@@ -1,0 +1,24 @@
+{
+  "type" : "record",
+  "name" : "SchemaFieldKey",
+  "namespace" : "com.linkedin.metadata.key",
+  "doc" : "Key for a SchemaField",
+  "fields" : [ {
+    "name" : "parent",
+    "type" : "com.linkedin.common.Urn",
+    "doc" : "Parent associated with the schema field",
+    "Searchable" : {
+      "fieldType" : "URN"
+    }
+  }, {
+    "name" : "fieldPath",
+    "type" : "string",
+    "doc" : "fieldPath identifying the schema field",
+    "Searchable" : {
+      "fieldType" : "KEYWORD"
+    }
+  } ],
+  "Aspect" : {
+    "name" : "schemaFieldKey"
+  }
+}

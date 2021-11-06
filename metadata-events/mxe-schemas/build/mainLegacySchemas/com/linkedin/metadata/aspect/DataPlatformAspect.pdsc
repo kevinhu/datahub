@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "DataPlatformAspect",
+  "namespace" : "com.linkedin.metadata.aspect",
+  "doc" : "A union of all supported metadata aspects for a Data Platform",
+  "ref" : [ "com.linkedin.metadata.key.DataPlatformKey", "com.linkedin.dataplatform.DataPlatformInfo" ]
+}

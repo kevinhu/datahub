@@ -1,0 +1,33 @@
+{
+  "type" : "typeref",
+  "name" : "DataJobUrn",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Standardized data processing job identifier.",
+  "ref" : "string",
+  "java" : {
+    "class" : "com.linkedin.common.urn.DataJobUrn"
+  },
+  "validate" : {
+    "com.linkedin.common.validator.TypedUrnValidator" : {
+      "accessible" : true,
+      "constructable" : true,
+      "doc" : "Standardized data processing job identifier.",
+      "entityType" : "dataJob",
+      "fields" : [ {
+        "doc" : "Standardized data processing flow urn representing the flow for the job",
+        "name" : "flow",
+        "type" : "com.linkedin.common.urn.DataFlowUrn"
+      }, {
+        "doc" : "Unique identifier of the data job",
+        "maxLength" : 200,
+        "name" : "jobID",
+        "type" : "string"
+      } ],
+      "maxLength" : 594,
+      "name" : "DataJob",
+      "namespace" : "li",
+      "owners" : [ "urn:li:corpuser:fbar", "urn:li:corpuser:bfoo" ],
+      "owningTeam" : "urn:li:internalTeam:datahub"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "GlossaryTermAspect",
+  "namespace" : "com.linkedin.metadata.aspect",
+  "doc" : "A union of all supported metadata aspects for a CorpUser",
+  "ref" : [ "com.linkedin.metadata.key.GlossaryTermKey", "com.linkedin.glossary.GlossaryTermInfo", "com.linkedin.common.Ownership", "com.linkedin.common.Status", "com.linkedin.common.BrowsePaths", "com.linkedin.glossary.GlossaryRelatedTerms" ]
+}

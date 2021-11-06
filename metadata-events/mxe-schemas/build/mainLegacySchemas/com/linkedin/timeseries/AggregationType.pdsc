@@ -1,0 +1,6 @@
+{
+  "type" : "enum",
+  "name" : "AggregationType",
+  "namespace" : "com.linkedin.timeseries",
+  "symbols" : [ "LATEST", "SUM", "CARDINALITY" ]
+}

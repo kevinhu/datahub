@@ -1,0 +1,38 @@
+{
+  "type" : "record",
+  "name" : "MLPrimaryKeyProperties",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "Properties associated with a MLPrimaryKey",
+  "fields" : [ {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Documentation of the MLPrimaryKey",
+    "optional" : true
+  }, {
+    "name" : "dataType",
+    "type" : "com.linkedin.common.MLFeatureDataType",
+    "doc" : "Data Type of the MLPrimaryKey",
+    "optional" : true
+  }, {
+    "name" : "version",
+    "type" : "com.linkedin.common.VersionTag",
+    "doc" : "Version of the MLPrimaryKey",
+    "optional" : true
+  }, {
+    "name" : "sources",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.Urn"
+    },
+    "doc" : "Source of the MLPrimaryKey",
+    "Relationship" : {
+      "/*" : {
+        "entityTypes" : [ "dataset" ],
+        "name" : "DerivedFrom"
+      }
+    }
+  } ],
+  "Aspect" : {
+    "name" : "mlPrimaryKeyProperties"
+  }
+}

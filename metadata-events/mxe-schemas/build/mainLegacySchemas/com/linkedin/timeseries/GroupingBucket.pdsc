@@ -1,0 +1,20 @@
+{
+  "type" : "record",
+  "name" : "GroupingBucket",
+  "namespace" : "com.linkedin.timeseries",
+  "doc" : "Defines the group by bucket definitions for time series requests.",
+  "fields" : [ {
+    "name" : "type",
+    "type" : "GroupingBucketType",
+    "doc" : "Type of the grouping bucket."
+  }, {
+    "name" : "key",
+    "type" : "string",
+    "doc" : "Key that specifies the column name to be used as the timestamp field for bucketing."
+  }, {
+    "name" : "timeWindowSize",
+    "type" : "TimeWindowSize",
+    "doc" : "Bucket size (like a day/hour etc) for the date grouping buckets.",
+    "optional" : true
+  } ]
+}

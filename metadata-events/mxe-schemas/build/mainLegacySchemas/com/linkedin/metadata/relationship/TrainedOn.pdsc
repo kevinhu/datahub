@@ -1,0 +1,12 @@
+{
+  "type" : "record",
+  "name" : "TrainedOn",
+  "namespace" : "com.linkedin.metadata.relationship",
+  "doc" : "A generic model for the Trained-On relationship",
+  "include" : [ "BaseRelationship" ],
+  "fields" : [ ],
+  "pairings" : [ {
+    "destination" : "com.linkedin.common.urn.DatasetUrn",
+    "source" : "com.linkedin.common.urn.MLModelUrn"
+  } ]
+}

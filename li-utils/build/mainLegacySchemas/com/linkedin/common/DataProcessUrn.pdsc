@@ -1,0 +1,38 @@
+{
+  "type" : "typeref",
+  "name" : "DataProcessUrn",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Standardized process identifier.",
+  "ref" : "string",
+  "java" : {
+    "class" : "com.linkedin.common.urn.DataProcessUrn"
+  },
+  "validate" : {
+    "com.linkedin.common.validator.TypedUrnValidator" : {
+      "accessible" : true,
+      "constructable" : true,
+      "doc" : "Standardized process identifier.",
+      "entityType" : "dataProcess",
+      "fields" : [ {
+        "doc" : "process name i.e. an ETL job name",
+        "maxLength" : 25,
+        "name" : "name",
+        "type" : "string"
+      }, {
+        "doc" : "Standardized Orchestrator where data process is defined.",
+        "maxLength" : 100,
+        "name" : "orchestrator",
+        "type" : "string"
+      }, {
+        "doc" : "Fabric type where dataset belongs to or where it was generated.",
+        "name" : "origin",
+        "type" : "com.linkedin.common.FabricType"
+      } ],
+      "maxLength" : 284,
+      "name" : "DataProcess",
+      "namespace" : "li",
+      "owners" : [ "urn:li:corpuser:fbar", "urn:li:corpuser:bfoo" ],
+      "owningTeam" : "urn:li:internalTeam:wherehows"
+    }
+  }
+}

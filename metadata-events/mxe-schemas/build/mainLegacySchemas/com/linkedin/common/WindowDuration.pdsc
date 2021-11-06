@@ -1,0 +1,7 @@
+{
+  "type" : "enum",
+  "name" : "WindowDuration",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Enum to define the length of a bucket when doing aggregations",
+  "symbols" : [ "YEAR", "MONTH", "WEEK", "DAY", "HOUR" ]
+}

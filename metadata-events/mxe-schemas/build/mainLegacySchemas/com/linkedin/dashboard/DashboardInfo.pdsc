@@ -1,0 +1,66 @@
+{
+  "type" : "record",
+  "name" : "DashboardInfo",
+  "namespace" : "com.linkedin.dashboard",
+  "doc" : "Information about a dashboard",
+  "include" : [ "com.linkedin.common.CustomProperties", "com.linkedin.common.ExternalReference" ],
+  "fields" : [ {
+    "name" : "title",
+    "type" : "string",
+    "doc" : "Title of the dashboard",
+    "Searchable" : {
+      "boostScore" : 10.0,
+      "enableAutocomplete" : true,
+      "fieldType" : "TEXT_PARTIAL"
+    }
+  }, {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Detailed description about the dashboard",
+    "Searchable" : {
+      "fieldType" : "TEXT",
+      "hasValuesFieldName" : "hasDescription"
+    }
+  }, {
+    "name" : "charts",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.ChartUrn"
+    },
+    "doc" : "Charts in a dashboard",
+    "default" : [ ],
+    "Relationship" : {
+      "/*" : {
+        "entityTypes" : [ "chart" ],
+        "name" : "Contains"
+      }
+    }
+  }, {
+    "name" : "lastModified",
+    "type" : "com.linkedin.common.ChangeAuditStamps",
+    "doc" : "Captures information about who created/last modified/deleted this dashboard and when"
+  }, {
+    "name" : "dashboardUrl",
+    "type" : "com.linkedin.common.Url",
+    "doc" : "URL for the dashboard. This could be used as an external link on DataHub to allow users access/view the dashboard",
+    "optional" : true
+  }, {
+    "name" : "access",
+    "type" : "com.linkedin.common.AccessLevel",
+    "doc" : "Access level for the dashboard",
+    "optional" : true,
+    "Searchable" : {
+      "addToFilters" : true,
+      "fieldType" : "KEYWORD",
+      "filterNameOverride" : "Access Level"
+    }
+  }, {
+    "name" : "lastRefreshed",
+    "type" : "com.linkedin.common.Time",
+    "doc" : "The time when this dashboard last refreshed",
+    "optional" : true
+  } ],
+  "Aspect" : {
+    "name" : "dashboardInfo"
+  }
+}

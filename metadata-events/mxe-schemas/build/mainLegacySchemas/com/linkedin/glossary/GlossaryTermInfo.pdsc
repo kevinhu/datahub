@@ -1,0 +1,53 @@
+{
+  "type" : "record",
+  "name" : "GlossaryTermInfo",
+  "namespace" : "com.linkedin.glossary",
+  "doc" : "Properties associated with a GlossaryTerm",
+  "fields" : [ {
+    "name" : "definition",
+    "type" : "string",
+    "doc" : "Definition of business term",
+    "Searchable" : { }
+  }, {
+    "name" : "parentNode",
+    "type" : "com.linkedin.common.GlossaryNodeUrn",
+    "doc" : "Parent node of the glossary term",
+    "optional" : true
+  }, {
+    "name" : "termSource",
+    "type" : "string",
+    "doc" : "Source of the Business Term (INTERNAL or EXTERNAL) with default value as INTERNAL",
+    "Searchable" : {
+      "fieldType" : "KEYWORD"
+    }
+  }, {
+    "name" : "sourceRef",
+    "type" : "string",
+    "doc" : "External Reference to the business-term",
+    "optional" : true,
+    "Searchable" : {
+      "fieldType" : "KEYWORD"
+    }
+  }, {
+    "name" : "sourceUrl",
+    "type" : "com.linkedin.common.Url",
+    "doc" : "The abstracted URL such as https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/CashInstrument.",
+    "optional" : true
+  }, {
+    "name" : "customProperties",
+    "type" : {
+      "type" : "map",
+      "values" : "string"
+    },
+    "doc" : "A key-value map to capture any other non-standardized properties for the glossary term",
+    "default" : { }
+  }, {
+    "name" : "rawSchema",
+    "type" : "string",
+    "doc" : "Schema definition of the glossary term",
+    "optional" : true
+  } ],
+  "Aspect" : {
+    "name" : "glossaryTermInfo"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "type" : "record",
+  "name" : "DataProcessDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for data process entity search",
+  "include" : [ "BaseDocument" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.DataProcessUrn",
+    "doc" : "Urn for the data process"
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Process native name e.g. a ETL script name",
+    "optional" : true
+  }, {
+    "name" : "orchestrator",
+    "type" : "string",
+    "doc" : "Orchestrator name for this process, such as Azure Data Factory",
+    "optional" : true
+  }, {
+    "name" : "origin",
+    "type" : "com.linkedin.common.FabricType",
+    "doc" : "Fabric type where data process belongs to or where it was generated",
+    "optional" : true
+  }, {
+    "name" : "owners",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "LDAP usernames of corp users who are the owners of this process",
+    "optional" : true
+  }, {
+    "name" : "hasOwners",
+    "type" : "boolean",
+    "doc" : "Flag to indicate if the process has non empty corp users as owners or not.",
+    "optional" : true
+  }, {
+    "name" : "numInputDatasets",
+    "type" : "long",
+    "doc" : "Lineage information represented by the number of immediate input datasets of this process.",
+    "optional" : true
+  }, {
+    "name" : "numOutputDatasets",
+    "type" : "long",
+    "doc" : "Lineage information represented by the number of immediate output datasets of this process.",
+    "optional" : true
+  }, {
+    "name" : "inputs",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.DatasetUrn"
+    },
+    "doc" : "List of inputs for this process",
+    "optional" : true
+  }, {
+    "name" : "outputs",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.DatasetUrn"
+    },
+    "doc" : "List of outputs for this process",
+    "optional" : true
+  } ]
+}

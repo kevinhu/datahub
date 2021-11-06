@@ -1,0 +1,33 @@
+{
+  "type" : "typeref",
+  "name" : "AzkabanJobUrn",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Standardized azkaban job identifier.",
+  "ref" : "string",
+  "java" : {
+    "class" : "com.linkedin.common.urn.AzkabanJobUrn"
+  },
+  "validate" : {
+    "com.linkedin.common.validator.TypedUrnValidator" : {
+      "accessible" : true,
+      "constructable" : true,
+      "doc" : "Standardized azkaban job identifier.",
+      "entityType" : "azkabanJob",
+      "fields" : [ {
+        "doc" : "Standardized azkaban flow urn representing the flow for the job",
+        "name" : "flow",
+        "type" : "com.linkedin.common.urn.AzkabanFlowUrn"
+      }, {
+        "doc" : "Id or name of the azkaban job",
+        "maxLength" : 200,
+        "name" : "jobID",
+        "type" : "string"
+      } ],
+      "maxLength" : 464,
+      "name" : "AzkabanJob",
+      "namespace" : "li",
+      "owners" : [ "urn:li:corpuser:fbar", "urn:li:corpuser:bfoo" ],
+      "owningTeam" : "urn:li:internalTeam:datahub"
+    }
+  }
+}

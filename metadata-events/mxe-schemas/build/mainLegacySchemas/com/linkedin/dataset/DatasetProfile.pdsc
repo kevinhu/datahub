@@ -1,0 +1,27 @@
+{
+  "type" : "record",
+  "name" : "DatasetProfile",
+  "namespace" : "com.linkedin.dataset",
+  "doc" : "Stats corresponding to datasets",
+  "include" : [ "com.linkedin.timeseries.TimeseriesAspectBase" ],
+  "fields" : [ {
+    "name" : "rowCount",
+    "type" : "long",
+    "optional" : true
+  }, {
+    "name" : "columnCount",
+    "type" : "long",
+    "optional" : true
+  }, {
+    "name" : "fieldProfiles",
+    "type" : {
+      "type" : "array",
+      "items" : "DatasetFieldProfile"
+    },
+    "optional" : true
+  } ],
+  "Aspect" : {
+    "name" : "datasetProfile",
+    "type" : "timeseries"
+  }
+}

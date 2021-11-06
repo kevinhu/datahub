@@ -1,0 +1,27 @@
+{
+  "type" : "record",
+  "name" : "AspectRowSummary",
+  "namespace" : "com.linkedin.metadata.run",
+  "fields" : [ {
+    "name" : "runId",
+    "type" : "string"
+  }, {
+    "name" : "aspectName",
+    "type" : "string"
+  }, {
+    "name" : "urn",
+    "type" : "string"
+  }, {
+    "name" : "timestamp",
+    "type" : "long"
+  }, {
+    "name" : "metadata",
+    "type" : "string"
+  }, {
+    "name" : "version",
+    "type" : "long"
+  }, {
+    "name" : "keyAspect",
+    "type" : "boolean"
+  } ]
+}

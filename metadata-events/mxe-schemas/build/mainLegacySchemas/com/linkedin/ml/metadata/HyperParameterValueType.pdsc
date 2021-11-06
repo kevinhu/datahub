@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "HyperParameterValueType",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "A union of all supported metadata aspects for HyperParameter Value",
+  "ref" : [ "string", "int", "float", "double", "boolean" ]
+}

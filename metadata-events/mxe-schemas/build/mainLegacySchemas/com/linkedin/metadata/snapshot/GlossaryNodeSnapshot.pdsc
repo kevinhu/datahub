@@ -1,0 +1,22 @@
+{
+  "type" : "record",
+  "name" : "GlossaryNodeSnapshot",
+  "namespace" : "com.linkedin.metadata.snapshot",
+  "doc" : "A metadata snapshot for a specific GlossaryNode entity.",
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.GlossaryNodeUrn",
+    "doc" : "URN for the entity the metadata snapshot is associated with."
+  }, {
+    "name" : "aspects",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.metadata.aspect.GlossaryNodeAspect"
+    },
+    "doc" : "The list of metadata aspects associated with the GlossaryNode. Depending on the use case, this can either be all, or a selection, of supported aspects."
+  } ],
+  "Entity" : {
+    "keyAspect" : "glossaryNodeKey",
+    "name" : "glossaryNode"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type" : "record",
+  "name" : "Cost",
+  "namespace" : "com.linkedin.common",
+  "fields" : [ {
+    "name" : "costType",
+    "type" : "CostType"
+  }, {
+    "name" : "cost",
+    "type" : "CostValue"
+  } ],
+  "Aspect" : {
+    "name" : "cost"
+  }
+}

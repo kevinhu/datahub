@@ -1,0 +1,20 @@
+{
+  "type" : "record",
+  "name" : "GlossaryTermAssociation",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Properties of an applied glossary term.",
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn of the applied glossary term",
+    "Searchable" : {
+      "addToFilters" : true,
+      "fieldName" : "glossaryTerms",
+      "fieldType" : "URN_PARTIAL",
+      "filterNameOverride" : "Glossary Term"
+    },
+    "java" : {
+      "class" : "com.linkedin.common.urn.GlossaryTermUrn"
+    }
+  } ]
+}

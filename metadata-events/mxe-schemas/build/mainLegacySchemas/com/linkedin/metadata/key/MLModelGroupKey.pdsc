@@ -1,0 +1,31 @@
+{
+  "type" : "record",
+  "name" : "MLModelGroupKey",
+  "namespace" : "com.linkedin.metadata.key",
+  "doc" : "Key for an ML model group",
+  "fields" : [ {
+    "name" : "platform",
+    "type" : "com.linkedin.common.Urn",
+    "doc" : "Standardized platform urn for the model group"
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Name of the MLModelGroup",
+    "Searchable" : {
+      "boostScore" : 10.0,
+      "enableAutocomplete" : true,
+      "fieldType" : "TEXT_PARTIAL"
+    }
+  }, {
+    "name" : "origin",
+    "type" : "com.linkedin.common.FabricType",
+    "doc" : "Fabric type where model group belongs to or where it was generated",
+    "Searchable" : {
+      "fieldType" : "TEXT_PARTIAL",
+      "queryByDefault" : false
+    }
+  } ],
+  "Aspect" : {
+    "name" : "mlModelGroupKey"
+  }
+}

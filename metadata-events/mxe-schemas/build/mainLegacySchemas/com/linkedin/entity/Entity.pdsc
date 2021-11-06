@@ -1,0 +1,9 @@
+{
+  "type" : "record",
+  "name" : "Entity",
+  "namespace" : "com.linkedin.entity",
+  "fields" : [ {
+    "name" : "value",
+    "type" : "com.linkedin.metadata.snapshot.Snapshot"
+  } ]
+}

@@ -1,0 +1,24 @@
+{
+  "type" : "record",
+  "name" : "TagEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a tag entity",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn for the tag",
+    "java" : {
+      "class" : "com.linkedin.common.urn.TagUrn"
+    }
+  }, {
+    "name" : "name",
+    "type" : [ "null", "string" ],
+    "doc" : "Name of the tag",
+    "default" : null
+  } ]
+}

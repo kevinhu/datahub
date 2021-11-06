@@ -1,0 +1,30 @@
+{
+  "type" : "record",
+  "name" : "GlossaryNodeInfoDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for GlossaryNodeInfo entity search",
+  "include" : [ "BaseDocument" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.GlossaryNodeUrn",
+    "doc" : "Urn for the GlossaryNode."
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Name of business node",
+    "optional" : true
+  }, {
+    "name" : "definition",
+    "type" : "string",
+    "doc" : "Definition of business node",
+    "optional" : true
+  }, {
+    "name" : "owners",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "LDAP usernames of corp users who are the owners of this business node",
+    "optional" : true
+  } ]
+}

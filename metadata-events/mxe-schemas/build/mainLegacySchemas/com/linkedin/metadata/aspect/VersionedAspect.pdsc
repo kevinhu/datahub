@@ -1,0 +1,12 @@
+{
+  "type" : "record",
+  "name" : "VersionedAspect",
+  "namespace" : "com.linkedin.metadata.aspect",
+  "fields" : [ {
+    "name" : "aspect",
+    "type" : "Aspect"
+  }, {
+    "name" : "version",
+    "type" : "long"
+  } ]
+}

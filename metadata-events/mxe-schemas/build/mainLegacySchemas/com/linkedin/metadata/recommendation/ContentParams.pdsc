@@ -1,0 +1,11 @@
+{
+  "type" : "record",
+  "name" : "ContentParams",
+  "namespace" : "com.linkedin.metadata.recommendation",
+  "doc" : "Params about the recommended content",
+  "fields" : [ {
+    "name" : "count",
+    "type" : "long",
+    "doc" : "Number of entities corresponding to the recommended content"
+  } ]
+}

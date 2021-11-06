@@ -1,0 +1,42 @@
+{
+  "type" : "record",
+  "name" : "ForeignKeyConstraint",
+  "namespace" : "com.linkedin.schema",
+  "doc" : "Description of a foreign key constraint in a schema.",
+  "fields" : [ {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Name of the constraint, likely provided from the source"
+  }, {
+    "name" : "foreignFields",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "Fields the constraint maps to on the foreign dataset",
+    "Relationship" : {
+      "/*" : {
+        "entityTypes" : [ "schemaField" ],
+        "name" : "ForeignKeyTo"
+      }
+    }
+  }, {
+    "name" : "sourceFields",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "Fields the constraint maps to on the source dataset"
+  }, {
+    "name" : "foreignDataset",
+    "type" : "string",
+    "doc" : "Reference to the foreign dataset for ease of lookup",
+    "Relationship" : {
+      "entityTypes" : [ "dataset" ],
+      "name" : "ForeignKeyToDataset"
+    },
+    "java" : {
+      "class" : "com.linkedin.common.urn.Urn"
+    }
+  } ]
+}

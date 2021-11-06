@@ -1,0 +1,15 @@
+{
+  "type" : "record",
+  "name" : "BrowseResultMetadata",
+  "namespace" : "com.linkedin.metadata.browse",
+  "doc" : "The model for browse result metadata",
+  "fields" : [ {
+    "name" : "path",
+    "type" : "string",
+    "doc" : "Path that is being browsed"
+  }, {
+    "name" : "totalNumEntities",
+    "type" : "long",
+    "doc" : "Total number of entities we can reach from path"
+  } ]
+}

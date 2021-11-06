@@ -1,0 +1,12 @@
+{
+  "type" : "record",
+  "name" : "ValueFrequency",
+  "namespace" : "com.linkedin.dataset",
+  "fields" : [ {
+    "name" : "value",
+    "type" : "string"
+  }, {
+    "name" : "frequency",
+    "type" : "long"
+  } ]
+}

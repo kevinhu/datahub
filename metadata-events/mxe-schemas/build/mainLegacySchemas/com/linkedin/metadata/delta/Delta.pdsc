@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "Delta",
+  "namespace" : "com.linkedin.metadata.delta",
+  "doc" : "A union of all supported metadata delta types.",
+  "ref" : [ ]
+}

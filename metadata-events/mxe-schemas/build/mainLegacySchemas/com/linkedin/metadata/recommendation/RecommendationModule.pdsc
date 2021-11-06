@@ -1,0 +1,25 @@
+{
+  "type" : "record",
+  "name" : "RecommendationModule",
+  "namespace" : "com.linkedin.metadata.recommendation",
+  "fields" : [ {
+    "name" : "title",
+    "type" : "string",
+    "doc" : "Title of the module to display"
+  }, {
+    "name" : "moduleId",
+    "type" : "string",
+    "doc" : "Unique id of the module being recommended"
+  }, {
+    "name" : "renderType",
+    "type" : "RecommendationRenderType",
+    "doc" : "Type of rendering that defines how the module should be rendered"
+  }, {
+    "name" : "content",
+    "type" : {
+      "type" : "array",
+      "items" : "RecommendationContent"
+    },
+    "doc" : "List of content to display inside the module"
+  } ]
+}

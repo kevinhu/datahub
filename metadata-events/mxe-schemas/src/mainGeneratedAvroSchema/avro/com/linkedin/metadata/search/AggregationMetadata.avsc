@@ -1,0 +1,45 @@
+{
+  "type" : "record",
+  "name" : "AggregationMetadata",
+  "namespace" : "com.linkedin.metadata.search",
+  "fields" : [ {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "The name of the aggregation, e.g, platform, origin"
+  }, {
+    "name" : "displayName",
+    "type" : [ "null", "string" ],
+    "doc" : "Name of the filter to be displayed in the UI",
+    "default" : null
+  }, {
+    "name" : "aggregations",
+    "type" : {
+      "type" : "map",
+      "values" : "long"
+    },
+    "doc" : "List of aggregations showing the number of documents falling into each bucket. e.g, for platform aggregation, the bucket can be hive, kafka, etc"
+  }, {
+    "name" : "filterValues",
+    "type" : {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "FilterValue",
+        "fields" : [ {
+          "name" : "value",
+          "type" : "string"
+        }, {
+          "name" : "entity",
+          "type" : [ "null", "string" ],
+          "default" : null,
+          "java" : {
+            "class" : "com.linkedin.common.urn.Urn"
+          }
+        }, {
+          "name" : "facetCount",
+          "type" : "long"
+        } ]
+      }
+    }
+  } ]
+}

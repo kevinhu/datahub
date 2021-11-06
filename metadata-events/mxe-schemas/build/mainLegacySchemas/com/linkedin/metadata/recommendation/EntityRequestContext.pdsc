@@ -1,0 +1,15 @@
+{
+  "type" : "record",
+  "name" : "EntityRequestContext",
+  "namespace" : "com.linkedin.metadata.recommendation",
+  "doc" : "Context that defines an entity page requesting recommendations",
+  "fields" : [ {
+    "name" : "type",
+    "type" : "string",
+    "doc" : "Type of the entity being displayed"
+  }, {
+    "name" : "urn",
+    "type" : "com.linkedin.common.Urn",
+    "doc" : "Urn of the entity being displayed"
+  } ]
+}

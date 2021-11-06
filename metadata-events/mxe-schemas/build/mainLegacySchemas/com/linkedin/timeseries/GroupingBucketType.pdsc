@@ -1,0 +1,7 @@
+{
+  "type" : "enum",
+  "name" : "GroupingBucketType",
+  "namespace" : "com.linkedin.timeseries",
+  "doc" : "Defines a grouping bucket type.",
+  "symbols" : [ "DATE_GROUPING_BUCKET", "STRING_GROUPING_BUCKET" ]
+}

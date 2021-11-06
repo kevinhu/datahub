@@ -1,0 +1,21 @@
+{
+  "type" : "record",
+  "name" : "RecommendationRequestContext",
+  "namespace" : "com.linkedin.metadata.recommendation",
+  "doc" : "Context that defines the page requesting recommendations\ni.e. for search pages, the query/filters. for entity pages, the entity urn and tab",
+  "fields" : [ {
+    "name" : "scenario",
+    "type" : "ScenarioType",
+    "doc" : "Scenario in which the recommendations will be displayed"
+  }, {
+    "name" : "searchRequestContext",
+    "type" : "SearchRequestContext",
+    "doc" : "Additional context for defining the search page requesting recommendations",
+    "optional" : true
+  }, {
+    "name" : "entityRequestContext",
+    "type" : "EntityRequestContext",
+    "doc" : "Additional context for defining the entity page requesting recommendations",
+    "optional" : true
+  } ]
+}

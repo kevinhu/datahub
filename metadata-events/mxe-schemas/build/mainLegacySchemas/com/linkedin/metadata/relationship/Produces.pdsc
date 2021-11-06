@@ -1,0 +1,12 @@
+{
+  "type" : "record",
+  "name" : "Produces",
+  "namespace" : "com.linkedin.metadata.relationship",
+  "doc" : "A generic model for the",
+  "include" : [ "BaseRelationship" ],
+  "fields" : [ ],
+  "pairings" : [ {
+    "destination" : "com.linkedin.common.urn.DatasetUrn",
+    "source" : "com.linkedin.common.urn.DataJobUrn"
+  } ]
+}

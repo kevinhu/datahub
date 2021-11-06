@@ -1,0 +1,142 @@
+{
+  "type" : "record",
+  "name" : "EditableSchemaFieldInfo",
+  "namespace" : "com.linkedin.schema",
+  "doc" : "SchemaField to describe metadata related to dataset schema.",
+  "fields" : [ {
+    "name" : "fieldPath",
+    "type" : "string",
+    "doc" : "FieldPath uniquely identifying the SchemaField this metadata is associated with"
+  }, {
+    "name" : "description",
+    "type" : [ "null", "string" ],
+    "doc" : "Description",
+    "default" : null,
+    "Searchable" : {
+      "boostScore" : 0.1,
+      "fieldName" : "editedFieldDescriptions",
+      "fieldType" : "TEXT"
+    }
+  }, {
+    "name" : "globalTags",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "GlobalTags",
+      "namespace" : "com.linkedin.common",
+      "doc" : "Tag aspect used for applying tags to an entity",
+      "fields" : [ {
+        "name" : "tags",
+        "type" : {
+          "type" : "array",
+          "items" : {
+            "type" : "record",
+            "name" : "TagAssociation",
+            "doc" : "Properties of an applied tag. For now, just an Urn. In the future we can extend this with other properties, e.g.\npropagation parameters.",
+            "fields" : [ {
+              "name" : "tag",
+              "type" : "string",
+              "doc" : "Urn of the applied tag",
+              "Searchable" : {
+                "addToFilters" : true,
+                "fieldName" : "tags",
+                "fieldType" : "URN_PARTIAL",
+                "filterNameOverride" : "Tag",
+                "hasValuesFieldName" : "hasTags"
+              },
+              "java" : {
+                "class" : "com.linkedin.common.urn.TagUrn"
+              }
+            } ]
+          }
+        },
+        "doc" : "Tags associated with a given entity"
+      } ],
+      "Aspect" : {
+        "name" : "globalTags"
+      }
+    } ],
+    "doc" : "Tags associated with the field",
+    "default" : null,
+    "Searchable" : {
+      "/tags/*/tag" : {
+        "boostScore" : 0.5,
+        "fieldName" : "editedFieldTags",
+        "fieldType" : "URN_PARTIAL"
+      }
+    }
+  }, {
+    "name" : "glossaryTerms",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "GlossaryTerms",
+      "namespace" : "com.linkedin.common",
+      "doc" : "Related business terms information",
+      "fields" : [ {
+        "name" : "terms",
+        "type" : {
+          "type" : "array",
+          "items" : {
+            "type" : "record",
+            "name" : "GlossaryTermAssociation",
+            "doc" : "Properties of an applied glossary term.",
+            "fields" : [ {
+              "name" : "urn",
+              "type" : "string",
+              "doc" : "Urn of the applied glossary term",
+              "Searchable" : {
+                "addToFilters" : true,
+                "fieldName" : "glossaryTerms",
+                "fieldType" : "URN_PARTIAL",
+                "filterNameOverride" : "Glossary Term"
+              },
+              "java" : {
+                "class" : "com.linkedin.common.urn.GlossaryTermUrn"
+              }
+            } ]
+          }
+        },
+        "doc" : "The related business terms"
+      }, {
+        "name" : "auditStamp",
+        "type" : {
+          "type" : "record",
+          "name" : "AuditStamp",
+          "doc" : "Data captured on a resource/association/sub-resource level giving insight into when that resource/association/sub-resource moved into a particular lifecycle stage, and who acted to move it into that specific lifecycle stage.",
+          "fields" : [ {
+            "name" : "time",
+            "type" : "long",
+            "doc" : "When did the resource/association/sub-resource move into the specific lifecycle stage represented by this AuditEvent."
+          }, {
+            "name" : "actor",
+            "type" : "string",
+            "doc" : "The entity (e.g. a member URN) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. It is also the one used to authorize the change.",
+            "java" : {
+              "class" : "com.linkedin.common.urn.Urn"
+            }
+          }, {
+            "name" : "impersonator",
+            "type" : [ "null", "string" ],
+            "doc" : "The entity (e.g. a service URN) which performs the change on behalf of the Actor and must be authorized to act as the Actor.",
+            "default" : null,
+            "java" : {
+              "class" : "com.linkedin.common.urn.Urn"
+            }
+          } ]
+        },
+        "doc" : "Audit stamp containing who reported the related business term"
+      } ],
+      "Aspect" : {
+        "name" : "glossaryTerms"
+      }
+    } ],
+    "doc" : "Glossary terms associated with the field",
+    "default" : null,
+    "Searchable" : {
+      "/terms/*/urn" : {
+        "boostScore" : 0.5,
+        "fieldName" : "editedFieldGlossaryTerms",
+        "fieldType" : "URN_PARTIAL"
+      }
+    }
+  } ]
+}

@@ -1,0 +1,20 @@
+{
+  "type" : "record",
+  "name" : "TimeWindowSize",
+  "namespace" : "com.linkedin.timeseries",
+  "doc" : "Defines the size of a time window.",
+  "fields" : [ {
+    "name" : "unit",
+    "type" : {
+      "type" : "enum",
+      "name" : "CalendarInterval",
+      "symbols" : [ "SECOND", "MINUTE", "HOUR", "DAY", "WEEK", "MONTH", "QUARTER", "YEAR" ]
+    },
+    "doc" : "Interval unit such as minute/hour/day etc."
+  }, {
+    "name" : "multiple",
+    "type" : "int",
+    "doc" : "How many units. Defaults to 1.",
+    "default" : 1
+  } ]
+}

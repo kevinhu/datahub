@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "GlossaryNodeAspect",
+  "namespace" : "com.linkedin.metadata.aspect",
+  "doc" : "A union of all supported metadata aspects for a GlossaryNode",
+  "ref" : [ "com.linkedin.metadata.key.GlossaryNodeKey", "com.linkedin.glossary.GlossaryNodeInfo", "com.linkedin.common.Ownership", "com.linkedin.common.Status" ]
+}

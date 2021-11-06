@@ -1,0 +1,55 @@
+{
+  "type" : "record",
+  "name" : "GlossaryTermInfoDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for GlossaryTermInfo entity search",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "browsePaths",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "All paths representing the hierarchy of this entity. This is essential for browsing various paths leading to this entity.",
+    "default" : null
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn for the GlossaryTerm.",
+    "java" : {
+      "class" : "com.linkedin.common.urn.GlossaryTermUrn"
+    }
+  }, {
+    "name" : "name",
+    "type" : [ "null", "string" ],
+    "doc" : "Name of business term",
+    "default" : null
+  }, {
+    "name" : "definition",
+    "type" : [ "null", "string" ],
+    "doc" : "Definition of business term",
+    "default" : null
+  }, {
+    "name" : "owners",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "LDAP usernames of corp users who are the owners of this dataset",
+    "default" : null
+  }, {
+    "name" : "termSource",
+    "type" : [ "null", "string" ],
+    "doc" : "Source of the Business Term (INTERNAL or EXTERNAL) with default value as INTERNAL",
+    "default" : null
+  }, {
+    "name" : "sourceRef",
+    "type" : [ "null", "string" ],
+    "doc" : "External Reference to the business-term (URL)",
+    "default" : null
+  } ]
+}

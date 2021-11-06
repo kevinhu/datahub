@@ -1,0 +1,17 @@
+{
+  "type" : "record",
+  "name" : "GlobalTags",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Tag aspect used for applying tags to an entity",
+  "fields" : [ {
+    "name" : "tags",
+    "type" : {
+      "type" : "array",
+      "items" : "TagAssociation"
+    },
+    "doc" : "Tags associated with a given entity"
+  } ],
+  "Aspect" : {
+    "name" : "globalTags"
+  }
+}

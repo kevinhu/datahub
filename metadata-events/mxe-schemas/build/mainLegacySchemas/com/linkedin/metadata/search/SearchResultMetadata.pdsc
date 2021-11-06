@@ -1,0 +1,15 @@
+{
+  "type" : "record",
+  "name" : "SearchResultMetadata",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "The model for the search result",
+  "fields" : [ {
+    "name" : "aggregations",
+    "type" : {
+      "type" : "array",
+      "items" : "AggregationMetadata"
+    },
+    "doc" : "A list of search result metadata such as aggregations",
+    "default" : [ ]
+  } ]
+}

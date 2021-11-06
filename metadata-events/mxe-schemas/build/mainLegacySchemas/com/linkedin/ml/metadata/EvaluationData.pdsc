@@ -1,0 +1,17 @@
+{
+  "type" : "record",
+  "name" : "EvaluationData",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "All referenced datasets would ideally point to any set of documents that provide visibility into the source and composition of the dataset.",
+  "fields" : [ {
+    "name" : "evaluationData",
+    "type" : {
+      "type" : "array",
+      "items" : "BaseData"
+    },
+    "doc" : "Details on the dataset(s) used for the quantitative analyses in the MLModel"
+  } ],
+  "Aspect" : {
+    "name" : "mlModelEvaluationData"
+  }
+}

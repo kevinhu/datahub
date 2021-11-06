@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>datahub.ingestion.run package &mdash; DataHub 0.0.0.dev0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="datahub.ingestion.sink package" href="datahub.ingestion.sink.html" />
+    <link rel="prev" title="datahub.ingestion.graph package" href="datahub.ingestion.graph.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DataHub
+          </a>
+              <div class="version">
+                0.0.0.dev0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="datahub.emitter.html">Emitters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.metadata.html">Metadata Schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.integrations.html">Integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.cli.html">CLI</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="datahub.ingestion.html">Ingestion</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="datahub.ingestion.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.api.html">datahub.ingestion.api package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.extractor.html">datahub.ingestion.extractor package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.graph.html">datahub.ingestion.graph package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">datahub.ingestion.run package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-datahub.ingestion.run.pipeline">datahub.ingestion.run.pipeline module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-datahub.ingestion.run">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.sink.html">datahub.ingestion.sink package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.source.html">datahub.ingestion.source package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.transformer.html">datahub.ingestion.transformer package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.ingestion.html#module-datahub.ingestion">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.configuration.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DataHub</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="datahub.ingestion.html">datahub.ingestion package</a> &raquo;</li>
+      <li>datahub.ingestion.run package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/datahub.ingestion.run.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="datahub-ingestion-run-package">
+<h1>datahub.ingestion.run package<a class="headerlink" href="#datahub-ingestion-run-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-datahub.ingestion.run.pipeline">
+<span id="datahub-ingestion-run-pipeline-module"></span><h2>datahub.ingestion.run.pipeline module<a class="headerlink" href="#module-datahub.ingestion.run.pipeline" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.LoggingCallback">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.run.pipeline.</span></span><span class="sig-name descname"><span class="pre">LoggingCallback</span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.LoggingCallback" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.WriteCallback" title="datahub.ingestion.api.sink.WriteCallback"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.api.sink.WriteCallback</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.LoggingCallback.on_failure">
+<span class="sig-name descname"><span class="pre">on_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record_envelope</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.RecordEnvelope" title="datahub.ingestion.api.common.RecordEnvelope"><span class="pre">datahub.ingestion.api.common.RecordEnvelope</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">failure_exception</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Exception</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">failure_metadata</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.LoggingCallback.on_failure" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.LoggingCallback.on_success">
+<span class="sig-name descname"><span class="pre">on_success</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record_envelope</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.RecordEnvelope" title="datahub.ingestion.api.common.RecordEnvelope"><span class="pre">datahub.ingestion.api.common.RecordEnvelope</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">success_metadata</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.LoggingCallback.on_success" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.Pipeline">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.run.pipeline.</span></span><span class="sig-name descname"><span class="pre">Pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.ingestion.run.pipeline.PipelineConfig" title="datahub.ingestion.run.pipeline.PipelineConfig"><span class="pre">datahub.ingestion.run.pipeline.PipelineConfig</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.Pipeline" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.Pipeline.config">
+<span class="sig-name descname"><span class="pre">config</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="#datahub.ingestion.run.pipeline.PipelineConfig" title="datahub.ingestion.run.pipeline.PipelineConfig"><span class="pre">datahub.ingestion.run.pipeline.PipelineConfig</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.Pipeline.config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.Pipeline.create">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#datahub.ingestion.run.pipeline.Pipeline" title="datahub.ingestion.run.pipeline.Pipeline"><span class="pre">datahub.ingestion.run.pipeline.Pipeline</span></a></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.Pipeline.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.Pipeline.ctx">
+<span class="sig-name descname"><span class="pre">ctx</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.Pipeline.ctx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.Pipeline.pretty_print_summary">
+<span class="sig-name descname"><span class="pre">pretty_print_summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.Pipeline.pretty_print_summary" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.Pipeline.raise_from_status">
+<span class="sig-name descname"><span class="pre">raise_from_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raise_warnings</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.Pipeline.raise_from_status" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.Pipeline.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.Pipeline.run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.Pipeline.sink">
+<span class="sig-name descname"><span class="pre">sink</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.sink.Sink" title="datahub.ingestion.api.sink.Sink"><span class="pre">datahub.ingestion.api.sink.Sink</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.Pipeline.sink" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.Pipeline.source">
+<span class="sig-name descname"><span class="pre">source</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.source.Source" title="datahub.ingestion.api.source.Source"><span class="pre">datahub.ingestion.api.source.Source</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.Pipeline.source" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.Pipeline.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">records</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.RecordEnvelope" title="datahub.ingestion.api.common.RecordEnvelope"><span class="pre">datahub.ingestion.api.common.RecordEnvelope</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.RecordEnvelope" title="datahub.ingestion.api.common.RecordEnvelope"><span class="pre">datahub.ingestion.api.common.RecordEnvelope</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.Pipeline.transform" title="Permalink to this definition"></a></dt>
+<dd><p>Transforms the given sequence of records by passing the records through the transformers
+:param records: the records to transform
+:return: the transformed records</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.Pipeline.transformers">
+<span class="sig-name descname"><span class="pre">transformers</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.transform.Transformer" title="datahub.ingestion.api.transform.Transformer"><span class="pre">datahub.ingestion.api.transform.Transformer</span></a><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.Pipeline.transformers" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.PipelineConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.run.pipeline.</span></span><span class="sig-name descname"><span class="pre">PipelineConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.ingestion.run.pipeline.SourceConfig" title="datahub.ingestion.run.pipeline.SourceConfig"><span class="pre">datahub.ingestion.run.pipeline.SourceConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">sink</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.DynamicTypedConfig" title="datahub.configuration.common.DynamicTypedConfig"><span class="pre">datahub.configuration.common.DynamicTypedConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">transformers</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.DynamicTypedConfig" title="datahub.configuration.common.DynamicTypedConfig"><span class="pre">datahub.configuration.common.DynamicTypedConfig</span></a><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">run_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'__DEFAULT_RUN_ID'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datahub_api</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.graph.html#datahub.ingestion.graph.client.DatahubClientConfig" title="datahub.ingestion.graph.client.DatahubClientConfig"><span class="pre">datahub.ingestion.graph.client.DatahubClientConfig</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.PipelineConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.ConfigModel" title="datahub.configuration.common.ConfigModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.ConfigModel</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.PipelineConfig.datahub_api">
+<span class="sig-name descname"><span class="pre">datahub_api</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.ingestion.graph.html#datahub.ingestion.graph.client.DatahubClientConfig" title="datahub.ingestion.graph.client.DatahubClientConfig"><span class="pre">datahub.ingestion.graph.client.DatahubClientConfig</span></a><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.PipelineConfig.datahub_api" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.PipelineConfig.datahub_api_should_use_rest_sink_as_default">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">datahub_api_should_use_rest_sink_as_default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.ingestion.graph.html#datahub.ingestion.graph.client.DatahubClientConfig" title="datahub.ingestion.graph.client.DatahubClientConfig"><span class="pre">datahub.ingestion.graph.client.DatahubClientConfig</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.ingestion.graph.html#datahub.ingestion.graph.client.DatahubClientConfig" title="datahub.ingestion.graph.client.DatahubClientConfig"><span class="pre">datahub.ingestion.graph.client.DatahubClientConfig</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.PipelineConfig.datahub_api_should_use_rest_sink_as_default" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.PipelineConfig.run_id">
+<span class="sig-name descname"><span class="pre">run_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.PipelineConfig.run_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.PipelineConfig.run_id_should_be_semantic">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">run_id_should_be_semantic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.PipelineConfig.run_id_should_be_semantic" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.PipelineConfig.sink">
+<span class="sig-name descname"><span class="pre">sink</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.DynamicTypedConfig" title="datahub.configuration.common.DynamicTypedConfig"><span class="pre">datahub.configuration.common.DynamicTypedConfig</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.PipelineConfig.sink" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.PipelineConfig.source">
+<span class="sig-name descname"><span class="pre">source</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="#datahub.ingestion.run.pipeline.SourceConfig" title="datahub.ingestion.run.pipeline.SourceConfig"><span class="pre">datahub.ingestion.run.pipeline.SourceConfig</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.PipelineConfig.source" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.PipelineConfig.transformers">
+<span class="sig-name descname"><span class="pre">transformers</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.DynamicTypedConfig" title="datahub.configuration.common.DynamicTypedConfig"><span class="pre">datahub.configuration.common.DynamicTypedConfig</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.PipelineConfig.transformers" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.SourceConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.run.pipeline.</span></span><span class="sig-name descname"><span class="pre">SourceConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extractor</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'generic'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.SourceConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.DynamicTypedConfig" title="datahub.configuration.common.DynamicTypedConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.DynamicTypedConfig</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.run.pipeline.SourceConfig.extractor">
+<span class="sig-name descname"><span class="pre">extractor</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/run/pipeline.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.run.pipeline.SourceConfig.extractor" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.ingestion.run">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datahub.ingestion.run" title="Permalink to this headline"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datahub.ingestion.graph.html" class="btn btn-neutral float-left" title="datahub.ingestion.graph package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datahub.ingestion.sink.html" class="btn btn-neutral float-right" title="datahub.ingestion.sink package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, DataHub Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "type" : "record",
+  "name" : "DatasetUsageStatistics",
+  "namespace" : "com.linkedin.dataset",
+  "doc" : "Stats corresponding to dataset's usage.",
+  "include" : [ "com.linkedin.timeseries.TimeseriesAspectBase" ],
+  "fields" : [ {
+    "name" : "uniqueUserCount",
+    "type" : "int",
+    "doc" : "Unique user count",
+    "optional" : true,
+    "TimeseriesField" : { }
+  }, {
+    "name" : "totalSqlQueries",
+    "type" : "int",
+    "doc" : "Total SQL query count",
+    "optional" : true,
+    "TimeseriesField" : { }
+  }, {
+    "name" : "topSqlQueries",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "Frequent SQL queries; mostly makes sense for datasets in SQL databases",
+    "optional" : true,
+    "TimeseriesField" : { }
+  }, {
+    "name" : "userCounts",
+    "type" : {
+      "type" : "array",
+      "items" : "DatasetUserUsageCounts"
+    },
+    "doc" : "Users within this bucket, with frequency counts",
+    "optional" : true,
+    "TimeseriesFieldCollection" : {
+      "key" : "user"
+    }
+  }, {
+    "name" : "fieldCounts",
+    "type" : {
+      "type" : "array",
+      "items" : "DatasetFieldUsageCounts"
+    },
+    "doc" : "Field-level usage stats",
+    "optional" : true,
+    "TimeseriesFieldCollection" : {
+      "key" : "fieldPath"
+    }
+  } ],
+  "Aspect" : {
+    "name" : "datasetUsageStatistics",
+    "type" : "timeseries"
+  }
+}

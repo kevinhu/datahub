@@ -1,0 +1,14 @@
+{
+  "type" : "enum",
+  "name" : "ChartType",
+  "namespace" : "com.linkedin.chart",
+  "doc" : "The various types of charts",
+  "symbols" : [ "BAR", "PIE", "SCATTER", "TABLE", "TEXT", "LINE", "AREA", "HISTOGRAM", "BOX_PLOT" ],
+  "symbolDocs" : {
+    "BAR" : "Chart showing a Bar chart",
+    "PIE" : "Chart showing a Pie chart",
+    "SCATTER" : "Chart showing a Scatter plot",
+    "TABLE" : "Chart showing a table",
+    "TEXT" : "Chart showing Markdown formatted text"
+  }
+}

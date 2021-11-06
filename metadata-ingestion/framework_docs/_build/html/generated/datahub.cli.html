@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>datahub.cli package &mdash; DataHub 0.0.0.dev0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="datahub.ingestion package" href="datahub.ingestion.html" />
+    <link rel="prev" title="datahub.integrations.airflow package" href="datahub.integrations.airflow.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DataHub
+          </a>
+              <div class="version">
+                0.0.0.dev0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="datahub.emitter.html">Emitters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.metadata.html">Metadata Schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.integrations.html">Integrations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.cli.check_cli">datahub.cli.check_cli module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.cli.cli_utils">datahub.cli.cli_utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.cli.delete_cli">datahub.cli.delete_cli module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.cli.docker">datahub.cli.docker module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.cli.docker_check">datahub.cli.docker_check module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.cli.ingest_cli">datahub.cli.ingest_cli module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.cli.json_file">datahub.cli.json_file module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.cli">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.ingestion.html">Ingestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.configuration.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DataHub</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>datahub.cli package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/datahub.cli.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="datahub-cli-package">
+<h1>datahub.cli package<a class="headerlink" href="#datahub-cli-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-datahub.cli.check_cli">
+<span id="datahub-cli-check-cli-module"></span><h2>datahub.cli.check_cli module<a class="headerlink" href="#module-datahub.cli.check_cli" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-datahub.cli.cli_utils">
+<span id="datahub-cli-cli-utils-module"></span><h2>datahub.cli.cli_utils module<a class="headerlink" href="#module-datahub.cli.cli_utils" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.DatahubConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.cli.cli_utils.</span></span><span class="sig-name descname"><span class="pre">DatahubConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gms</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.cli.cli_utils.GmsConfig" title="datahub.cli.cli_utils.GmsConfig"><span class="pre">datahub.cli.cli_utils.GmsConfig</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.DatahubConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.DatahubConfig.gms">
+<span class="sig-name descname"><span class="pre">gms</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="#datahub.cli.cli_utils.GmsConfig" title="datahub.cli.cli_utils.GmsConfig"><span class="pre">datahub.cli.cli_utils.GmsConfig</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.DatahubConfig.gms" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.GmsConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.cli.cli_utils.</span></span><span class="sig-name descname"><span class="pre">GmsConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.GmsConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.GmsConfig.server">
+<span class="sig-name descname"><span class="pre">server</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.GmsConfig.server" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.GmsConfig.token">
+<span class="sig-name descname"><span class="pre">token</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.GmsConfig.token" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.ensure_datahub_config">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.cli_utils.</span></span><span class="sig-name descname"><span class="pre">ensure_datahub_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.ensure_datahub_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.first_non_null">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.cli_utils.</span></span><span class="sig-name descname"><span class="pre">first_non_null</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ls</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.first_non_null" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.get_details_from_config">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.cli_utils.</span></span><span class="sig-name descname"><span class="pre">get_details_from_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.get_details_from_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.get_details_from_env">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.cli_utils.</span></span><span class="sig-name descname"><span class="pre">get_details_from_env</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.get_details_from_env" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.get_session_and_host">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.cli_utils.</span></span><span class="sig-name descname"><span class="pre">get_session_and_host</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.get_session_and_host" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.parse_run_restli_response">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.cli_utils.</span></span><span class="sig-name descname"><span class="pre">parse_run_restli_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.parse_run_restli_response" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.post_delete_endpoint">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.cli_utils.</span></span><span class="sig-name descname"><span class="pre">post_delete_endpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload_obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.post_delete_endpoint" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.post_delete_endpoint_with_session_and_url">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.cli_utils.</span></span><span class="sig-name descname"><span class="pre">post_delete_endpoint_with_session_and_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">requests.sessions.Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payload_obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.post_delete_endpoint_with_session_and_url" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.post_rollback_endpoint">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.cli_utils.</span></span><span class="sig-name descname"><span class="pre">post_rollback_endpoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">payload_obj</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.post_rollback_endpoint" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.should_skip_config">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.cli_utils.</span></span><span class="sig-name descname"><span class="pre">should_skip_config</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.should_skip_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.cli_utils.write_datahub_config">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.cli_utils.</span></span><span class="sig-name descname"><span class="pre">write_datahub_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/cli_utils.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.cli_utils.write_datahub_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-datahub.cli.delete_cli">
+<span id="datahub-cli-delete-cli-module"></span><h2>datahub.cli.delete_cli module<a class="headerlink" href="#module-datahub.cli.delete_cli" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-datahub.cli.docker">
+<span id="datahub-cli-docker-module"></span><h2>datahub.cli.docker module<a class="headerlink" href="#module-datahub.cli.docker" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.docker.docker_check_impl">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.docker.</span></span><span class="sig-name descname"><span class="pre">docker_check_impl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/docker.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.docker.docker_check_impl" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.docker.should_use_neo4j_for_graph_service">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.docker.</span></span><span class="sig-name descname"><span class="pre">should_use_neo4j_for_graph_service</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_service_override</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/docker.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.docker.should_use_neo4j_for_graph_service" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-datahub.cli.docker_check">
+<span id="datahub-cli-docker-check-module"></span><h2>datahub.cli.docker_check module<a class="headerlink" href="#module-datahub.cli.docker_check" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.docker_check.check_local_docker_containers">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.docker_check.</span></span><span class="sig-name descname"><span class="pre">check_local_docker_containers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">preflight_only</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/docker_check.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.docker_check.check_local_docker_containers" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.docker_check.get_client_with_error">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.docker_check.</span></span><span class="sig-name descname"><span class="pre">get_client_with_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">docker.client.DockerClient</span><span class="p"><span class="pre">,</span> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Exception</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/docker_check.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.docker_check.get_client_with_error" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.docker_check.memory_in_gb">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.docker_check.</span></span><span class="sig-name descname"><span class="pre">memory_in_gb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mem_bytes</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/docker_check.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.docker_check.memory_in_gb" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-datahub.cli.ingest_cli">
+<span id="datahub-cli-ingest-cli-module"></span><h2>datahub.cli.ingest_cli module<a class="headerlink" href="#module-datahub.cli.ingest_cli" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.ingest_cli.get_runs_url">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.ingest_cli.</span></span><span class="sig-name descname"><span class="pre">get_runs_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gms_host</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/ingest_cli.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.ingest_cli.get_runs_url" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.ingest_cli.parse_restli_response">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.ingest_cli.</span></span><span class="sig-name descname"><span class="pre">parse_restli_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/ingest_cli.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.ingest_cli.parse_restli_response" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-datahub.cli.json_file">
+<span id="datahub-cli-json-file-module"></span><h2>datahub.cli.json_file module<a class="headerlink" href="#module-datahub.cli.json_file" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.cli.json_file.check_mce_file">
+<span class="sig-prename descclassname"><span class="pre">datahub.cli.json_file.</span></span><span class="sig-name descname"><span class="pre">check_mce_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/cli/json_file.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.cli.json_file.check_mce_file" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-datahub.cli">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datahub.cli" title="Permalink to this headline"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datahub.integrations.airflow.html" class="btn btn-neutral float-left" title="datahub.integrations.airflow package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datahub.ingestion.html" class="btn btn-neutral float-right" title="datahub.ingestion package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, DataHub Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

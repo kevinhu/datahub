@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "MLModelDeploymentAspect",
+  "namespace" : "com.linkedin.metadata.aspect",
+  "doc" : "A union of all supported metadata aspects for a MLModelDeployment",
+  "ref" : [ "com.linkedin.metadata.key.MLModelDeploymentKey", "com.linkedin.ml.metadata.MLModelDeploymentProperties", "com.linkedin.common.Ownership", "com.linkedin.common.Status", "com.linkedin.common.Deprecation", "com.linkedin.common.GlobalTags", "com.linkedin.common.DataPlatformInstance" ]
+}

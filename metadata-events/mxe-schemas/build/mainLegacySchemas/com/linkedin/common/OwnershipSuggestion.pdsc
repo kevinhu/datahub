@@ -1,0 +1,14 @@
+{
+  "type" : "record",
+  "name" : "OwnershipSuggestion",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Ownership information of an entity, suggested by source system or other services.",
+  "fields" : [ {
+    "name" : "owners",
+    "type" : {
+      "type" : "array",
+      "items" : "Owner"
+    },
+    "doc" : "List of owners of the entity."
+  } ]
+}

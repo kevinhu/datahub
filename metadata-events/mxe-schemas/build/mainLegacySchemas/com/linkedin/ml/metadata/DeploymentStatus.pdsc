@@ -1,0 +1,17 @@
+{
+  "type" : "enum",
+  "name" : "DeploymentStatus",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "Model endpoint statuses",
+  "symbols" : [ "OUT_OF_SERVICE", "CREATING", "UPDATING", "ROLLING_BACK", "IN_SERVICE", "DELETING", "FAILED", "UNKNOWN" ],
+  "symbolDocs" : {
+    "CREATING" : "Deployments being created.",
+    "DELETING" : "Deployments being deleted.",
+    "FAILED" : "Deployments with an error state.",
+    "IN_SERVICE" : "Deployments that are active.",
+    "OUT_OF_SERVICE" : "Deployments out of service.",
+    "ROLLING_BACK" : "Deployments being reverted to a previous version.",
+    "UNKNOWN" : "Deployments with unknown/unmappable state.",
+    "UPDATING" : "Deployments being updated."
+  }
+}

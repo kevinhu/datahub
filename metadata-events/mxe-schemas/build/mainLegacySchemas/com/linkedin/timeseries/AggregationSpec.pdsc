@@ -1,0 +1,15 @@
+{
+  "type" : "record",
+  "name" : "AggregationSpec",
+  "namespace" : "com.linkedin.timeseries",
+  "doc" : "Provides the aggregation specification on a member/field.",
+  "fields" : [ {
+    "name" : "fieldPath",
+    "type" : "string",
+    "doc" : "Name of the member/field."
+  }, {
+    "name" : "aggregationType",
+    "type" : "AggregationType",
+    "doc" : "Aggregation type for the metric."
+  } ]
+}

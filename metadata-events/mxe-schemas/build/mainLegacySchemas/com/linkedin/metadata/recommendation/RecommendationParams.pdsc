@@ -1,0 +1,22 @@
+{
+  "type" : "record",
+  "name" : "RecommendationParams",
+  "namespace" : "com.linkedin.metadata.recommendation",
+  "doc" : "Parameters required to render a recommendation of a given type",
+  "fields" : [ {
+    "name" : "searchParams",
+    "type" : "SearchParams",
+    "doc" : "Context to define the search recommendations",
+    "optional" : true
+  }, {
+    "name" : "entityProfileParams",
+    "type" : "EntityProfileParams",
+    "doc" : "Context to define the entity profile page",
+    "optional" : true
+  }, {
+    "name" : "contentParams",
+    "type" : "ContentParams",
+    "doc" : "Context about the recommendation",
+    "optional" : true
+  } ]
+}

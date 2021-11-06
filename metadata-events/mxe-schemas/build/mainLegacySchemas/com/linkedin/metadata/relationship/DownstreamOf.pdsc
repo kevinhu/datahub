@@ -1,0 +1,20 @@
+{
+  "type" : "record",
+  "name" : "DownstreamOf",
+  "namespace" : "com.linkedin.metadata.relationship",
+  "doc" : "A generic model for the DownstreamOf relationship",
+  "include" : [ "BaseRelationship" ],
+  "fields" : [ {
+    "name" : "type",
+    "type" : "com.linkedin.dataset.DatasetLineageType",
+    "doc" : "The type of the lineage",
+    "optional" : true
+  } ],
+  "pairings" : [ {
+    "destination" : "com.linkedin.common.urn.DatasetUrn",
+    "source" : "com.linkedin.common.urn.DatasetUrn"
+  }, {
+    "destination" : "com.linkedin.common.urn.DatasetUrn",
+    "source" : "com.linkedin.common.urn.ChartUrn"
+  } ]
+}

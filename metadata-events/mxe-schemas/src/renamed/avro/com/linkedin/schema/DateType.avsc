@@ -1,0 +1,7 @@
+{
+  "type" : "record",
+  "name" : "DateType",
+  "namespace" : "com.linkedin.pegasus2avro.schema",
+  "doc" : "Date field type.",
+  "fields" : [ ]
+}

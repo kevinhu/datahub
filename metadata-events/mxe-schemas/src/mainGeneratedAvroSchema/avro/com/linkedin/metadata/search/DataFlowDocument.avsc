@@ -1,0 +1,78 @@
+{
+  "type" : "record",
+  "name" : "DataFlowDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for DataFlow entity search",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "browsePaths",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "All paths representing the hierarchy of this entity. This is essential for browsing various paths leading to this entity.",
+    "default" : null
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn for the DataFlow",
+    "java" : {
+      "class" : "com.linkedin.common.urn.DataFlowUrn"
+    }
+  }, {
+    "name" : "flowId",
+    "type" : [ "null", "string" ],
+    "doc" : "Id of the flow",
+    "default" : null
+  }, {
+    "name" : "name",
+    "type" : [ "null", "string" ],
+    "doc" : "Name of the flow",
+    "default" : null
+  }, {
+    "name" : "description",
+    "type" : [ "null", "string" ],
+    "doc" : "Description of the flow",
+    "default" : null
+  }, {
+    "name" : "orchestrator",
+    "type" : [ "null", "string" ],
+    "doc" : "Workflow orchestrator ex: Azkaban, Airflow",
+    "default" : null
+  }, {
+    "name" : "cluster",
+    "type" : [ "null", "string" ],
+    "doc" : "Cluster of the flow",
+    "default" : null
+  }, {
+    "name" : "project",
+    "type" : [ "null", "string" ],
+    "doc" : "Project of the flow",
+    "default" : null
+  }, {
+    "name" : "owners",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "LDAP usernames of corp users who are the owners of this flow",
+    "default" : null
+  }, {
+    "name" : "hasOwners",
+    "type" : [ "null", "boolean" ],
+    "doc" : "Flag to indicate if the flow has non empty corp users as owners or not.",
+    "default" : null
+  }, {
+    "name" : "tags",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "List of tags for this dataset",
+    "default" : null
+  } ]
+}

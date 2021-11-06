@@ -1,0 +1,105 @@
+{
+  "type" : "record",
+  "name" : "ChartDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for Chart entity search",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "browsePaths",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "All paths representing the hierarchy of this entity. This is essential for browsing various paths leading to this entity.",
+    "default" : null
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn for the Chart",
+    "java" : {
+      "class" : "com.linkedin.common.urn.ChartUrn"
+    }
+  }, {
+    "name" : "title",
+    "type" : [ "null", "string" ],
+    "doc" : "Title of the chart",
+    "default" : null
+  }, {
+    "name" : "description",
+    "type" : [ "null", "string" ],
+    "doc" : "Detailed description about the chart",
+    "default" : null
+  }, {
+    "name" : "tool",
+    "type" : [ "null", "string" ],
+    "doc" : "Dashboard tool ex: Looker, Redash",
+    "default" : null
+  }, {
+    "name" : "queryType",
+    "type" : [ "null", {
+      "type" : "enum",
+      "name" : "ChartQueryType",
+      "namespace" : "com.linkedin.chart",
+      "symbols" : [ "LOOKML", "SQL" ],
+      "symbolDocs" : {
+        "LOOKML" : "LookML queries",
+        "SQL" : "SQL type queries"
+      }
+    } ],
+    "doc" : "Chart query type",
+    "default" : null
+  }, {
+    "name" : "owners",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "LDAP usernames of corp users who are the owners of this chart",
+    "default" : null
+  }, {
+    "name" : "type",
+    "type" : [ "null", {
+      "type" : "enum",
+      "name" : "ChartType",
+      "namespace" : "com.linkedin.chart",
+      "doc" : "The various types of charts",
+      "symbols" : [ "BAR", "PIE", "SCATTER", "TABLE", "TEXT", "LINE", "AREA", "HISTOGRAM", "BOX_PLOT" ],
+      "symbolDocs" : {
+        "BAR" : "Chart showing a Bar chart",
+        "PIE" : "Chart showing a Pie chart",
+        "SCATTER" : "Chart showing a Scatter plot",
+        "TABLE" : "Chart showing a table",
+        "TEXT" : "Chart showing Markdown formatted text"
+      }
+    } ],
+    "doc" : "Type of the chart",
+    "default" : null
+  }, {
+    "name" : "access",
+    "type" : [ "null", {
+      "type" : "enum",
+      "name" : "AccessLevel",
+      "namespace" : "com.linkedin.common",
+      "doc" : "The various access levels",
+      "symbols" : [ "PUBLIC", "PRIVATE" ],
+      "symbolDocs" : {
+        "PRIVATE" : "Private availability to certain set of users",
+        "PUBLIC" : "Publicly available access level"
+      }
+    } ],
+    "doc" : "Access level for the chart",
+    "default" : null
+  }, {
+    "name" : "tags",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "List of tags for this dataset",
+    "default" : null
+  } ]
+}

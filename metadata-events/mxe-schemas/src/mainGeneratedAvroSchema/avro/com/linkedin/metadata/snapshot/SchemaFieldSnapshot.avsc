@@ -1,0 +1,51 @@
+{
+  "type" : "record",
+  "name" : "SchemaFieldSnapshot",
+  "namespace" : "com.linkedin.metadata.snapshot",
+  "doc" : "A metadata snapshot for a specific schema field entity.",
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "URN for the entity the metadata snapshot is associated with.",
+    "java" : {
+      "class" : "com.linkedin.common.urn.Urn"
+    }
+  }, {
+    "name" : "aspects",
+    "type" : {
+      "type" : "array",
+      "items" : [ {
+        "type" : "record",
+        "name" : "SchemaFieldKey",
+        "namespace" : "com.linkedin.metadata.key",
+        "doc" : "Key for a SchemaField",
+        "fields" : [ {
+          "name" : "parent",
+          "type" : "string",
+          "doc" : "Parent associated with the schema field",
+          "Searchable" : {
+            "fieldType" : "URN"
+          },
+          "java" : {
+            "class" : "com.linkedin.common.urn.Urn"
+          }
+        }, {
+          "name" : "fieldPath",
+          "type" : "string",
+          "doc" : "fieldPath identifying the schema field",
+          "Searchable" : {
+            "fieldType" : "KEYWORD"
+          }
+        } ],
+        "Aspect" : {
+          "name" : "schemaFieldKey"
+        }
+      } ]
+    },
+    "doc" : "The list of metadata aspects associated with the dataset. Depending on the use case, this can either be all, or a selection, of supported aspects."
+  } ],
+  "Entity" : {
+    "keyAspect" : "schemaFieldKey",
+    "name" : "schemaField"
+  }
+}

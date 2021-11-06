@@ -1,0 +1,23 @@
+{
+  "type" : "record",
+  "name" : "SourceCodeUrl",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "Source Code Url Entity",
+  "fields" : [ {
+    "name" : "type",
+    "type" : {
+      "type" : "enum",
+      "name" : "SourceCodeUrlType",
+      "symbols" : [ "ML_MODEL_SOURCE_CODE", "TRAINING_PIPELINE_SOURCE_CODE", "EVALUATION_PIPELINE_SOURCE_CODE" ]
+    },
+    "doc" : "Source Code Url Types"
+  }, {
+    "name" : "sourceCodeUrl",
+    "type" : "string",
+    "doc" : "Source Code Url",
+    "java" : {
+      "class" : "com.linkedin.common.url.Url",
+      "coercerClass" : "com.linkedin.common.url.UrlCoercer"
+    }
+  } ]
+}

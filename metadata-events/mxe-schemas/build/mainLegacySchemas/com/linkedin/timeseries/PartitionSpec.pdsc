@@ -1,0 +1,16 @@
+{
+  "type" : "record",
+  "name" : "PartitionSpec",
+  "namespace" : "com.linkedin.timeseries",
+  "doc" : "Defines how the data is partitioned",
+  "fields" : [ {
+    "name" : "partition",
+    "type" : "string",
+    "doc" : "String representation of the partition"
+  }, {
+    "name" : "timePartition",
+    "type" : "TimeWindow",
+    "doc" : "Time window of the partition if applicable",
+    "optional" : true
+  } ]
+}

@@ -1,0 +1,16 @@
+{
+  "type" : "record",
+  "name" : "MetadataChangeLog",
+  "namespace" : "com.linkedin.mxe",
+  "doc" : "Kafka event for capturing update made to an entity's metadata.",
+  "include" : [ "MetadataChangeProposal" ],
+  "fields" : [ {
+    "name" : "previousAspectValue",
+    "type" : "GenericAspect",
+    "optional" : true
+  }, {
+    "name" : "previousSystemMetadata",
+    "type" : "SystemMetadata",
+    "optional" : true
+  } ]
+}

@@ -1,0 +1,23 @@
+{
+  "type" : "record",
+  "name" : "Filter",
+  "namespace" : "com.linkedin.metadata.query.filter",
+  "doc" : "The filter for finding a record or a collection of records",
+  "fields" : [ {
+    "name" : "or",
+    "type" : {
+      "type" : "array",
+      "items" : "ConjunctiveCriterion"
+    },
+    "doc" : "A list of of disjunctive criterion for the filter.",
+    "optional" : true
+  }, {
+    "name" : "criteria",
+    "type" : {
+      "type" : "array",
+      "items" : "Criterion"
+    },
+    "doc" : "Deprecated! A list of conjunctive criterion for the filter. If \"or\" field is provided, then this field is ignored.",
+    "optional" : true
+  } ]
+}

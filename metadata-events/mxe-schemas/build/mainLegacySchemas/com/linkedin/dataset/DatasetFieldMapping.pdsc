@@ -1,0 +1,19 @@
+{
+  "type" : "record",
+  "name" : "DatasetFieldMapping",
+  "namespace" : "com.linkedin.dataset",
+  "doc" : "Representation of mapping between fields in source dataset to the field in destination dataset",
+  "include" : [ "com.linkedin.common.BaseFieldMapping" ],
+  "fields" : [ {
+    "name" : "sourceFields",
+    "type" : {
+      "type" : "array",
+      "items" : "DatasetFieldUpstream"
+    },
+    "doc" : "Source fields from which the fine grained lineage is derived"
+  }, {
+    "name" : "destinationField",
+    "type" : "com.linkedin.common.DatasetFieldUrn",
+    "doc" : "Destination field which is derived from source fields"
+  } ]
+}

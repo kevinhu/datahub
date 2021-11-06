@@ -1,0 +1,13 @@
+{
+  "type" : "record",
+  "name" : "FieldUsageCounts",
+  "namespace" : "com.linkedin.usage",
+  "doc" : " Records field-level usage counts for a given resource ",
+  "fields" : [ {
+    "name" : "fieldName",
+    "type" : "string"
+  }, {
+    "name" : "count",
+    "type" : "int"
+  } ]
+}

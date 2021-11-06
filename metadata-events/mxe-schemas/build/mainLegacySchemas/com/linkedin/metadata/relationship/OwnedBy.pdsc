@@ -1,0 +1,34 @@
+{
+  "type" : "record",
+  "name" : "OwnedBy",
+  "namespace" : "com.linkedin.metadata.relationship",
+  "doc" : "A generic model for the Owned-By relationship",
+  "include" : [ "BaseRelationship" ],
+  "fields" : [ {
+    "name" : "type",
+    "type" : "com.linkedin.common.OwnershipType",
+    "doc" : "The type of the ownership"
+  } ],
+  "pairings" : [ {
+    "destination" : "com.linkedin.common.urn.CorpuserUrn",
+    "source" : "com.linkedin.common.urn.DatasetUrn"
+  }, {
+    "destination" : "com.linkedin.common.urn.CorpuserUrn",
+    "source" : "com.linkedin.common.urn.DataProcessUrn"
+  }, {
+    "destination" : "com.linkedin.common.urn.CorpuserUrn",
+    "source" : "com.linkedin.common.urn.MLModelUrn"
+  }, {
+    "destination" : "com.linkedin.common.urn.CorpuserUrn",
+    "source" : "com.linkedin.common.urn.DataJobUrn"
+  }, {
+    "destination" : "com.linkedin.common.urn.CorpuserUrn",
+    "source" : "com.linkedin.common.urn.DataFlowUrn"
+  }, {
+    "destination" : "com.linkedin.common.urn.CorpuserUrn",
+    "source" : "com.linkedin.common.urn.GlossaryTermUrn"
+  }, {
+    "destination" : "com.linkedin.common.urn.CorpuserUrn",
+    "source" : "com.linkedin.common.urn.GlossaryNodeUrn"
+  } ]
+}

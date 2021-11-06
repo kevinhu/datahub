@@ -1,0 +1,43 @@
+{
+  "type" : "record",
+  "name" : "GroupingBucket",
+  "namespace" : "com.linkedin.timeseries",
+  "doc" : "Defines the group by bucket definitions for time series requests.",
+  "fields" : [ {
+    "name" : "type",
+    "type" : {
+      "type" : "enum",
+      "name" : "GroupingBucketType",
+      "doc" : "Defines a grouping bucket type.",
+      "symbols" : [ "DATE_GROUPING_BUCKET", "STRING_GROUPING_BUCKET" ]
+    },
+    "doc" : "Type of the grouping bucket."
+  }, {
+    "name" : "key",
+    "type" : "string",
+    "doc" : "Key that specifies the column name to be used as the timestamp field for bucketing."
+  }, {
+    "name" : "timeWindowSize",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "TimeWindowSize",
+      "doc" : "Defines the size of a time window.",
+      "fields" : [ {
+        "name" : "unit",
+        "type" : {
+          "type" : "enum",
+          "name" : "CalendarInterval",
+          "symbols" : [ "SECOND", "MINUTE", "HOUR", "DAY", "WEEK", "MONTH", "QUARTER", "YEAR" ]
+        },
+        "doc" : "Interval unit such as minute/hour/day etc."
+      }, {
+        "name" : "multiple",
+        "type" : "int",
+        "doc" : "How many units. Defaults to 1.",
+        "default" : 1
+      } ]
+    } ],
+    "doc" : "Bucket size (like a day/hour etc) for the date grouping buckets.",
+    "default" : null
+  } ]
+}

@@ -1,0 +1,7 @@
+{
+  "type" : "record",
+  "name" : "NullType",
+  "namespace" : "com.linkedin.pegasus2avro.schema",
+  "doc" : "Null field type.",
+  "fields" : [ ]
+}

@@ -1,0 +1,25 @@
+{
+  "type" : "record",
+  "name" : "ReportsTo",
+  "namespace" : "com.linkedin.pegasus2avro.metadata.relationship",
+  "doc" : "A generic model for the Reports-To relationship",
+  "fields" : [ {
+    "name" : "source",
+    "type" : "string",
+    "doc" : "Urn for the source of the relationship",
+    "java" : {
+      "class" : "com.linkedin.pegasus2avro.common.urn.Urn"
+    }
+  }, {
+    "name" : "destination",
+    "type" : "string",
+    "doc" : "Urn for the destination of the relationship",
+    "java" : {
+      "class" : "com.linkedin.pegasus2avro.common.urn.Urn"
+    }
+  } ],
+  "pairings" : [ {
+    "destination" : "com.linkedin.pegasus2avro.common.urn.CorpuserUrn",
+    "source" : "com.linkedin.pegasus2avro.common.urn.CorpuserUrn"
+  } ]
+}

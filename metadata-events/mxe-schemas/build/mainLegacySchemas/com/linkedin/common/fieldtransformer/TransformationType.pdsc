@@ -1,0 +1,11 @@
+{
+  "type" : "enum",
+  "name" : "TransformationType",
+  "namespace" : "com.linkedin.common.fieldtransformer",
+  "doc" : "Type of the transformation involved in generating destination fields from source fields.",
+  "symbols" : [ "BLACKBOX", "IDENTITY" ],
+  "symbolDocs" : {
+    "BLACKBOX" : "Field transformation expressed as unknown black box function.",
+    "IDENTITY" : "Field transformation expressed as Identity function."
+  }
+}

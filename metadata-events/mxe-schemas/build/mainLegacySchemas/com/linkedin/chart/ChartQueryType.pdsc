@@ -1,0 +1,10 @@
+{
+  "type" : "enum",
+  "name" : "ChartQueryType",
+  "namespace" : "com.linkedin.chart",
+  "symbols" : [ "LOOKML", "SQL" ],
+  "symbolDocs" : {
+    "LOOKML" : "LookML queries",
+    "SQL" : "SQL type queries"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "type" : "record",
+  "name" : "DataFlowInfo",
+  "namespace" : "com.linkedin.datajob",
+  "doc" : "Information about a Data processing flow",
+  "include" : [ "com.linkedin.common.CustomProperties", "com.linkedin.common.ExternalReference" ],
+  "fields" : [ {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Flow name",
+    "Searchable" : {
+      "boostScore" : 10.0,
+      "enableAutocomplete" : true,
+      "fieldType" : "TEXT_PARTIAL"
+    }
+  }, {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Flow description",
+    "optional" : true,
+    "Searchable" : {
+      "fieldType" : "TEXT",
+      "hasValuesFieldName" : "hasDescription"
+    }
+  }, {
+    "name" : "project",
+    "type" : "string",
+    "doc" : "Optional project/namespace associated with the flow",
+    "optional" : true,
+    "Searchable" : {
+      "fieldType" : "TEXT_PARTIAL",
+      "queryByDefault" : false
+    }
+  } ],
+  "Aspect" : {
+    "name" : "dataFlowInfo"
+  }
+}

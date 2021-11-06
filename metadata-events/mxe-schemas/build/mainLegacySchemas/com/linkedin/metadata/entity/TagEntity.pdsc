@@ -1,0 +1,17 @@
+{
+  "type" : "record",
+  "name" : "TagEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a tag entity",
+  "include" : [ "BaseEntity" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.TagUrn",
+    "doc" : "Urn for the tag"
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Name of the tag",
+    "optional" : true
+  } ]
+}

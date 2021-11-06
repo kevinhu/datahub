@@ -1,0 +1,33 @@
+{
+  "type" : "typeref",
+  "name" : "MLFeatureUrn",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Standardized MLFeature identifier.",
+  "ref" : "string",
+  "java" : {
+    "class" : "com.linkedin.common.urn.MLFeatureUrn"
+  },
+  "validate" : {
+    "com.linkedin.common.validator.TypedUrnValidator" : {
+      "accessible" : true,
+      "constructable" : true,
+      "doc" : "Standardized MLFeature identifier.",
+      "entityType" : "mlFeature",
+      "fields" : [ {
+        "doc" : "Namespace for the MLFeature",
+        "name" : "mlFeatureNamespace",
+        "type" : "string"
+      }, {
+        "doc" : "Name of the MLFeature",
+        "maxLength" : 210,
+        "name" : "mlFeatureName",
+        "type" : "string"
+      } ],
+      "maxLength" : 284,
+      "name" : "MLFeature",
+      "namespace" : "li",
+      "owners" : [ "urn:li:corpuser:fbar", "urn:li:corpuser:bfoo" ],
+      "owningTeam" : "urn:li:internalTeam:datahub"
+    }
+  }
+}

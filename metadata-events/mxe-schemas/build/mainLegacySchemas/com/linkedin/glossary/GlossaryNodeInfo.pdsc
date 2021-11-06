@@ -1,0 +1,20 @@
+{
+  "type" : "record",
+  "name" : "GlossaryNodeInfo",
+  "namespace" : "com.linkedin.glossary",
+  "doc" : "Properties associated with a GlossaryNode",
+  "fields" : [ {
+    "name" : "definition",
+    "type" : "string",
+    "doc" : "Definition of business node",
+    "Searchable" : { }
+  }, {
+    "name" : "parentNode",
+    "type" : "com.linkedin.common.GlossaryNodeUrn",
+    "doc" : "Parent node of the glossary term",
+    "optional" : true
+  } ],
+  "Aspect" : {
+    "name" : "glossaryNodeInfo"
+  }
+}

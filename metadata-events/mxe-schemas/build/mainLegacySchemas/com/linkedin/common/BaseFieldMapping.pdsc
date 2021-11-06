@@ -1,0 +1,15 @@
+{
+  "type" : "record",
+  "name" : "BaseFieldMapping",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Base model representing field mappings",
+  "fields" : [ {
+    "name" : "created",
+    "type" : "AuditStamp",
+    "doc" : "Audit stamp containing who reported the field mapping and when"
+  }, {
+    "name" : "transformation",
+    "type" : [ "com.linkedin.common.fieldtransformer.TransformationType", "com.linkedin.common.fieldtransformer.UDFTransformer" ],
+    "doc" : "Transfomration function between the fields involved"
+  } ]
+}

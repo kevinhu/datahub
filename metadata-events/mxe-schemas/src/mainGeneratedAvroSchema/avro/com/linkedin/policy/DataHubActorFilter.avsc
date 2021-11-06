@@ -1,0 +1,38 @@
+{
+  "type" : "record",
+  "name" : "DataHubActorFilter",
+  "namespace" : "com.linkedin.policy",
+  "doc" : "Information used to filter DataHub actors.",
+  "fields" : [ {
+    "name" : "users",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "A specific set of users to apply the policy to (disjunctive)",
+    "default" : null
+  }, {
+    "name" : "groups",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "A specific set of groups to apply the policy to (disjunctive)",
+    "default" : null
+  }, {
+    "name" : "resourceOwners",
+    "type" : "boolean",
+    "doc" : "Whether the filter should return true for owners of a particular resource.\nOnly applies to policies of type 'Metadata', which have a resource associated with them.",
+    "default" : false
+  }, {
+    "name" : "allUsers",
+    "type" : "boolean",
+    "doc" : "Whether the filter should apply to all users.",
+    "default" : false
+  }, {
+    "name" : "allGroups",
+    "type" : "boolean",
+    "doc" : "Whether the filter should apply to all groups.",
+    "default" : false
+  } ]
+}

@@ -1,0 +1,15 @@
+{
+  "type" : "record",
+  "name" : "SourceCodeUrl",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "Source Code Url Entity",
+  "fields" : [ {
+    "name" : "type",
+    "type" : "SourceCodeUrlType",
+    "doc" : "Source Code Url Types"
+  }, {
+    "name" : "sourceCodeUrl",
+    "type" : "com.linkedin.common.Url",
+    "doc" : "Source Code Url"
+  } ]
+}

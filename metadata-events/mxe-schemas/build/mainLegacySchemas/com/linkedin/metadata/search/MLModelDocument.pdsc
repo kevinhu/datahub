@@ -1,0 +1,76 @@
+{
+  "type" : "record",
+  "name" : "MLModelDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for ML Model entity search",
+  "include" : [ "BaseDocument" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.MLModelUrn",
+    "doc" : "Urn for the model"
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Name of model",
+    "optional" : true
+  }, {
+    "name" : "platform",
+    "type" : "string",
+    "doc" : "Platform name for the model",
+    "optional" : true
+  }, {
+    "name" : "origin",
+    "type" : "com.linkedin.common.FabricType",
+    "doc" : "Fabric type where model belongs to or where it was generated",
+    "optional" : true
+  }, {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Description of the model",
+    "optional" : true
+  }, {
+    "name" : "createdTimestamp",
+    "type" : "long",
+    "doc" : "Timestamp model was created",
+    "optional" : true
+  }, {
+    "name" : "hasOwners",
+    "type" : "boolean",
+    "doc" : "Whether or not the Model has owners",
+    "optional" : true
+  }, {
+    "name" : "owners",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "LDAP usernames of corp users who are the owners of this model",
+    "optional" : true
+  }, {
+    "name" : "type",
+    "type" : "string",
+    "doc" : "Type of Algorithm or Model such as whether it is a Naive Bayes classifier, Convolutional Neural Network, etc",
+    "optional" : true
+  }, {
+    "name" : "trainingDatasets",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.DatasetUrn"
+    },
+    "doc" : "What datasets were used to train the model?",
+    "optional" : true
+  }, {
+    "name" : "evaluationDatasets",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.DatasetUrn"
+    },
+    "doc" : "What datasets were used to evaluate the model?",
+    "optional" : true
+  }, {
+    "name" : "active",
+    "type" : "boolean",
+    "doc" : "Whether or not the model is currently active",
+    "optional" : true
+  } ]
+}

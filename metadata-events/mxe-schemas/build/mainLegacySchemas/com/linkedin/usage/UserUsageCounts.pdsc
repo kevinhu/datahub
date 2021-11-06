@@ -1,0 +1,19 @@
+{
+  "type" : "record",
+  "name" : "UserUsageCounts",
+  "namespace" : "com.linkedin.usage",
+  "doc" : " Records a single user's usage counts for a given resource ",
+  "fields" : [ {
+    "name" : "user",
+    "type" : "com.linkedin.common.Urn",
+    "optional" : true
+  }, {
+    "name" : "count",
+    "type" : "int"
+  }, {
+    "name" : "userEmail",
+    "type" : "string",
+    "doc" : " If user_email is set, we attempt to resolve the user's urn upon ingest ",
+    "optional" : true
+  } ]
+}

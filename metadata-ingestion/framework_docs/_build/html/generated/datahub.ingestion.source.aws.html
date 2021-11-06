@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>datahub.ingestion.source.aws package &mdash; DataHub 0.0.0.dev0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="datahub.ingestion.source.aws.sagemaker_processors package" href="datahub.ingestion.source.aws.sagemaker_processors.html" />
+    <link rel="prev" title="datahub.ingestion.source package" href="datahub.ingestion.source.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DataHub
+          </a>
+              <div class="version">
+                0.0.0.dev0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="datahub.emitter.html">Emitters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.metadata.html">Metadata Schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.integrations.html">Integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.cli.html">CLI</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="datahub.ingestion.html">Ingestion</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="datahub.ingestion.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.api.html">datahub.ingestion.api package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.extractor.html">datahub.ingestion.extractor package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.graph.html">datahub.ingestion.graph package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.run.html">datahub.ingestion.run package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.sink.html">datahub.ingestion.sink package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="datahub.ingestion.source.html">datahub.ingestion.source package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="datahub.ingestion.source.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.datahub_custom_ge_profiler">datahub.ingestion.source.datahub_custom_ge_profiler module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.dbt">datahub.ingestion.source.dbt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.feast">datahub.ingestion.source.feast module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.file">datahub.ingestion.source.file module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#datahub-ingestion-source-ge-data-profiler-module">datahub.ingestion.source.ge_data_profiler module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.kafka">datahub.ingestion.source.kafka module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#datahub-ingestion-source-kafka-connect-module">datahub.ingestion.source.kafka_connect module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#datahub-ingestion-source-ldap-module">datahub.ingestion.source.ldap module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.looker">datahub.ingestion.source.looker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.looker_common">datahub.ingestion.source.looker_common module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.lookml">datahub.ingestion.source.lookml module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.metadata_common">datahub.ingestion.source.metadata_common module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#datahub-ingestion-source-mongodb-module">datahub.ingestion.source.mongodb module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.redash">datahub.ingestion.source.redash module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.source_registry">datahub.ingestion.source.source_registry module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.superset">datahub.ingestion.source.superset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.transformer.html">datahub.ingestion.transformer package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.ingestion.html#module-datahub.ingestion">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.configuration.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DataHub</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="datahub.ingestion.html">datahub.ingestion package</a> &raquo;</li>
+          <li><a href="datahub.ingestion.source.html">datahub.ingestion.source package</a> &raquo;</li>
+      <li>datahub.ingestion.source.aws package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/datahub.ingestion.source.aws.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="datahub-ingestion-source-aws-package">
+<h1>datahub.ingestion.source.aws package<a class="headerlink" href="#datahub-ingestion-source-aws-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datahub.ingestion.source.aws.sagemaker_processors.html">datahub.ingestion.source.aws.sagemaker_processors package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datahub.ingestion.source.aws.sagemaker_processors.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.ingestion.source.aws.sagemaker_processors.html#module-datahub.ingestion.source.aws.sagemaker_processors.common">datahub.ingestion.source.aws.sagemaker_processors.common module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.ingestion.source.aws.sagemaker_processors.html#module-datahub.ingestion.source.aws.sagemaker_processors.feature_groups">datahub.ingestion.source.aws.sagemaker_processors.feature_groups module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.ingestion.source.aws.sagemaker_processors.html#module-datahub.ingestion.source.aws.sagemaker_processors.job_classes">datahub.ingestion.source.aws.sagemaker_processors.job_classes module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.ingestion.source.aws.sagemaker_processors.html#module-datahub.ingestion.source.aws.sagemaker_processors.jobs">datahub.ingestion.source.aws.sagemaker_processors.jobs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.ingestion.source.aws.sagemaker_processors.html#module-datahub.ingestion.source.aws.sagemaker_processors.lineage">datahub.ingestion.source.aws.sagemaker_processors.lineage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.ingestion.source.aws.sagemaker_processors.html#module-datahub.ingestion.source.aws.sagemaker_processors.models">datahub.ingestion.source.aws.sagemaker_processors.models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.ingestion.source.aws.sagemaker_processors.html#module-datahub.ingestion.source.aws.sagemaker_processors">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-datahub.ingestion.source.aws.aws_common">
+<span id="datahub-ingestion-source-aws-aws-common-module"></span><h2>datahub.ingestion.source.aws.aws_common module<a class="headerlink" href="#module-datahub.ingestion.source.aws.aws_common" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.AwsSourceConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.aws.aws_common.</span></span><span class="sig-name descname"><span class="pre">AwsSourceConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'PROD'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database_pattern</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.AllowDenyPattern" title="datahub.configuration.common.AllowDenyPattern"><span class="pre">datahub.configuration.common.AllowDenyPattern</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">AllowDenyPattern(allow=['.*'],</span> <span class="pre">deny=[],</span> <span class="pre">ignoreCase=True,</span> <span class="pre">alphabet='[A-Za-z0-9</span> <span class="pre">_.-]')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_pattern</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.AllowDenyPattern" title="datahub.configuration.common.AllowDenyPattern"><span class="pre">datahub.configuration.common.AllowDenyPattern</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">AllowDenyPattern(allow=['.*'],</span> <span class="pre">deny=[],</span> <span class="pre">ignoreCase=True,</span> <span class="pre">alphabet='[A-Za-z0-9</span> <span class="pre">_.-]')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_access_key_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_secret_access_key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_session_token</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_role</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_region</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.ConfigModel" title="datahub.configuration.common.ConfigModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.ConfigModel</span></code></a></p>
+<p>Common AWS credentials config.</p>
+<dl class="simple">
+<dt>Currently used by:</dt><dd><ul class="simple">
+<li><p>Glue source</p></li>
+<li><p>SageMaker source</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.AwsSourceConfig.aws_access_key_id">
+<span class="sig-name descname"><span class="pre">aws_access_key_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig.aws_access_key_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.AwsSourceConfig.aws_region">
+<span class="sig-name descname"><span class="pre">aws_region</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig.aws_region" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.AwsSourceConfig.aws_role">
+<span class="sig-name descname"><span class="pre">aws_role</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig.aws_role" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.AwsSourceConfig.aws_secret_access_key">
+<span class="sig-name descname"><span class="pre">aws_secret_access_key</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig.aws_secret_access_key" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.AwsSourceConfig.aws_session_token">
+<span class="sig-name descname"><span class="pre">aws_session_token</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig.aws_session_token" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.AwsSourceConfig.database_pattern">
+<span class="sig-name descname"><span class="pre">database_pattern</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.AllowDenyPattern" title="datahub.configuration.common.AllowDenyPattern"><span class="pre">datahub.configuration.common.AllowDenyPattern</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig.database_pattern" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.AwsSourceConfig.env">
+<span class="sig-name descname"><span class="pre">env</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig.env" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.AwsSourceConfig.get_glue_client">
+<span class="sig-name descname"><span class="pre">get_glue_client</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">GlueClient</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig.get_glue_client" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.AwsSourceConfig.get_s3_client">
+<span class="sig-name descname"><span class="pre">get_s3_client</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">S3Client</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig.get_s3_client" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.AwsSourceConfig.get_sagemaker_client">
+<span class="sig-name descname"><span class="pre">get_sagemaker_client</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">SageMakerClient</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig.get_sagemaker_client" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.AwsSourceConfig.get_session">
+<span class="sig-name descname"><span class="pre">get_session</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">boto3.session.Session</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig.get_session" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.AwsSourceConfig.table_pattern">
+<span class="sig-name descname"><span class="pre">table_pattern</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.AllowDenyPattern" title="datahub.configuration.common.AllowDenyPattern"><span class="pre">datahub.configuration.common.AllowDenyPattern</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig.table_pattern" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.assume_role">
+<span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.aws.aws_common.</span></span><span class="sig-name descname"><span class="pre">assume_role</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">role_arn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_region</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">credentials</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.assume_role" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.aws_common.make_s3_urn">
+<span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.aws.aws_common.</span></span><span class="sig-name descname"><span class="pre">make_s3_urn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s3_uri</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/aws_common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.aws_common.make_s3_urn" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-datahub.ingestion.source.aws.glue">
+<span id="datahub-ingestion-source-aws-glue-module"></span><h2>datahub.ingestion.source.aws.glue module<a class="headerlink" href="#module-datahub.ingestion.source.aws.glue" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.aws.glue.</span></span><span class="sig-name descname"><span class="pre">GlueSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.ingestion.source.aws.glue.GlueSourceConfig" title="datahub.ingestion.source.aws.glue.GlueSourceConfig"><span class="pre">datahub.ingestion.source.aws.glue.GlueSourceConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.source.Source" title="datahub.ingestion.api.source.Source"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.api.source.Source</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.close" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.create">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.get_all_jobs">
+<span class="sig-name descname"><span class="pre">get_all_jobs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.get_all_jobs" title="Permalink to this definition"></a></dt>
+<dd><p>List all jobs in Glue.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.get_all_tables">
+<span class="sig-name descname"><span class="pre">get_all_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.get_all_tables" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.get_dataflow_graph">
+<span class="sig-name descname"><span class="pre">get_dataflow_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">script_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.get_dataflow_graph" title="Permalink to this definition"></a></dt>
+<dd><p>Get the DAG of transforms and data sources/sinks for a job.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>script_path:</dt><dd><p>S3 path to the job’s Python script.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.get_dataflow_s3_names">
+<span class="sig-name descname"><span class="pre">get_dataflow_s3_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataflow_graph</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.get_dataflow_s3_names" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.get_dataflow_wu">
+<span class="sig-name descname"><span class="pre">get_dataflow_wu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flow_urn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.workunit.MetadataWorkUnit" title="datahub.ingestion.api.workunit.MetadataWorkUnit"><span class="pre">datahub.ingestion.api.workunit.MetadataWorkUnit</span></a></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.get_dataflow_wu" title="Permalink to this definition"></a></dt>
+<dd><p>Generate a DataFlow workunit for a Glue job.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>flow_urn:</dt><dd><p>URN for the flow</p>
+</dd>
+<dt>job:</dt><dd><p>Job object from get_all_jobs()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.get_datajob_wu">
+<span class="sig-name descname"><span class="pre">get_datajob_wu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.workunit.MetadataWorkUnit" title="datahub.ingestion.api.workunit.MetadataWorkUnit"><span class="pre">datahub.ingestion.api.workunit.MetadataWorkUnit</span></a></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.get_datajob_wu" title="Permalink to this definition"></a></dt>
+<dd><p>Generate a DataJob workunit for a component (node) in a Glue job.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>node:</dt><dd><p>Node from process_dataflow_graph()</p>
+</dd>
+<dt>job:</dt><dd><p>Job object from get_all_jobs()</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.get_report">
+<span class="sig-name descname"><span class="pre">get_report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.get_report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.get_underlying_platform">
+<span class="sig-name descname"><span class="pre">get_underlying_platform</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.get_underlying_platform" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.get_workunits">
+<span class="sig-name descname"><span class="pre">get_workunits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.workunit.MetadataWorkUnit" title="datahub.ingestion.api.workunit.MetadataWorkUnit"><span class="pre">datahub.ingestion.api.workunit.MetadataWorkUnit</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.get_workunits" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.process_dataflow_graph">
+<span class="sig-name descname"><span class="pre">process_dataflow_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataflow_graph</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flow_urn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s3_formats</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DefaultDict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.MetadataChangeEventClass" title="datahub.metadata.schema_classes.MetadataChangeEventClass"><span class="pre">datahub.metadata.schema_classes.MetadataChangeEventClass</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.process_dataflow_graph" title="Permalink to this definition"></a></dt>
+<dd><p>Prepare a job’s DAG for ingestion.
+Parameters
+———-</p>
+<blockquote>
+<div><dl class="simple">
+<dt>dataflow_graph:</dt><dd><p>Job DAG returned from get_dataflow_graph()</p>
+</dd>
+<dt>flow_urn:</dt><dd><p>URN of the flow (i.e. the AWS Glue job itself).</p>
+</dd>
+<dt>s3_formats:</dt><dd><p>Map from s3 URIs to formats used (for deduplication purposes)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.process_dataflow_node">
+<span class="sig-name descname"><span class="pre">process_dataflow_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flow_urn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_dataset_ids</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_dataset_mces</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.MetadataChangeEventClass" title="datahub.metadata.schema_classes.MetadataChangeEventClass"><span class="pre">datahub.metadata.schema_classes.MetadataChangeEventClass</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s3_formats</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">DefaultDict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Set</span><span class="p"><span class="pre">[</span></span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.process_dataflow_node" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.report">
+<span class="sig-name descname"><span class="pre">report</span></span><em class="property"> <span class="pre">=</span> <span class="pre">GlueSourceReport(workunits_produced=0,</span> <span class="pre">workunit_ids=[],</span> <span class="pre">warnings={},</span> <span class="pre">failures={},</span> <span class="pre">filtered=[])</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSource.source_config">
+<span class="sig-name descname"><span class="pre">source_config</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="#datahub.ingestion.source.aws.glue.GlueSourceConfig" title="datahub.ingestion.source.aws.glue.GlueSourceConfig"><span class="pre">datahub.ingestion.source.aws.glue.GlueSourceConfig</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSource.source_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSourceConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.aws.glue.</span></span><span class="sig-name descname"><span class="pre">GlueSourceConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'PROD'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database_pattern</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.AllowDenyPattern" title="datahub.configuration.common.AllowDenyPattern"><span class="pre">datahub.configuration.common.AllowDenyPattern</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">AllowDenyPattern(allow=['.*'],</span> <span class="pre">deny=[],</span> <span class="pre">ignoreCase=True,</span> <span class="pre">alphabet='[A-Za-z0-9</span> <span class="pre">_.-]')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_pattern</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.AllowDenyPattern" title="datahub.configuration.common.AllowDenyPattern"><span class="pre">datahub.configuration.common.AllowDenyPattern</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">AllowDenyPattern(allow=['.*'],</span> <span class="pre">deny=[],</span> <span class="pre">ignoreCase=True,</span> <span class="pre">alphabet='[A-Za-z0-9</span> <span class="pre">_.-]')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_access_key_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_secret_access_key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_session_token</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_role</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aws_region</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extract_transforms</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">underlying_platform</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSourceConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datahub.ingestion.source.aws.aws_common.AwsSourceConfig" title="datahub.ingestion.source.aws.aws_common.AwsSourceConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.source.aws.aws_common.AwsSourceConfig</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSourceConfig.extract_transforms">
+<span class="sig-name descname"><span class="pre">extract_transforms</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSourceConfig.extract_transforms" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSourceConfig.glue_client">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">glue_client</span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSourceConfig.glue_client" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSourceConfig.s3_client">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">s3_client</span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSourceConfig.s3_client" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSourceConfig.underlying_platform">
+<span class="sig-name descname"><span class="pre">underlying_platform</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSourceConfig.underlying_platform" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSourceReport">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.aws.glue.</span></span><span class="sig-name descname"><span class="pre">GlueSourceReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">workunits_produced:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></em>, <em class="sig-param"><span class="pre">workunit_ids:</span> <span class="pre">List[str]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">warnings:</span> <span class="pre">Dict[str</span></em>, <em class="sig-param"><span class="pre">List[str]]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">failures:</span> <span class="pre">Dict[str</span></em>, <em class="sig-param"><span class="pre">List[str]]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">filtered:</span> <span class="pre">List[str]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSourceReport" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.source.SourceReport" title="datahub.ingestion.api.source.SourceReport"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.api.source.SourceReport</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSourceReport.filtered">
+<span class="sig-name descname"><span class="pre">filtered</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSourceReport.filtered" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSourceReport.report_table_dropped">
+<span class="sig-name descname"><span class="pre">report_table_dropped</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSourceReport.report_table_dropped" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSourceReport.report_table_scanned">
+<span class="sig-name descname"><span class="pre">report_table_scanned</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSourceReport.report_table_scanned" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.GlueSourceReport.tables_scanned">
+<span class="sig-name descname"><span class="pre">tables_scanned</span></span><em class="property"> <span class="pre">=</span> <span class="pre">0</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.GlueSourceReport.tables_scanned" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.glue.get_column_type">
+<span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.aws.glue.</span></span><span class="sig-name descname"><span class="pre">get_column_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">glue_source</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.ingestion.source.aws.glue.GlueSource" title="datahub.ingestion.source.aws.glue.GlueSource"><span class="pre">datahub.ingestion.source.aws.glue.GlueSource</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.SchemaFieldDataTypeClass" title="datahub.metadata.schema_classes.SchemaFieldDataTypeClass"><span class="pre">datahub.metadata.schema_classes.SchemaFieldDataTypeClass</span></a></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/glue.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.glue.get_column_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-datahub.ingestion.source.aws.sagemaker">
+<span id="datahub-ingestion-source-aws-sagemaker-module"></span><h2>datahub.ingestion.source.aws.sagemaker module<a class="headerlink" href="#module-datahub.ingestion.source.aws.sagemaker" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.sagemaker.SagemakerSource">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.aws.sagemaker.</span></span><span class="sig-name descname"><span class="pre">SagemakerSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.source.aws.sagemaker_processors.html#datahub.ingestion.source.aws.sagemaker_processors.common.SagemakerSourceConfig" title="datahub.ingestion.source.aws.sagemaker_processors.common.SagemakerSourceConfig"><span class="pre">datahub.ingestion.source.aws.sagemaker_processors.common.SagemakerSourceConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/sagemaker.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.sagemaker.SagemakerSource" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.source.Source" title="datahub.ingestion.api.source.Source"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.api.source.Source</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.sagemaker.SagemakerSource.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/sagemaker.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.sagemaker.SagemakerSource.close" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.sagemaker.SagemakerSource.create">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/sagemaker.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.sagemaker.SagemakerSource.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.sagemaker.SagemakerSource.get_report">
+<span class="sig-name descname"><span class="pre">get_report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/sagemaker.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.sagemaker.SagemakerSource.get_report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.sagemaker.SagemakerSource.get_workunits">
+<span class="sig-name descname"><span class="pre">get_workunits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.workunit.MetadataWorkUnit" title="datahub.ingestion.api.workunit.MetadataWorkUnit"><span class="pre">datahub.ingestion.api.workunit.MetadataWorkUnit</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/sagemaker.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.sagemaker.SagemakerSource.get_workunits" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.sagemaker.SagemakerSource.report">
+<span class="sig-name descname"><span class="pre">report</span></span><em class="property"> <span class="pre">=</span> <span class="pre">SagemakerSourceReport(workunits_produced=0,</span> <span class="pre">workunit_ids=[],</span> <span class="pre">warnings={},</span> <span class="pre">failures={})</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/sagemaker.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.sagemaker.SagemakerSource.report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.aws.sagemaker.SagemakerSource.source_config">
+<span class="sig-name descname"><span class="pre">source_config</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.ingestion.source.aws.sagemaker_processors.html#datahub.ingestion.source.aws.sagemaker_processors.common.SagemakerSourceConfig" title="datahub.ingestion.source.aws.sagemaker_processors.common.SagemakerSourceConfig"><span class="pre">datahub.ingestion.source.aws.sagemaker_processors.common.SagemakerSourceConfig</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/aws/sagemaker.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.aws.sagemaker.SagemakerSource.source_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.ingestion.source.aws">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datahub.ingestion.source.aws" title="Permalink to this headline"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datahub.ingestion.source.html" class="btn btn-neutral float-left" title="datahub.ingestion.source package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datahub.ingestion.source.aws.sagemaker_processors.html" class="btn btn-neutral float-right" title="datahub.ingestion.source.aws.sagemaker_processors package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, DataHub Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

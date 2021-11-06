@@ -1,0 +1,27 @@
+{
+  "type" : "record",
+  "name" : "SearchParams",
+  "namespace" : "com.linkedin.metadata.recommendation",
+  "doc" : "Context to define the search recommendations",
+  "fields" : [ {
+    "name" : "types",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "Entity types to be searched. If this is not provided, all entities will be searched.",
+    "default" : [ ]
+  }, {
+    "name" : "query",
+    "type" : "string",
+    "doc" : "Search query"
+  }, {
+    "name" : "filters",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.metadata.query.filter.Criterion"
+    },
+    "doc" : "Filters",
+    "default" : [ ]
+  } ]
+}

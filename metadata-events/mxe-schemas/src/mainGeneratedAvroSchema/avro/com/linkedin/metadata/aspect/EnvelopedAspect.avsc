@@ -1,0 +1,49 @@
+{
+  "type" : "record",
+  "name" : "EnvelopedAspect",
+  "namespace" : "com.linkedin.metadata.aspect",
+  "doc" : "Enveloped record for an aspect.\n",
+  "fields" : [ {
+    "name" : "aspect",
+    "type" : {
+      "type" : "record",
+      "name" : "GenericAspect",
+      "namespace" : "com.linkedin.mxe",
+      "doc" : "Generic record structure for serializing an Aspect\n",
+      "fields" : [ {
+        "name" : "value",
+        "type" : "bytes"
+      }, {
+        "name" : "contentType",
+        "type" : "string"
+      } ]
+    }
+  }, {
+    "name" : "systemMetadata",
+    "type" : {
+      "type" : "record",
+      "name" : "SystemMetadata",
+      "namespace" : "com.linkedin.mxe",
+      "doc" : "Kafka event for proposing a metadata change for an entity. A corresponding MetadataAuditEvent is emitted when the change is accepted and committed, otherwise a FailedMetadataChangeEvent will be emitted instead.",
+      "fields" : [ {
+        "name" : "lastObserved",
+        "type" : [ "long", "null" ],
+        "doc" : "The timestamp the metadata was observed at",
+        "default" : 0
+      }, {
+        "name" : "runId",
+        "type" : [ "string", "null" ],
+        "doc" : "The run id that produced the metadata",
+        "default" : "no-run-id-provided"
+      }, {
+        "name" : "properties",
+        "type" : [ "null", {
+          "type" : "map",
+          "values" : "string"
+        } ],
+        "doc" : "Additional properties",
+        "default" : null
+      } ]
+    }
+  } ]
+}

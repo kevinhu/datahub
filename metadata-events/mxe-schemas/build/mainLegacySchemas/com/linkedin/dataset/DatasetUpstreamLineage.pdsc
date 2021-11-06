@@ -1,0 +1,17 @@
+{
+  "type" : "record",
+  "name" : "DatasetUpstreamLineage",
+  "namespace" : "com.linkedin.dataset",
+  "doc" : "Fine Grained upstream lineage for fields in a dataset",
+  "fields" : [ {
+    "name" : "fieldMappings",
+    "type" : {
+      "type" : "array",
+      "items" : "DatasetFieldMapping"
+    },
+    "doc" : "Upstream to downstream field level lineage mappings"
+  } ],
+  "Aspect" : {
+    "name" : "datasetUpstreamLineage"
+  }
+}

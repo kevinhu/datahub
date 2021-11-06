@@ -1,0 +1,34 @@
+{
+  "type" : "record",
+  "name" : "DataFlowEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a DataFlow entity",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn for the DataFlow",
+    "java" : {
+      "class" : "com.linkedin.common.urn.DataFlowUrn"
+    }
+  }, {
+    "name" : "orchestrator",
+    "type" : [ "null", "string" ],
+    "doc" : "Workflow orchestrator ex: Azkaban, Airflow",
+    "default" : null
+  }, {
+    "name" : "flowId",
+    "type" : [ "null", "string" ],
+    "doc" : "Id of the flow",
+    "default" : null
+  }, {
+    "name" : "cluster",
+    "type" : [ "null", "string" ],
+    "doc" : "Cluster of the flow",
+    "default" : null
+  } ]
+}

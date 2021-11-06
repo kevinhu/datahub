@@ -1,0 +1,24 @@
+{
+  "type" : "record",
+  "name" : "SortCriterion",
+  "namespace" : "com.linkedin.metadata.query.filter",
+  "doc" : "Sort order along with the field to sort it on, to be applied to the results.",
+  "fields" : [ {
+    "name" : "field",
+    "type" : "string",
+    "doc" : "The name of the field that sorting has to be applied to"
+  }, {
+    "name" : "order",
+    "type" : {
+      "type" : "enum",
+      "name" : "SortOrder",
+      "doc" : "The order used to sort the results",
+      "symbols" : [ "ASCENDING", "DESCENDING" ],
+      "symbolDocs" : {
+        "ASCENDING" : "If results need to be sorted in ascending order",
+        "DESCENDING" : "If results need to be sorted in descending order"
+      }
+    },
+    "doc" : "The order to sort the results i.e. ASCENDING or DESCENDING"
+  } ]
+}

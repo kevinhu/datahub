@@ -1,0 +1,26 @@
+{
+  "type" : "record",
+  "name" : "Metrics",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "Metrics to be featured for the MLModel.",
+  "fields" : [ {
+    "name" : "performanceMeasures",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "Measures of MLModel performance",
+    "default" : null
+  }, {
+    "name" : "decisionThreshold",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : "Decision Thresholds used (if any)?",
+    "default" : null
+  } ],
+  "Aspect" : {
+    "name" : "mlModelMetrics"
+  }
+}

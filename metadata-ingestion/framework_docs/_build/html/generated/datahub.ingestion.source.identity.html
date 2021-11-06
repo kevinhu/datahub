@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>datahub.ingestion.source.identity package &mdash; DataHub 0.0.0.dev0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="datahub.ingestion.source.metadata package" href="datahub.ingestion.source.metadata.html" />
+    <link rel="prev" title="datahub.ingestion.source.feast_image package" href="datahub.ingestion.source.feast_image.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DataHub
+          </a>
+              <div class="version">
+                0.0.0.dev0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="datahub.emitter.html">Emitters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.metadata.html">Metadata Schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.integrations.html">Integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.cli.html">CLI</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="datahub.ingestion.html">Ingestion</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="datahub.ingestion.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.api.html">datahub.ingestion.api package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.extractor.html">datahub.ingestion.extractor package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.graph.html">datahub.ingestion.graph package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.run.html">datahub.ingestion.run package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.sink.html">datahub.ingestion.sink package</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="datahub.ingestion.source.html">datahub.ingestion.source package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="datahub.ingestion.source.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.datahub_custom_ge_profiler">datahub.ingestion.source.datahub_custom_ge_profiler module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.dbt">datahub.ingestion.source.dbt module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.feast">datahub.ingestion.source.feast module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.file">datahub.ingestion.source.file module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#datahub-ingestion-source-ge-data-profiler-module">datahub.ingestion.source.ge_data_profiler module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.kafka">datahub.ingestion.source.kafka module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#datahub-ingestion-source-kafka-connect-module">datahub.ingestion.source.kafka_connect module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#datahub-ingestion-source-ldap-module">datahub.ingestion.source.ldap module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.looker">datahub.ingestion.source.looker module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.looker_common">datahub.ingestion.source.looker_common module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.lookml">datahub.ingestion.source.lookml module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.metadata_common">datahub.ingestion.source.metadata_common module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#datahub-ingestion-source-mongodb-module">datahub.ingestion.source.mongodb module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.redash">datahub.ingestion.source.redash module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.source_registry">datahub.ingestion.source.source_registry module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source.superset">datahub.ingestion.source.superset module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datahub.ingestion.source.html#module-datahub.ingestion.source">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.transformer.html">datahub.ingestion.transformer package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.ingestion.html#module-datahub.ingestion">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.configuration.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DataHub</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="datahub.ingestion.html">datahub.ingestion package</a> &raquo;</li>
+          <li><a href="datahub.ingestion.source.html">datahub.ingestion.source package</a> &raquo;</li>
+      <li>datahub.ingestion.source.identity package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/datahub.ingestion.source.identity.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="datahub-ingestion-source-identity-package">
+<h1>datahub.ingestion.source.identity package<a class="headerlink" href="#datahub-ingestion-source-identity-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-datahub.ingestion.source.identity.azure_ad">
+<span id="datahub-ingestion-source-identity-azure-ad-module"></span><h2>datahub.ingestion.source.identity.azure_ad module<a class="headerlink" href="#module-datahub.ingestion.source.identity.azure_ad" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.identity.azure_ad.</span></span><span class="sig-name descname"><span class="pre">AzureADConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tenant_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_secret</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">redirect</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">authority</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">azure_ad_response_to_username_attr</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'mail'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">azure_ad_response_to_username_regex</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'([^&#64;]+)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">azure_ad_response_to_groupname_attr</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'displayName'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">azure_ad_response_to_groupname_regex</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'(.*)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingest_users</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingest_groups</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingest_group_membership</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingest_groups_users</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">users_pattern</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.AllowDenyPattern" title="datahub.configuration.common.AllowDenyPattern"><span class="pre">datahub.configuration.common.AllowDenyPattern</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">AllowDenyPattern(allow=['.*'],</span> <span class="pre">deny=[],</span> <span class="pre">ignoreCase=True,</span> <span class="pre">alphabet='[A-Za-z0-9</span> <span class="pre">_.-]')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups_pattern</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.AllowDenyPattern" title="datahub.configuration.common.AllowDenyPattern"><span class="pre">datahub.configuration.common.AllowDenyPattern</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">AllowDenyPattern(allow=['.*'],</span> <span class="pre">deny=[],</span> <span class="pre">ignoreCase=True,</span> <span class="pre">alphabet='[A-Za-z0-9</span> <span class="pre">_.-]')</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.ConfigModel" title="datahub.configuration.common.ConfigModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.ConfigModel</span></code></a></p>
+<p>Config to create a token and connect to Azure AD instance</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.authority">
+<span class="sig-name descname"><span class="pre">authority</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.authority" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.azure_ad_response_to_groupname_attr">
+<span class="sig-name descname"><span class="pre">azure_ad_response_to_groupname_attr</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.azure_ad_response_to_groupname_attr" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.azure_ad_response_to_groupname_regex">
+<span class="sig-name descname"><span class="pre">azure_ad_response_to_groupname_regex</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.azure_ad_response_to_groupname_regex" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.azure_ad_response_to_username_attr">
+<span class="sig-name descname"><span class="pre">azure_ad_response_to_username_attr</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.azure_ad_response_to_username_attr" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.azure_ad_response_to_username_regex">
+<span class="sig-name descname"><span class="pre">azure_ad_response_to_username_regex</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.azure_ad_response_to_username_regex" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.client_id">
+<span class="sig-name descname"><span class="pre">client_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.client_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.client_secret">
+<span class="sig-name descname"><span class="pre">client_secret</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.client_secret" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.graph_url">
+<span class="sig-name descname"><span class="pre">graph_url</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.graph_url" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.groups_pattern">
+<span class="sig-name descname"><span class="pre">groups_pattern</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.AllowDenyPattern" title="datahub.configuration.common.AllowDenyPattern"><span class="pre">datahub.configuration.common.AllowDenyPattern</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.groups_pattern" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.ingest_group_membership">
+<span class="sig-name descname"><span class="pre">ingest_group_membership</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.ingest_group_membership" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.ingest_groups">
+<span class="sig-name descname"><span class="pre">ingest_groups</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.ingest_groups" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.ingest_groups_users">
+<span class="sig-name descname"><span class="pre">ingest_groups_users</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.ingest_groups_users" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.ingest_users">
+<span class="sig-name descname"><span class="pre">ingest_users</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.ingest_users" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.redirect">
+<span class="sig-name descname"><span class="pre">redirect</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.redirect" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.tenant_id">
+<span class="sig-name descname"><span class="pre">tenant_id</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.tenant_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.token_url">
+<span class="sig-name descname"><span class="pre">token_url</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.token_url" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADConfig.users_pattern">
+<span class="sig-name descname"><span class="pre">users_pattern</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.AllowDenyPattern" title="datahub.configuration.common.AllowDenyPattern"><span class="pre">datahub.configuration.common.AllowDenyPattern</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig.users_pattern" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADSource">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.identity.azure_ad.</span></span><span class="sig-name descname"><span class="pre">AzureADSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.ingestion.source.identity.azure_ad.AzureADConfig" title="datahub.ingestion.source.identity.azure_ad.AzureADConfig"><span class="pre">datahub.ingestion.source.identity.azure_ad.AzureADConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADSource" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.source.Source" title="datahub.ingestion.api.source.Source"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.api.source.Source</span></code></a></p>
+<p>Ingest Azure AD Users and Groups into DataHub</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADSource.azure_ad_groups_users">
+<span class="sig-name descname"><span class="pre">azure_ad_groups_users</span></span><em class="property"><span class="pre">:</span> <span class="pre">list</span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADSource.azure_ad_groups_users" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADSource.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADSource.close" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADSource.create">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADSource.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADSource.get_report">
+<span class="sig-name descname"><span class="pre">get_report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.source.SourceReport" title="datahub.ingestion.api.source.SourceReport"><span class="pre">datahub.ingestion.api.source.SourceReport</span></a></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADSource.get_report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADSource.get_token">
+<span class="sig-name descname"><span class="pre">get_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADSource.get_token" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADSource.get_workunits">
+<span class="sig-name descname"><span class="pre">get_workunits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.workunit.MetadataWorkUnit" title="datahub.ingestion.api.workunit.MetadataWorkUnit"><span class="pre">datahub.ingestion.api.workunit.MetadataWorkUnit</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADSource.get_workunits" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADSource.ingest_ad_users">
+<span class="sig-name descname"><span class="pre">ingest_ad_users</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datahub_corp_user_snapshots</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.CorpUserSnapshotClass" title="datahub.metadata.schema_classes.CorpUserSnapshotClass"><span class="pre">datahub.metadata.schema_classes.CorpUserSnapshotClass</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datahub_corp_user_urn_to_group_membership</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.workunit.MetadataWorkUnit" title="datahub.ingestion.api.workunit.MetadataWorkUnit"><span class="pre">datahub.ingestion.api.workunit.MetadataWorkUnit</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADSource.ingest_ad_users" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADSource.selected_azure_ad_groups">
+<span class="sig-name descname"><span class="pre">selected_azure_ad_groups</span></span><em class="property"><span class="pre">:</span> <span class="pre">list</span></em><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADSource.selected_azure_ad_groups" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADSourceReport">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.identity.azure_ad.</span></span><span class="sig-name descname"><span class="pre">AzureADSourceReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">workunits_produced:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></em>, <em class="sig-param"><span class="pre">workunit_ids:</span> <span class="pre">List[str]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">warnings:</span> <span class="pre">Dict[str</span></em>, <em class="sig-param"><span class="pre">List[str]]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">failures:</span> <span class="pre">Dict[str</span></em>, <em class="sig-param"><span class="pre">List[str]]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">filtered:</span> <span class="pre">List[str]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADSourceReport" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.source.SourceReport" title="datahub.ingestion.api.source.SourceReport"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.api.source.SourceReport</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADSourceReport.filtered">
+<span class="sig-name descname"><span class="pre">filtered</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADSourceReport.filtered" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.azure_ad.AzureADSourceReport.report_filtered">
+<span class="sig-name descname"><span class="pre">report_filtered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/azure_ad.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.azure_ad.AzureADSourceReport.report_filtered" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.ingestion.source.identity.okta">
+<span id="datahub-ingestion-source-identity-okta-module"></span><h2>datahub.ingestion.source.identity.okta module<a class="headerlink" href="#module-datahub.ingestion.source.identity.okta" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.identity.okta.</span></span><span class="sig-name descname"><span class="pre">OktaConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingest_users</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingest_groups</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingest_group_membership</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">okta_profile_to_username_attr</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'login'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">okta_profile_to_username_regex</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'([^&#64;]+)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">okta_profile_to_group_name_attr</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'name'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">okta_profile_to_group_name_regex</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'(.*)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">okta_domain</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'dev-44231988.okta.com'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">okta_api_token</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'00be4R_M2MzDqXawbWgfKGpKee0kuEOfX1RCQSRx00'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_deprovisioned_users</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_suspended_users</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">page_size</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay_seconds</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">0.01</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.configuration.html#datahub.configuration.common.ConfigModel" title="datahub.configuration.common.ConfigModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.ConfigModel</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaConfig.ingest_group_membership">
+<span class="sig-name descname"><span class="pre">ingest_group_membership</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaConfig.ingest_group_membership" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaConfig.ingest_groups">
+<span class="sig-name descname"><span class="pre">ingest_groups</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaConfig.ingest_groups" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaConfig.ingest_users">
+<span class="sig-name descname"><span class="pre">ingest_users</span></span><em class="property"><span class="pre">:</span> <span class="pre">bool</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaConfig.ingest_users" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaConfig.okta_profile_to_group_name_attr">
+<span class="sig-name descname"><span class="pre">okta_profile_to_group_name_attr</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaConfig.okta_profile_to_group_name_attr" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaConfig.okta_profile_to_group_name_regex">
+<span class="sig-name descname"><span class="pre">okta_profile_to_group_name_regex</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaConfig.okta_profile_to_group_name_regex" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaConfig.okta_profile_to_username_attr">
+<span class="sig-name descname"><span class="pre">okta_profile_to_username_attr</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaConfig.okta_profile_to_username_attr" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaConfig.okta_profile_to_username_regex">
+<span class="sig-name descname"><span class="pre">okta_profile_to_username_regex</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaConfig.okta_profile_to_username_regex" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaSource">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.identity.okta.</span></span><span class="sig-name descname"><span class="pre">OktaSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.ingestion.source.identity.okta.OktaConfig" title="datahub.ingestion.source.identity.okta.OktaConfig"><span class="pre">datahub.ingestion.source.identity.okta.OktaConfig</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaSource" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.source.Source" title="datahub.ingestion.api.source.Source"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.api.source.Source</span></code></a></p>
+<p>Ingest Okta Users &amp; Groups into Datahub</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaSource.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaSource.close" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaSource.create">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaSource.create" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaSource.ctx">
+<span class="sig-name descname"><span class="pre">ctx</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaSource.ctx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaSource.get_report">
+<span class="sig-name descname"><span class="pre">get_report</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaSource.get_report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaSource.get_workunits">
+<span class="sig-name descname"><span class="pre">get_workunits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.workunit.MetadataWorkUnit" title="datahub.ingestion.api.workunit.MetadataWorkUnit"><span class="pre">datahub.ingestion.api.workunit.MetadataWorkUnit</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaSource.get_workunits" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaSourceReport">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.source.identity.okta.</span></span><span class="sig-name descname"><span class="pre">OktaSourceReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">workunits_produced:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></em>, <em class="sig-param"><span class="pre">workunit_ids:</span> <span class="pre">List[str]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">warnings:</span> <span class="pre">Dict[str</span></em>, <em class="sig-param"><span class="pre">List[str]]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">failures:</span> <span class="pre">Dict[str</span></em>, <em class="sig-param"><span class="pre">List[str]]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em>, <em class="sig-param"><span class="pre">filtered:</span> <span class="pre">List[str]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaSourceReport" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.source.SourceReport" title="datahub.ingestion.api.source.SourceReport"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.api.source.SourceReport</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaSourceReport.filtered">
+<span class="sig-name descname"><span class="pre">filtered</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaSourceReport.filtered" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.source.identity.okta.OktaSourceReport.report_filtered">
+<span class="sig-name descname"><span class="pre">report_filtered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/source/identity/okta.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.source.identity.okta.OktaSourceReport.report_filtered" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.ingestion.source.identity">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datahub.ingestion.source.identity" title="Permalink to this headline"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datahub.ingestion.source.feast_image.html" class="btn btn-neutral float-left" title="datahub.ingestion.source.feast_image package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datahub.ingestion.source.metadata.html" class="btn btn-neutral float-right" title="datahub.ingestion.source.metadata package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, DataHub Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

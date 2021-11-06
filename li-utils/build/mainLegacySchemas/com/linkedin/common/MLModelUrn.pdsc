@@ -1,0 +1,37 @@
+{
+  "type" : "typeref",
+  "name" : "MLModelUrn",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Standardized MLModel identifier.",
+  "ref" : "string",
+  "java" : {
+    "class" : "com.linkedin.common.urn.MLModelUrn"
+  },
+  "validate" : {
+    "com.linkedin.common.validator.TypedUrnValidator" : {
+      "accessible" : true,
+      "constructable" : true,
+      "doc" : "Standardized model identifier.",
+      "entityType" : "mlModel",
+      "fields" : [ {
+        "doc" : "Standardized platform urn for the MLModel.",
+        "name" : "platform",
+        "type" : "com.linkedin.common.urn.DataPlatformUrn"
+      }, {
+        "doc" : "Name of the MLModel",
+        "maxLength" : 210,
+        "name" : "mlModelName",
+        "type" : "string"
+      }, {
+        "doc" : "Fabric type where model belongs to or where it was generated.",
+        "name" : "origin",
+        "type" : "com.linkedin.common.FabricType"
+      } ],
+      "maxLength" : 284,
+      "name" : "MlModel",
+      "namespace" : "li",
+      "owners" : [ "urn:li:corpuser:fbar", "urn:li:corpuser:bfoo" ],
+      "owningTeam" : "urn:li:internalTeam:datahub"
+    }
+  }
+}

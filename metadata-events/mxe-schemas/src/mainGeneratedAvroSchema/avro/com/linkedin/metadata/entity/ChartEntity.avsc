@@ -1,0 +1,29 @@
+{
+  "type" : "record",
+  "name" : "ChartEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a Chart entity",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn for the chart",
+    "java" : {
+      "class" : "com.linkedin.common.urn.ChartUrn"
+    }
+  }, {
+    "name" : "dashboardTool",
+    "type" : [ "null", "string" ],
+    "doc" : "Dashboard tool",
+    "default" : null
+  }, {
+    "name" : "chartId",
+    "type" : [ "null", "string" ],
+    "doc" : "Chart Id",
+    "default" : null
+  } ]
+}

@@ -1,0 +1,18 @@
+{
+  "type" : "record",
+  "name" : "RollbackResponse",
+  "namespace" : "com.linkedin.metadata.run",
+  "fields" : [ {
+    "name" : "aspectRowSummaries",
+    "type" : {
+      "type" : "array",
+      "items" : "AspectRowSummary"
+    }
+  }, {
+    "name" : "entitiesAffected",
+    "type" : "long"
+  }, {
+    "name" : "aspectsAffected",
+    "type" : "long"
+  } ]
+}

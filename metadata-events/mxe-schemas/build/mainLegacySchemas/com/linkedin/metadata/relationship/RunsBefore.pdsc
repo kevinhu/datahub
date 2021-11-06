@@ -1,0 +1,12 @@
+{
+  "type" : "record",
+  "name" : "RunsBefore",
+  "namespace" : "com.linkedin.metadata.relationship",
+  "doc" : "A generic model for the",
+  "include" : [ "BaseRelationship" ],
+  "fields" : [ ],
+  "pairings" : [ {
+    "destination" : "com.linkedin.common.urn.DataJobUrn",
+    "source" : "com.linkedin.common.urn.DataJobUrn"
+  } ]
+}

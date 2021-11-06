@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "ResultsType",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "A union of all supported metadata aspects for ResultsType",
+  "ref" : [ "string" ]
+}

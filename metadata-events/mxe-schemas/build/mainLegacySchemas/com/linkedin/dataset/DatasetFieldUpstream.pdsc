@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "DatasetFieldUpstream",
+  "namespace" : "com.linkedin.dataset",
+  "doc" : "Upstreams of a dataset field.",
+  "ref" : [ "com.linkedin.common.DatasetFieldUrn" ]
+}

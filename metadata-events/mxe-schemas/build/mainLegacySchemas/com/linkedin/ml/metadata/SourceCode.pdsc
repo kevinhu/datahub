@@ -1,0 +1,17 @@
+{
+  "type" : "record",
+  "name" : "SourceCode",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "Source Code",
+  "fields" : [ {
+    "name" : "sourceCode",
+    "type" : {
+      "type" : "array",
+      "items" : "SourceCodeUrl"
+    },
+    "doc" : "Source Code along with types"
+  } ],
+  "Aspect" : {
+    "name" : "sourceCode"
+  }
+}

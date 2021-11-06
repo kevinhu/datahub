@@ -1,0 +1,13 @@
+{
+  "type" : "record",
+  "name" : "EnvelopedAspect",
+  "namespace" : "com.linkedin.metadata.aspect",
+  "doc" : "Enveloped record for an aspect.\n",
+  "fields" : [ {
+    "name" : "aspect",
+    "type" : "com.linkedin.mxe.GenericAspect"
+  }, {
+    "name" : "systemMetadata",
+    "type" : "com.linkedin.mxe.SystemMetadata"
+  } ]
+}

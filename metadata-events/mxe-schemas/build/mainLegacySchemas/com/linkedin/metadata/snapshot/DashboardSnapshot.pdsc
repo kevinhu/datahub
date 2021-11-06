@@ -1,0 +1,22 @@
+{
+  "type" : "record",
+  "name" : "DashboardSnapshot",
+  "namespace" : "com.linkedin.metadata.snapshot",
+  "doc" : "A metadata snapshot for a specific Dashboard entity.",
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.DashboardUrn",
+    "doc" : "URN for the entity the metadata snapshot is associated with."
+  }, {
+    "name" : "aspects",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.metadata.aspect.DashboardAspect"
+    },
+    "doc" : "The list of metadata aspects associated with the dashboard. Depending on the use case, this can either be all, or a selection, of supported aspects."
+  } ],
+  "Entity" : {
+    "keyAspect" : "dashboardKey",
+    "name" : "dashboard"
+  }
+}

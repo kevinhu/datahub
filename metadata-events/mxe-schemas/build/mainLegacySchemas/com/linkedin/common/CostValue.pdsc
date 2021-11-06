@@ -1,0 +1,13 @@
+{
+  "type" : "typeref",
+  "name" : "CostValue",
+  "namespace" : "com.linkedin.common",
+  "doc" : "A union of all supported Cost Value types",
+  "ref" : [ {
+    "alias" : "costId",
+    "type" : "double"
+  }, {
+    "alias" : "costCode",
+    "type" : "string"
+  } ]
+}

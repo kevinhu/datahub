@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "SchemaFieldPath",
+  "namespace" : "com.linkedin.dataset",
+  "doc" : "Schema field path. TODO: Add formal documentation on normalization rules.",
+  "ref" : "string"
+}

@@ -1,0 +1,63 @@
+{
+  "type" : "record",
+  "name" : "DataFlowDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for DataFlow entity search",
+  "include" : [ "BaseDocument" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.DataFlowUrn",
+    "doc" : "Urn for the DataFlow"
+  }, {
+    "name" : "flowId",
+    "type" : "string",
+    "doc" : "Id of the flow",
+    "optional" : true
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Name of the flow",
+    "optional" : true
+  }, {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Description of the flow",
+    "optional" : true
+  }, {
+    "name" : "orchestrator",
+    "type" : "string",
+    "doc" : "Workflow orchestrator ex: Azkaban, Airflow",
+    "optional" : true
+  }, {
+    "name" : "cluster",
+    "type" : "string",
+    "doc" : "Cluster of the flow",
+    "optional" : true
+  }, {
+    "name" : "project",
+    "type" : "string",
+    "doc" : "Project of the flow",
+    "optional" : true
+  }, {
+    "name" : "owners",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "LDAP usernames of corp users who are the owners of this flow",
+    "optional" : true
+  }, {
+    "name" : "hasOwners",
+    "type" : "boolean",
+    "doc" : "Flag to indicate if the flow has non empty corp users as owners or not.",
+    "optional" : true
+  }, {
+    "name" : "tags",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "List of tags for this dataset",
+    "optional" : true
+  } ]
+}

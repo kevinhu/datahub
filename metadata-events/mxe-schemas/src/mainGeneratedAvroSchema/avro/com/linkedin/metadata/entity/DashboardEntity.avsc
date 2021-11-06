@@ -1,0 +1,29 @@
+{
+  "type" : "record",
+  "name" : "DashboardEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a Dashboard entity",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn for the dashboard",
+    "java" : {
+      "class" : "com.linkedin.common.urn.DashboardUrn"
+    }
+  }, {
+    "name" : "dashboardTool",
+    "type" : [ "null", "string" ],
+    "doc" : "Dashboard tool",
+    "default" : null
+  }, {
+    "name" : "dashboardId",
+    "type" : [ "null", "string" ],
+    "doc" : "Dashboard Id",
+    "default" : null
+  } ]
+}

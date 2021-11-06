@@ -1,0 +1,28 @@
+{
+  "type" : "typeref",
+  "name" : "GlossaryTermUrn",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Business Term",
+  "ref" : "string",
+  "java" : {
+    "class" : "com.linkedin.common.urn.GlossaryTermUrn"
+  },
+  "validate" : {
+    "com.linkedin.common.validator.TypedUrnValidator" : {
+      "accessible" : true,
+      "constructable" : true,
+      "doc" : "business term",
+      "entityType" : "glossaryTerm",
+      "fields" : [ {
+        "doc" : "The name of business term with hierarchy.",
+        "name" : "name",
+        "type" : "string"
+      } ],
+      "maxLength" : 56,
+      "name" : "GlossaryTerm",
+      "namespace" : "li",
+      "owners" : [ "urn:li:corpuser:fbar", "urn:li:corpuser:bfoo" ],
+      "owningTeam" : "urn:li:internalTeam:datahub"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type" : "record",
+  "name" : "DataJobEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a DataJob entity",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn for the DataJob",
+    "java" : {
+      "class" : "com.linkedin.common.urn.DataJobUrn"
+    }
+  }, {
+    "name" : "flow",
+    "type" : [ "null", "string" ],
+    "doc" : "Urn of the associated DataFlow",
+    "default" : null,
+    "java" : {
+      "class" : "com.linkedin.common.urn.DataFlowUrn"
+    }
+  }, {
+    "name" : "jobId",
+    "type" : [ "null", "string" ],
+    "doc" : "Id of the job",
+    "default" : null
+  } ]
+}

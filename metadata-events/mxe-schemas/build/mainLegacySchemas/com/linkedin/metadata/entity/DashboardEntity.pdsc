@@ -1,0 +1,22 @@
+{
+  "type" : "record",
+  "name" : "DashboardEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a Dashboard entity",
+  "include" : [ "BaseEntity" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.DashboardUrn",
+    "doc" : "Urn for the dashboard"
+  }, {
+    "name" : "dashboardTool",
+    "type" : "string",
+    "doc" : "Dashboard tool",
+    "optional" : true
+  }, {
+    "name" : "dashboardId",
+    "type" : "string",
+    "doc" : "Dashboard Id",
+    "optional" : true
+  } ]
+}

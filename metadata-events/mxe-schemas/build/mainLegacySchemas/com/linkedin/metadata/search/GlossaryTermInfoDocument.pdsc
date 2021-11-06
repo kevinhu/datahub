@@ -1,0 +1,40 @@
+{
+  "type" : "record",
+  "name" : "GlossaryTermInfoDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for GlossaryTermInfo entity search",
+  "include" : [ "BaseDocument" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.GlossaryTermUrn",
+    "doc" : "Urn for the GlossaryTerm."
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Name of business term",
+    "optional" : true
+  }, {
+    "name" : "definition",
+    "type" : "string",
+    "doc" : "Definition of business term",
+    "optional" : true
+  }, {
+    "name" : "owners",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "LDAP usernames of corp users who are the owners of this dataset",
+    "optional" : true
+  }, {
+    "name" : "termSource",
+    "type" : "string",
+    "doc" : "Source of the Business Term (INTERNAL or EXTERNAL) with default value as INTERNAL",
+    "optional" : true
+  }, {
+    "name" : "sourceRef",
+    "type" : "string",
+    "doc" : "External Reference to the business-term (URL)",
+    "optional" : true
+  } ]
+}

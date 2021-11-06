@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>datahub.utilities package &mdash; DataHub 0.0.0.dev0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DataHub
+          </a>
+              <div class="version">
+                0.0.0.dev0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="datahub.emitter.html">Emitters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.metadata.html">Metadata Schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.integrations.html">Integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.ingestion.html">Ingestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.configuration.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DataHub</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>datahub.utilities package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/datahub.utilities.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="datahub-utilities-package">
+<h1>datahub.utilities package<a class="headerlink" href="#datahub-utilities-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-datahub.utilities.config_clean">
+<span id="datahub-utilities-config-clean-module"></span><h2>datahub.utilities.config_clean module<a class="headerlink" href="#module-datahub.utilities.config_clean" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.utilities.config_clean.remove_trailing_slashes">
+<span class="sig-prename descclassname"><span class="pre">datahub.utilities.config_clean.</span></span><span class="sig-name descname"><span class="pre">remove_trailing_slashes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/config_clean.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.config_clean.remove_trailing_slashes" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-datahub.utilities.delayed_iter">
+<span id="datahub-utilities-delayed-iter-module"></span><h2>datahub.utilities.delayed_iter module<a class="headerlink" href="#module-datahub.utilities.delayed_iter" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.utilities.delayed_iter.delayed_iter">
+<span class="sig-prename descclassname"><span class="pre">datahub.utilities.delayed_iter.</span></span><span class="sig-name descname"><span class="pre">delayed_iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">datahub.utilities.delayed_iter.T</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delay</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">datahub.utilities.delayed_iter.T</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/delayed_iter.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.delayed_iter.delayed_iter" title="Permalink to this definition"></a></dt>
+<dd><p>Waits to yield the i’th element until after the (i+n)’th element has been
+materialized by the source iterator. If delay is none, wait until the full
+iterable has been materialized before yielding.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.utilities.groupby">
+<span id="datahub-utilities-groupby-module"></span><h2>datahub.utilities.groupby module<a class="headerlink" href="#module-datahub.utilities.groupby" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.utilities.groupby.groupby_unsorted">
+<span class="sig-prename descclassname"><span class="pre">datahub.utilities.groupby.</span></span><span class="sig-name descname"><span class="pre">groupby_unsorted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">datahub.utilities.groupby.T</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">datahub.utilities.groupby.T</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">datahub.utilities.groupby.K</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">datahub.utilities.groupby.K</span><span class="p"><span class="pre">,</span> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">datahub.utilities.groupby.T</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/groupby.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.groupby.groupby_unsorted" title="Permalink to this definition"></a></dt>
+<dd><p>The default itertools.groupby() requires that the iterable is already sorted by the key.
+This method is similar to groupby() but without the pre-sorted requirement.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.utilities.perf_timer">
+<span id="datahub-utilities-perf-timer-module"></span><h2>datahub.utilities.perf_timer module<a class="headerlink" href="#module-datahub.utilities.perf_timer" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.utilities.perf_timer.PerfTimer">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.utilities.perf_timer.</span></span><span class="sig-name descname"><span class="pre">PerfTimer</span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/perf_timer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.perf_timer.PerfTimer" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">contextlib.AbstractContextManager</span></code></p>
+<p>A context manager that gives easy access to elapsed time for performance measurement.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.utilities.perf_timer.PerfTimer.elapsed_seconds">
+<span class="sig-name descname"><span class="pre">elapsed_seconds</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/perf_timer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.perf_timer.PerfTimer.elapsed_seconds" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the elapsed time in seconds.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.utilities.perf_timer.PerfTimer.end_time">
+<span class="sig-name descname"><span class="pre">end_time</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/perf_timer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.perf_timer.PerfTimer.end_time" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.utilities.perf_timer.PerfTimer.finish">
+<span class="sig-name descname"><span class="pre">finish</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/perf_timer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.perf_timer.PerfTimer.finish" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.utilities.perf_timer.PerfTimer.start">
+<span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/perf_timer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.perf_timer.PerfTimer.start" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.utilities.perf_timer.PerfTimer.start_time">
+<span class="sig-name descname"><span class="pre">start_time</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/perf_timer.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.perf_timer.PerfTimer.start_time" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.utilities.sql_parser">
+<span id="datahub-utilities-sql-parser-module"></span><h2>datahub.utilities.sql_parser module<a class="headerlink" href="#module-datahub.utilities.sql_parser" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.utilities.sql_parser.DefaultSQLParser">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.utilities.sql_parser.</span></span><span class="sig-name descname"><span class="pre">DefaultSQLParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql_query</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/sql_parser.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.sql_parser.DefaultSQLParser" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datahub.utilities.sql_parser.SQLParser" title="datahub.utilities.sql_parser.SQLParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.utilities.sql_parser.SQLParser</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.utilities.sql_parser.DefaultSQLParser.get_columns">
+<span class="sig-name descname"><span class="pre">get_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/sql_parser.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.sql_parser.DefaultSQLParser.get_columns" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.utilities.sql_parser.DefaultSQLParser.get_tables">
+<span class="sig-name descname"><span class="pre">get_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/sql_parser.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.sql_parser.DefaultSQLParser.get_tables" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.utilities.sql_parser.SQLParser">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.utilities.sql_parser.</span></span><span class="sig-name descname"><span class="pre">SQLParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sql_query</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/sql_parser.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.sql_parser.SQLParser" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.utilities.sql_parser.SQLParser.get_columns">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">get_columns</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/sql_parser.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.sql_parser.SQLParser.get_columns" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.utilities.sql_parser.SQLParser.get_tables">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">get_tables</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/utilities/sql_parser.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.utilities.sql_parser.SQLParser.get_tables" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.utilities">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datahub.utilities" title="Permalink to this headline"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, DataHub Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

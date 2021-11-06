@@ -1,0 +1,47 @@
+{
+  "type" : "record",
+  "name" : "DataHubPolicyInfo",
+  "namespace" : "com.linkedin.policy",
+  "doc" : "Information about a DataHub (UI) access policy.",
+  "fields" : [ {
+    "name" : "displayName",
+    "type" : "string",
+    "doc" : "Display name of the Policy"
+  }, {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Description of the Policy"
+  }, {
+    "name" : "type",
+    "type" : "string",
+    "doc" : "The type of policy"
+  }, {
+    "name" : "state",
+    "type" : "string",
+    "doc" : "The state of policy, ACTIVE or INACTIVE"
+  }, {
+    "name" : "resources",
+    "type" : "DataHubResourceFilter",
+    "doc" : "The resource that the policy applies to. Not required for some 'Platform' privileges.",
+    "optional" : true
+  }, {
+    "name" : "privileges",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "The privileges that the policy grants."
+  }, {
+    "name" : "actors",
+    "type" : "DataHubActorFilter",
+    "doc" : "The actors that the policy applies to."
+  }, {
+    "name" : "editable",
+    "type" : "boolean",
+    "doc" : "Whether the policy should be editable via the UI",
+    "default" : true
+  } ],
+  "Aspect" : {
+    "name" : "dataHubPolicyInfo"
+  }
+}

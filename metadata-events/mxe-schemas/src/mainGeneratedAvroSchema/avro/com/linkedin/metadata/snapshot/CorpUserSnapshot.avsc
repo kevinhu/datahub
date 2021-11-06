@@ -1,0 +1,307 @@
+{
+  "type" : "record",
+  "name" : "CorpUserSnapshot",
+  "namespace" : "com.linkedin.metadata.snapshot",
+  "doc" : "A metadata snapshot for a specific CorpUser entity.",
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "URN for the entity the metadata snapshot is associated with.",
+    "java" : {
+      "class" : "com.linkedin.common.urn.CorpuserUrn"
+    }
+  }, {
+    "name" : "aspects",
+    "type" : {
+      "type" : "array",
+      "items" : [ {
+        "type" : "record",
+        "name" : "CorpUserKey",
+        "namespace" : "com.linkedin.metadata.key",
+        "doc" : "Key for a CorpUser",
+        "fields" : [ {
+          "name" : "username",
+          "type" : "string",
+          "doc" : "The name of the AD/LDAP user.",
+          "Searchable" : {
+            "boostScore" : 2.0,
+            "enableAutocomplete" : true,
+            "fieldName" : "ldap",
+            "fieldType" : "TEXT_PARTIAL"
+          }
+        } ],
+        "Aspect" : {
+          "name" : "corpUserKey"
+        }
+      }, {
+        "type" : "record",
+        "name" : "CorpUserInfo",
+        "namespace" : "com.linkedin.identity",
+        "doc" : "Linkedin corp user information",
+        "fields" : [ {
+          "name" : "active",
+          "type" : "boolean",
+          "doc" : "Deprecated! Use CorpUserStatus instead. Whether the corpUser is active, ref: https://iwww.corp.linkedin.com/wiki/cf/display/GTSD/Accessing+Active+Directory+via+LDAP+tools",
+          "Searchable" : {
+            "fieldType" : "BOOLEAN",
+            "weightsPerFieldValue" : {
+              "true" : 2.0
+            }
+          }
+        }, {
+          "name" : "displayName",
+          "type" : [ "null", "string" ],
+          "doc" : "displayName of this user ,  e.g.  Hang Zhang(DataHQ)",
+          "default" : null
+        }, {
+          "name" : "email",
+          "type" : [ "null", "string" ],
+          "doc" : "email address of this user",
+          "default" : null,
+          "Searchable" : {
+            "fieldType" : "KEYWORD",
+            "queryByDefault" : true
+          }
+        }, {
+          "name" : "title",
+          "type" : [ "null", "string" ],
+          "doc" : "title of this user",
+          "default" : null,
+          "Searchable" : {
+            "fieldType" : "KEYWORD",
+            "queryByDefault" : true
+          }
+        }, {
+          "name" : "managerUrn",
+          "type" : [ "null", "string" ],
+          "doc" : "direct manager of this user",
+          "default" : null,
+          "Relationship" : {
+            "entityTypes" : [ "corpUser" ],
+            "name" : "ReportsTo"
+          },
+          "Searchable" : {
+            "fieldName" : "managerLdap",
+            "fieldType" : "URN",
+            "queryByDefault" : true
+          },
+          "java" : {
+            "class" : "com.linkedin.common.urn.CorpuserUrn"
+          }
+        }, {
+          "name" : "departmentId",
+          "type" : [ "null", "long" ],
+          "doc" : "department id this user belong to",
+          "default" : null
+        }, {
+          "name" : "departmentName",
+          "type" : [ "null", "string" ],
+          "doc" : "department name this user belong to",
+          "default" : null
+        }, {
+          "name" : "firstName",
+          "type" : [ "null", "string" ],
+          "doc" : "first name of this user",
+          "default" : null
+        }, {
+          "name" : "lastName",
+          "type" : [ "null", "string" ],
+          "doc" : "last name of this user",
+          "default" : null
+        }, {
+          "name" : "fullName",
+          "type" : [ "null", "string" ],
+          "doc" : "Common name of this user, format is firstName + lastName (split by a whitespace)",
+          "default" : null,
+          "Searchable" : {
+            "boostScore" : 10.0,
+            "fieldType" : "TEXT_PARTIAL",
+            "queryByDefault" : true
+          }
+        }, {
+          "name" : "countryCode",
+          "type" : [ "null", "string" ],
+          "doc" : "two uppercase letters country code. e.g.  US",
+          "default" : null
+        } ],
+        "Aspect" : {
+          "EntityUrns" : [ "com.linkedin.common.CorpuserUrn" ],
+          "name" : "corpUserInfo"
+        }
+      }, {
+        "type" : "record",
+        "name" : "CorpUserEditableInfo",
+        "namespace" : "com.linkedin.identity",
+        "doc" : "Linkedin corp user information that can be edited from UI",
+        "fields" : [ {
+          "name" : "aboutMe",
+          "type" : [ "null", "string" ],
+          "doc" : "About me section of the user",
+          "default" : null
+        }, {
+          "name" : "teams",
+          "type" : {
+            "type" : "array",
+            "items" : "string"
+          },
+          "doc" : "Teams that the user belongs to e.g. Metadata",
+          "default" : [ ],
+          "Searchable" : {
+            "/*" : {
+              "fieldType" : "TEXT"
+            }
+          }
+        }, {
+          "name" : "skills",
+          "type" : {
+            "type" : "array",
+            "items" : "string"
+          },
+          "doc" : "Skills that the user possesses e.g. Machine Learning",
+          "default" : [ ],
+          "Searchable" : {
+            "/*" : {
+              "fieldType" : "TEXT"
+            }
+          }
+        }, {
+          "name" : "pictureLink",
+          "type" : "string",
+          "doc" : "A URL which points to a picture which user wants to set as a profile photo",
+          "default" : "https://raw.githubusercontent.com/linkedin/datahub/master/datahub-web-react/src/images/default_avatar.png",
+          "java" : {
+            "class" : "com.linkedin.common.url.Url",
+            "coercerClass" : "com.linkedin.common.url.UrlCoercer"
+          }
+        } ],
+        "Aspect" : {
+          "EntityUrns" : [ "com.linkedin.common.CorpuserUrn" ],
+          "name" : "corpUserEditableInfo"
+        }
+      }, {
+        "type" : "record",
+        "name" : "CorpUserStatus",
+        "namespace" : "com.linkedin.identity",
+        "doc" : "The status of the user, e.g. provisioned, active, suspended, etc.",
+        "fields" : [ {
+          "name" : "status",
+          "type" : "string",
+          "doc" : "Status of the user, e.g. PROVISIONED / ACTIVE / SUSPENDED",
+          "Searchable" : {
+            "fieldType" : "KEYWORD"
+          }
+        }, {
+          "name" : "lastModified",
+          "type" : {
+            "type" : "record",
+            "name" : "AuditStamp",
+            "namespace" : "com.linkedin.common",
+            "doc" : "Data captured on a resource/association/sub-resource level giving insight into when that resource/association/sub-resource moved into a particular lifecycle stage, and who acted to move it into that specific lifecycle stage.",
+            "fields" : [ {
+              "name" : "time",
+              "type" : "long",
+              "doc" : "When did the resource/association/sub-resource move into the specific lifecycle stage represented by this AuditEvent."
+            }, {
+              "name" : "actor",
+              "type" : "string",
+              "doc" : "The entity (e.g. a member URN) which will be credited for moving the resource/association/sub-resource into the specific lifecycle stage. It is also the one used to authorize the change.",
+              "java" : {
+                "class" : "com.linkedin.common.urn.Urn"
+              }
+            }, {
+              "name" : "impersonator",
+              "type" : [ "null", "string" ],
+              "doc" : "The entity (e.g. a service URN) which performs the change on behalf of the Actor and must be authorized to act as the Actor.",
+              "default" : null,
+              "java" : {
+                "class" : "com.linkedin.common.urn.Urn"
+              }
+            } ]
+          },
+          "doc" : "Audit stamp containing who last modified the status and when."
+        } ],
+        "Aspect" : {
+          "name" : "corpUserStatus"
+        }
+      }, {
+        "type" : "record",
+        "name" : "GroupMembership",
+        "namespace" : "com.linkedin.identity",
+        "doc" : "Carries information about the CorpGroups a user is in.",
+        "fields" : [ {
+          "name" : "groups",
+          "type" : {
+            "type" : "array",
+            "items" : "string"
+          },
+          "Relationship" : {
+            "/*" : {
+              "entityTypes" : [ "corpGroup" ],
+              "name" : "IsMemberOfGroup"
+            }
+          }
+        } ],
+        "Aspect" : {
+          "name" : "groupMembership"
+        }
+      }, {
+        "type" : "record",
+        "name" : "GlobalTags",
+        "namespace" : "com.linkedin.common",
+        "doc" : "Tag aspect used for applying tags to an entity",
+        "fields" : [ {
+          "name" : "tags",
+          "type" : {
+            "type" : "array",
+            "items" : {
+              "type" : "record",
+              "name" : "TagAssociation",
+              "doc" : "Properties of an applied tag. For now, just an Urn. In the future we can extend this with other properties, e.g.\npropagation parameters.",
+              "fields" : [ {
+                "name" : "tag",
+                "type" : "string",
+                "doc" : "Urn of the applied tag",
+                "Searchable" : {
+                  "addToFilters" : true,
+                  "fieldName" : "tags",
+                  "fieldType" : "URN_PARTIAL",
+                  "filterNameOverride" : "Tag",
+                  "hasValuesFieldName" : "hasTags"
+                },
+                "java" : {
+                  "class" : "com.linkedin.common.urn.TagUrn"
+                }
+              } ]
+            }
+          },
+          "doc" : "Tags associated with a given entity"
+        } ],
+        "Aspect" : {
+          "name" : "globalTags"
+        }
+      }, {
+        "type" : "record",
+        "name" : "Status",
+        "namespace" : "com.linkedin.common",
+        "doc" : "The status metadata of an entity, e.g. dataset, metric, feature, etc.\nThis aspect is used to represent soft deletes conventionally.",
+        "fields" : [ {
+          "name" : "removed",
+          "type" : "boolean",
+          "doc" : "whether the entity is removed or not",
+          "default" : false,
+          "Searchable" : {
+            "fieldType" : "BOOLEAN"
+          }
+        } ],
+        "Aspect" : {
+          "name" : "status"
+        }
+      } ]
+    },
+    "doc" : "The list of metadata aspects associated with the CorpUser. Depending on the use case, this can either be all, or a selection, of supported aspects."
+  } ],
+  "Entity" : {
+    "keyAspect" : "corpUserKey",
+    "name" : "corpuser"
+  }
+}

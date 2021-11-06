@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>datahub.metadata.schemas package &mdash; DataHub 0.0.0.dev0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="datahub.integrations package" href="datahub.integrations.html" />
+    <link rel="prev" title="datahub.metadata.com.linkedin.pegasus2avro.usage package" href="datahub.metadata.com.linkedin.pegasus2avro.usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DataHub
+          </a>
+              <div class="version">
+                0.0.0.dev0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="datahub.emitter.html">Emitters</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="datahub.metadata.html">Metadata Schemas</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="datahub.metadata.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="datahub.metadata.com.html">datahub.metadata.com package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">datahub.metadata.schemas package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#module-datahub.metadata.schemas">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.metadata.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.metadata.html#module-datahub.metadata.schema_classes">datahub.metadata.schema_classes module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.metadata.html#module-datahub.metadata">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.integrations.html">Integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.ingestion.html">Ingestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.configuration.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DataHub</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="datahub.metadata.html">datahub.metadata package</a> &raquo;</li>
+      <li>datahub.metadata.schemas package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/datahub.metadata.schemas.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="datahub-metadata-schemas-package">
+<h1>datahub.metadata.schemas package<a class="headerlink" href="#datahub-metadata-schemas-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="module-datahub.metadata.schemas">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datahub.metadata.schemas" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getBrowsePathsSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getBrowsePathsSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getBrowsePathsSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getCaveatsAndRecommendationsSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getCaveatsAndRecommendationsSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getCaveatsAndRecommendationsSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getChartInfoSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getChartInfoSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getChartInfoSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getChartKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getChartKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getChartKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getChartQuerySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getChartQuerySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getChartQuerySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getCorpGroupInfoSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getCorpGroupInfoSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getCorpGroupInfoSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getCorpGroupKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getCorpGroupKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getCorpGroupKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getCorpUserEditableInfoSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getCorpUserEditableInfoSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getCorpUserEditableInfoSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getCorpUserInfoSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getCorpUserInfoSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getCorpUserInfoSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getCorpUserKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getCorpUserKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getCorpUserKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getCorpUserStatusSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getCorpUserStatusSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getCorpUserStatusSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getCostSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getCostSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getCostSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDashboardInfoSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDashboardInfoSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDashboardInfoSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDashboardKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDashboardKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDashboardKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDataFlowInfoSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDataFlowInfoSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDataFlowInfoSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDataFlowKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDataFlowKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDataFlowKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDataHubPolicyInfoSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDataHubPolicyInfoSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDataHubPolicyInfoSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDataHubPolicyKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDataHubPolicyKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDataHubPolicyKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDataJobInfoSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDataJobInfoSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDataJobInfoSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDataJobInputOutputSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDataJobInputOutputSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDataJobInputOutputSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDataJobKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDataJobKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDataJobKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDataPlatformInfoSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDataPlatformInfoSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDataPlatformInfoSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDataPlatformInstanceSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDataPlatformInstanceSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDataPlatformInstanceSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDataPlatformKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDataPlatformKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDataPlatformKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDataProcessInfoSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDataProcessInfoSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDataProcessInfoSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDataProcessKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDataProcessKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDataProcessKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDatasetDeprecationSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDatasetDeprecationSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDatasetDeprecationSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDatasetKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDatasetKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDatasetKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDatasetProfileSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDatasetProfileSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDatasetProfileSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDatasetPropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDatasetPropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDatasetPropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDatasetUpstreamLineageSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDatasetUpstreamLineageSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDatasetUpstreamLineageSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDatasetUsageStatisticsSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDatasetUsageStatisticsSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDatasetUsageStatisticsSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getDeprecationSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getDeprecationSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getDeprecationSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getEditableChartPropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getEditableChartPropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getEditableChartPropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getEditableDashboardPropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getEditableDashboardPropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getEditableDashboardPropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getEditableDataFlowPropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getEditableDataFlowPropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getEditableDataFlowPropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getEditableDataJobPropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getEditableDataJobPropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getEditableDataJobPropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getEditableDatasetPropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getEditableDatasetPropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getEditableDatasetPropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getEditableSchemaMetadataSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getEditableSchemaMetadataSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getEditableSchemaMetadataSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getEthicalConsiderationsSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getEthicalConsiderationsSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getEthicalConsiderationsSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getEvaluationDataSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getEvaluationDataSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getEvaluationDataSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getGlobalTagsSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getGlobalTagsSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getGlobalTagsSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getGlossaryNodeInfoSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getGlossaryNodeInfoSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getGlossaryNodeInfoSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getGlossaryNodeKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getGlossaryNodeKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getGlossaryNodeKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getGlossaryRelatedTermsSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getGlossaryRelatedTermsSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getGlossaryRelatedTermsSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getGlossaryTermInfoSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getGlossaryTermInfoSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getGlossaryTermInfoSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getGlossaryTermKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getGlossaryTermKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getGlossaryTermKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getGlossaryTermsSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getGlossaryTermsSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getGlossaryTermsSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getGroupMembershipSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getGroupMembershipSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getGroupMembershipSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getInstitutionalMemorySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getInstitutionalMemorySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getInstitutionalMemorySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getIntendedUseSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getIntendedUseSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getIntendedUseSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLFeatureKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLFeatureKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLFeatureKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLFeaturePropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLFeaturePropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLFeaturePropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLFeatureTableKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLFeatureTableKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLFeatureTableKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLFeatureTablePropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLFeatureTablePropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLFeatureTablePropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLHyperParamSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLHyperParamSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLHyperParamSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLMetricSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLMetricSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLMetricSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLModelDeploymentKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLModelDeploymentKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLModelDeploymentKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLModelDeploymentPropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLModelDeploymentPropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLModelDeploymentPropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLModelFactorPromptsSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLModelFactorPromptsSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLModelFactorPromptsSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLModelGroupKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLModelGroupKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLModelGroupKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLModelGroupPropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLModelGroupPropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLModelGroupPropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLModelKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLModelKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLModelKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLModelPropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLModelPropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLModelPropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLPrimaryKeyKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLPrimaryKeyKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLPrimaryKeyKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMLPrimaryKeyPropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMLPrimaryKeyPropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMLPrimaryKeyPropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMetadataChangeEventSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMetadataChangeEventSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMetadataChangeEventSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMetadataChangeProposalSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMetadataChangeProposalSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMetadataChangeProposalSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getMetricsSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getMetricsSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getMetricsSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getOwnershipSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getOwnershipSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getOwnershipSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getQuantitativeAnalysesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getQuantitativeAnalysesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getQuantitativeAnalysesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getSchemaFieldKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getSchemaFieldKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getSchemaFieldKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getSchemaMetadataSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getSchemaMetadataSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getSchemaMetadataSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getSourceCodeSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getSourceCodeSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getSourceCodeSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getStatusSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getStatusSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getStatusSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getSubTypesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getSubTypesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getSubTypesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getTagKeySchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getTagKeySchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getTagKeySchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getTagPropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getTagPropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getTagPropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getTrainingDataSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getTrainingDataSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getTrainingDataSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getUpstreamLineageSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getUpstreamLineageSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getUpstreamLineageSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getUsageAggregationSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getUsageAggregationSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getUsageAggregationSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.metadata.schemas.getViewPropertiesSchema">
+<span class="sig-prename descclassname"><span class="pre">datahub.metadata.schemas.</span></span><span class="sig-name descname"><span class="pre">getViewPropertiesSchema</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/metadata/schemas.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.metadata.schemas.getViewPropertiesSchema" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datahub.metadata.com.linkedin.pegasus2avro.usage.html" class="btn btn-neutral float-left" title="datahub.metadata.com.linkedin.pegasus2avro.usage package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datahub.integrations.html" class="btn btn-neutral float-right" title="datahub.integrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, DataHub Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

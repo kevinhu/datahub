@@ -1,0 +1,142 @@
+{
+  "type" : "record",
+  "name" : "MLModelProperties",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "Properties associated with a ML Model",
+  "include" : [ "com.linkedin.common.CustomProperties", "com.linkedin.common.ExternalReference" ],
+  "fields" : [ {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Documentation of the MLModel",
+    "optional" : true,
+    "Searchable" : {
+      "fieldType" : "TEXT",
+      "hasValuesFieldName" : "hasDescription"
+    }
+  }, {
+    "name" : "date",
+    "type" : "com.linkedin.common.Time",
+    "doc" : "Date when the MLModel was developed",
+    "optional" : true
+  }, {
+    "name" : "version",
+    "type" : "com.linkedin.common.VersionTag",
+    "doc" : "Version of the MLModel",
+    "optional" : true
+  }, {
+    "name" : "type",
+    "type" : "string",
+    "doc" : "Type of Algorithm or MLModel such as whether it is a Naive Bayes classifier, Convolutional Neural Network, etc",
+    "optional" : true,
+    "Searchable" : {
+      "fieldType" : "TEXT_PARTIAL"
+    }
+  }, {
+    "name" : "hyperParameters",
+    "type" : {
+      "type" : "map",
+      "values" : "HyperParameterValueType"
+    },
+    "doc" : "Hyper Parameters of the MLModel\n\nNOTE: these are deprecated in favor of hyperParams",
+    "optional" : true
+  }, {
+    "name" : "hyperParams",
+    "type" : {
+      "type" : "array",
+      "items" : "MLHyperParam"
+    },
+    "doc" : "Hyperparameters of the MLModel",
+    "optional" : true
+  }, {
+    "name" : "trainingMetrics",
+    "type" : {
+      "type" : "array",
+      "items" : "MLMetric"
+    },
+    "doc" : "Metrics of the MLModel used in training",
+    "optional" : true
+  }, {
+    "name" : "onlineMetrics",
+    "type" : {
+      "type" : "array",
+      "items" : "MLMetric"
+    },
+    "doc" : "Metrics of the MLModel used in production",
+    "optional" : true
+  }, {
+    "name" : "mlFeatures",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.MLFeatureUrn"
+    },
+    "doc" : "List of features used for MLModel training",
+    "optional" : true
+  }, {
+    "name" : "tags",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "Tags for the MLModel",
+    "default" : [ ]
+  }, {
+    "name" : "deployments",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.Urn"
+    },
+    "doc" : "Deployments for the MLModel",
+    "optional" : true,
+    "Relationship" : {
+      "/*" : {
+        "entityTypes" : [ "mlModelDeployment" ],
+        "name" : "DeployedTo"
+      }
+    }
+  }, {
+    "name" : "trainingJobs",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.Urn"
+    },
+    "doc" : "List of jobs (if any) used to train the model",
+    "optional" : true,
+    "Relationship" : {
+      "/*" : {
+        "entityTypes" : [ "dataJob" ],
+        "name" : "TrainedBy"
+      }
+    }
+  }, {
+    "name" : "downstreamJobs",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.Urn"
+    },
+    "doc" : "List of jobs (if any) that use the model",
+    "optional" : true,
+    "Relationship" : {
+      "/*" : {
+        "entityTypes" : [ "dataJob" ],
+        "name" : "UsedBy"
+      }
+    }
+  }, {
+    "name" : "groups",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.Urn"
+    },
+    "doc" : "Groups the model belongs to",
+    "optional" : true,
+    "Relationship" : {
+      "/*" : {
+        "entityTypes" : [ "mlModelGroup" ],
+        "name" : "MemberOf"
+      }
+    }
+  } ],
+  "Aspect" : {
+    "name" : "mlModelProperties"
+  }
+}

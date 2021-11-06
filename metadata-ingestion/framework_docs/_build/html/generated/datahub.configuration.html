@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>datahub.configuration package &mdash; DataHub 0.0.0.dev0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="datahub.ingestion.transformer package" href="datahub.ingestion.transformer.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DataHub
+          </a>
+              <div class="version">
+                0.0.0.dev0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="datahub.emitter.html">Emitters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.metadata.html">Metadata Schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.integrations.html">Integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.cli.html">CLI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.ingestion.html">Ingestion</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.configuration.common">datahub.configuration.common module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.configuration.config_loader">datahub.configuration.config_loader module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.configuration.github">datahub.configuration.github module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.configuration.import_resolver">datahub.configuration.import_resolver module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.configuration.kafka">datahub.configuration.kafka module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.configuration.time_window_config">datahub.configuration.time_window_config module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.configuration.toml">datahub.configuration.toml module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.configuration.yaml">datahub.configuration.yaml module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-datahub.configuration">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DataHub</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>datahub.configuration package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/datahub.configuration.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="datahub-configuration-package">
+<h1>datahub.configuration package<a class="headerlink" href="#datahub-configuration-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-datahub.configuration.common">
+<span id="datahub-configuration-common-module"></span><h2>datahub.configuration.common module<a class="headerlink" href="#module-datahub.configuration.common" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.configuration.common.AllowDenyPattern">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.common.</span></span><span class="sig-name descname"><span class="pre">AllowDenyPattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">['.*']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deny</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignoreCase</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alphabet</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'[A-Za-z0-9</span> <span class="pre">_.-]'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.AllowDenyPattern" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datahub.configuration.common.ConfigModel" title="datahub.configuration.common.ConfigModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.ConfigModel</span></code></a></p>
+<p>A class to store allow deny regexes</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.common.AllowDenyPattern.allow">
+<span class="sig-name descname"><span class="pre">allow</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.AllowDenyPattern.allow" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.common.AllowDenyPattern.allow_all">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">allow_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#datahub.configuration.common.AllowDenyPattern" title="datahub.configuration.common.AllowDenyPattern"><span class="pre">datahub.configuration.common.AllowDenyPattern</span></a></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.AllowDenyPattern.allow_all" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.common.AllowDenyPattern.allowed">
+<span class="sig-name descname"><span class="pre">allowed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.AllowDenyPattern.allowed" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.common.AllowDenyPattern.alphabet">
+<span class="sig-name descname"><span class="pre">alphabet</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.AllowDenyPattern.alphabet" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="datahub.configuration.common.AllowDenyPattern.alphabet_pattern">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">alphabet_pattern</span></span><em class="property"><span class="pre">:</span> <span class="pre">Pattern</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.AllowDenyPattern.alphabet_pattern" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.common.AllowDenyPattern.deny">
+<span class="sig-name descname"><span class="pre">deny</span></span><em class="property"><span class="pre">:</span> <span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.AllowDenyPattern.deny" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.common.AllowDenyPattern.get_allowed_list">
+<span class="sig-name descname"><span class="pre">get_allowed_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.AllowDenyPattern.get_allowed_list" title="Permalink to this definition"></a></dt>
+<dd><p>Return the list of allowed strings as a list, after taking into account deny patterns, if possible</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.common.AllowDenyPattern.ignoreCase">
+<span class="sig-name descname"><span class="pre">ignoreCase</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.AllowDenyPattern.ignoreCase" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.common.AllowDenyPattern.is_fully_specified_allow_list">
+<span class="sig-name descname"><span class="pre">is_fully_specified_allow_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.AllowDenyPattern.is_fully_specified_allow_list" title="Permalink to this definition"></a></dt>
+<dd><p>If the allow patterns are literals and not full regexes, then it is considered
+fully specified. This is useful if you want to convert a ‘list + filter’
+pattern into a ‘search for the ones that are allowed’ pattern, which can be
+much more efficient in some cases.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="datahub.configuration.common.AllowDenyPattern.regex_flags">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">regex_flags</span></span><em class="property"><span class="pre">:</span> <span class="pre">int</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.AllowDenyPattern.regex_flags" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.configuration.common.ConfigModel">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.common.</span></span><span class="sig-name descname"><span class="pre">ConfigModel</span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.ConfigModel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydantic.main.BaseModel</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.configuration.common.ConfigModel.Config">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Config</span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.ConfigModel.Config" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.common.ConfigModel.Config.extra">
+<span class="sig-name descname"><span class="pre">extra</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'forbid'</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.ConfigModel.Config.extra" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="datahub.configuration.common.ConfigurationError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.common.</span></span><span class="sig-name descname"><span class="pre">ConfigurationError</span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.ConfigurationError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datahub.configuration.common.MetaError" title="datahub.configuration.common.MetaError"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.MetaError</span></code></a></p>
+<p>A configuration error has happened</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.configuration.common.ConfigurationMechanism">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.common.</span></span><span class="sig-name descname"><span class="pre">ConfigurationMechanism</span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.ConfigurationMechanism" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.common.ConfigurationMechanism.load_config">
+<em class="property"><span class="pre">abstract</span> </em><span class="sig-name descname"><span class="pre">load_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_fp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">IO</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.ConfigurationMechanism.load_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.configuration.common.DynamicTypedConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.common.</span></span><span class="sig-name descname"><span class="pre">DynamicTypedConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.DynamicTypedConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datahub.configuration.common.ConfigModel" title="datahub.configuration.common.ConfigModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.ConfigModel</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.common.DynamicTypedConfig.config">
+<span class="sig-name descname"><span class="pre">config</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.DynamicTypedConfig.config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.common.DynamicTypedConfig.type">
+<span class="sig-name descname"><span class="pre">type</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.DynamicTypedConfig.type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.configuration.common.KeyValuePattern">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.common.</span></span><span class="sig-name descname"><span class="pre">KeyValuePattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rules</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">{'.*':</span> <span class="pre">[]}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alphabet</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'[A-Za-z0-9</span> <span class="pre">_.-]'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.KeyValuePattern" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datahub.configuration.common.ConfigModel" title="datahub.configuration.common.ConfigModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.ConfigModel</span></code></a></p>
+<p>A class to store allow deny regexes</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.common.KeyValuePattern.all">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#datahub.configuration.common.KeyValuePattern" title="datahub.configuration.common.KeyValuePattern"><span class="pre">datahub.configuration.common.KeyValuePattern</span></a></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.KeyValuePattern.all" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.common.KeyValuePattern.alphabet">
+<span class="sig-name descname"><span class="pre">alphabet</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.KeyValuePattern.alphabet" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="datahub.configuration.common.KeyValuePattern.alphabet_pattern">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">alphabet_pattern</span></span><em class="property"><span class="pre">:</span> <span class="pre">Pattern</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.KeyValuePattern.alphabet_pattern" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.common.KeyValuePattern.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.KeyValuePattern.get" title="Permalink to this definition"></a></dt>
+<dd><p>Return the list of allowed strings as a list, after taking into account deny patterns, if possible</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.common.KeyValuePattern.is_fully_specified_key">
+<span class="sig-name descname"><span class="pre">is_fully_specified_key</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.KeyValuePattern.is_fully_specified_key" title="Permalink to this definition"></a></dt>
+<dd><p>If the allow patterns are literals and not full regexes, then it is considered
+fully specified. This is useful if you want to convert a ‘list + filter’
+pattern into a ‘search for the ones that are allowed’ pattern, which can be
+much more efficient in some cases.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.common.KeyValuePattern.matched">
+<span class="sig-name descname"><span class="pre">matched</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.KeyValuePattern.matched" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.common.KeyValuePattern.rules">
+<span class="sig-name descname"><span class="pre">rules</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.KeyValuePattern.rules" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.common.KeyValuePattern.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.KeyValuePattern.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="datahub.configuration.common.MetaError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.common.</span></span><span class="sig-name descname"><span class="pre">MetaError</span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.MetaError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>A base class for all meta exceptions</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="datahub.configuration.common.OperationalError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.common.</span></span><span class="sig-name descname"><span class="pre">OperationalError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.OperationalError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datahub.configuration.common.PipelineExecutionError" title="datahub.configuration.common.PipelineExecutionError"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.PipelineExecutionError</span></code></a></p>
+<p>An error occurred because of client-provided metadata</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.common.OperationalError.info">
+<span class="sig-name descname"><span class="pre">info</span></span><em class="property"><span class="pre">:</span> <span class="pre">dict</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.OperationalError.info" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.common.OperationalError.message">
+<span class="sig-name descname"><span class="pre">message</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.OperationalError.message" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="datahub.configuration.common.PipelineExecutionError">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.common.</span></span><span class="sig-name descname"><span class="pre">PipelineExecutionError</span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/common.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.common.PipelineExecutionError" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datahub.configuration.common.MetaError" title="datahub.configuration.common.MetaError"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.MetaError</span></code></a></p>
+<p>An error occurred when executing the pipeline</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.configuration.config_loader">
+<span id="datahub-configuration-config-loader-module"></span><h2>datahub.configuration.config_loader module<a class="headerlink" href="#module-datahub.configuration.config_loader" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.configuration.config_loader.load_config_file">
+<span class="sig-prename descclassname"><span class="pre">datahub.configuration.config_loader.</span></span><span class="sig-name descname"><span class="pre">load_config_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/config_loader.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.config_loader.load_config_file" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-datahub.configuration.github">
+<span id="datahub-configuration-github-module"></span><h2>datahub.configuration.github module<a class="headerlink" href="#module-datahub.configuration.github" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.configuration.github.GitHubInfo">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.github.</span></span><span class="sig-name descname"><span class="pre">GitHubInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repo</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'main'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'https://github.com'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/github.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.github.GitHubInfo" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datahub.configuration.common.ConfigModel" title="datahub.configuration.common.ConfigModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.ConfigModel</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.github.GitHubInfo.base_url">
+<span class="sig-name descname"><span class="pre">base_url</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/github.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.github.GitHubInfo.base_url" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.github.GitHubInfo.branch">
+<span class="sig-name descname"><span class="pre">branch</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/github.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.github.GitHubInfo.branch" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.github.GitHubInfo.get_url_for_file_path">
+<span class="sig-name descname"><span class="pre">get_url_for_file_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/github.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.github.GitHubInfo.get_url_for_file_path" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.github.GitHubInfo.repo">
+<span class="sig-name descname"><span class="pre">repo</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/github.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.github.GitHubInfo.repo" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.github.GitHubInfo.repo_should_be_org_slash_repo">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">repo_should_be_org_slash_repo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repo</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/github.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.github.GitHubInfo.repo_should_be_org_slash_repo" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.configuration.import_resolver">
+<span id="datahub-configuration-import-resolver-module"></span><h2>datahub.configuration.import_resolver module<a class="headerlink" href="#module-datahub.configuration.import_resolver" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.configuration.import_resolver.pydantic_resolve_key">
+<span class="sig-prename descclassname"><span class="pre">datahub.configuration.import_resolver.</span></span><span class="sig-name descname"><span class="pre">pydantic_resolve_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">classmethod</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/import_resolver.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.import_resolver.pydantic_resolve_key" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-datahub.configuration.kafka">
+<span id="datahub-configuration-kafka-module"></span><h2>datahub.configuration.kafka module<a class="headerlink" href="#module-datahub.configuration.kafka" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.configuration.kafka.KafkaConsumerConnectionConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.kafka.</span></span><span class="sig-name descname"><span class="pre">KafkaConsumerConnectionConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootstrap</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'localhost:9092'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema_registry_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'http://localhost:8081'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema_registry_config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">consumer_config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.kafka.KafkaConsumerConnectionConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.kafka._KafkaConnectionConfig</span></code></p>
+<p>Configuration class for holding connectivity information for Kafka consumers</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.kafka.KafkaConsumerConnectionConfig.consumer_config">
+<span class="sig-name descname"><span class="pre">consumer_config</span></span><em class="property"><span class="pre">:</span> <span class="pre">dict</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.kafka.KafkaConsumerConnectionConfig.consumer_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.configuration.kafka.KafkaProducerConnectionConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.kafka.</span></span><span class="sig-name descname"><span class="pre">KafkaProducerConnectionConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bootstrap</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'localhost:9092'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema_registry_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'http://localhost:8081'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schema_registry_config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">producer_config</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.kafka.KafkaProducerConnectionConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.kafka._KafkaConnectionConfig</span></code></p>
+<p>Configuration class for holding connectivity information for Kafka producers</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.kafka.KafkaProducerConnectionConfig.producer_config">
+<span class="sig-name descname"><span class="pre">producer_config</span></span><em class="property"><span class="pre">:</span> <span class="pre">dict</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/kafka.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.kafka.KafkaProducerConnectionConfig.producer_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.configuration.time_window_config">
+<span id="datahub-configuration-time-window-config-module"></span><h2>datahub.configuration.time_window_config module<a class="headerlink" href="#module-datahub.configuration.time_window_config" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.configuration.time_window_config.BaseTimeWindowConfig">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.time_window_config.</span></span><span class="sig-name descname"><span class="pre">BaseTimeWindowConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bucket_duration</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.configuration.time_window_config.BucketDuration" title="datahub.configuration.time_window_config.BucketDuration"><span class="pre">datahub.configuration.time_window_config.BucketDuration</span></a></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">BucketDuration.DAY</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">datetime.datetime</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">datetime.datetime</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/time_window_config.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.time_window_config.BaseTimeWindowConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datahub.configuration.common.ConfigModel" title="datahub.configuration.common.ConfigModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.ConfigModel</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.time_window_config.BaseTimeWindowConfig.bucket_duration">
+<span class="sig-name descname"><span class="pre">bucket_duration</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="#datahub.configuration.time_window_config.BucketDuration" title="datahub.configuration.time_window_config.BucketDuration"><span class="pre">datahub.configuration.time_window_config.BucketDuration</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/time_window_config.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.time_window_config.BaseTimeWindowConfig.bucket_duration" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.time_window_config.BaseTimeWindowConfig.default_end_time">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">default_end_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime.datetime</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/time_window_config.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.time_window_config.BaseTimeWindowConfig.default_end_time" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.time_window_config.BaseTimeWindowConfig.default_start_time">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">default_start_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime.datetime</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/time_window_config.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.time_window_config.BaseTimeWindowConfig.default_start_time" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.time_window_config.BaseTimeWindowConfig.end_time">
+<span class="sig-name descname"><span class="pre">end_time</span></span><em class="property"><span class="pre">:</span> <span class="pre">datetime.datetime</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/time_window_config.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.time_window_config.BaseTimeWindowConfig.end_time" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.time_window_config.BaseTimeWindowConfig.ensure_timestamps_in_utc">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">ensure_timestamps_in_utc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">datetime.datetime</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime.datetime</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/time_window_config.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.time_window_config.BaseTimeWindowConfig.ensure_timestamps_in_utc" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.time_window_config.BaseTimeWindowConfig.start_time">
+<span class="sig-name descname"><span class="pre">start_time</span></span><em class="property"><span class="pre">:</span> <span class="pre">datetime.datetime</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/time_window_config.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.time_window_config.BaseTimeWindowConfig.start_time" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.configuration.time_window_config.BucketDuration">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.time_window_config.</span></span><span class="sig-name descname"><span class="pre">BucketDuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/time_window_config.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.time_window_config.BucketDuration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.time_window_config.BucketDuration.DAY">
+<span class="sig-name descname"><span class="pre">DAY</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'DAY'</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/time_window_config.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.time_window_config.BucketDuration.DAY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.configuration.time_window_config.BucketDuration.HOUR">
+<span class="sig-name descname"><span class="pre">HOUR</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'HOUR'</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/time_window_config.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.time_window_config.BucketDuration.HOUR" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.configuration.time_window_config.get_bucket_duration_delta">
+<span class="sig-prename descclassname"><span class="pre">datahub.configuration.time_window_config.</span></span><span class="sig-name descname"><span class="pre">get_bucket_duration_delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bucketing</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.configuration.time_window_config.BucketDuration" title="datahub.configuration.time_window_config.BucketDuration"><span class="pre">datahub.configuration.time_window_config.BucketDuration</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime.timedelta</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/time_window_config.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.time_window_config.get_bucket_duration_delta" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.configuration.time_window_config.get_time_bucket">
+<span class="sig-prename descclassname"><span class="pre">datahub.configuration.time_window_config.</span></span><span class="sig-name descname"><span class="pre">get_time_bucket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">datetime.datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bucketing</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.configuration.time_window_config.BucketDuration" title="datahub.configuration.time_window_config.BucketDuration"><span class="pre">datahub.configuration.time_window_config.BucketDuration</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">datetime.datetime</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/time_window_config.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.time_window_config.get_time_bucket" title="Permalink to this definition"></a></dt>
+<dd><p>Floors the timestamp to the closest day or hour.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.configuration.toml">
+<span id="datahub-configuration-toml-module"></span><h2>datahub.configuration.toml module<a class="headerlink" href="#module-datahub.configuration.toml" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.configuration.toml.TomlConfigurationMechanism">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.toml.</span></span><span class="sig-name descname"><span class="pre">TomlConfigurationMechanism</span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/toml.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.toml.TomlConfigurationMechanism" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datahub.configuration.common.ConfigurationMechanism" title="datahub.configuration.common.ConfigurationMechanism"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.ConfigurationMechanism</span></code></a></p>
+<p>Ability to load configuration from toml files</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.toml.TomlConfigurationMechanism.load_config">
+<span class="sig-name descname"><span class="pre">load_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_fp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">IO</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/toml.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.toml.TomlConfigurationMechanism.load_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.configuration.yaml">
+<span id="datahub-configuration-yaml-module"></span><h2>datahub.configuration.yaml module<a class="headerlink" href="#module-datahub.configuration.yaml" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.configuration.yaml.YamlConfigurationMechanism">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.configuration.yaml.</span></span><span class="sig-name descname"><span class="pre">YamlConfigurationMechanism</span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/yaml.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.yaml.YamlConfigurationMechanism" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#datahub.configuration.common.ConfigurationMechanism" title="datahub.configuration.common.ConfigurationMechanism"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.configuration.common.ConfigurationMechanism</span></code></a></p>
+<p>Ability to load configuration from yaml files</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.configuration.yaml.YamlConfigurationMechanism.load_config">
+<span class="sig-name descname"><span class="pre">load_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_fp</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">IO</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/configuration/yaml.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.configuration.yaml.YamlConfigurationMechanism.load_config" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.configuration">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datahub.configuration" title="Permalink to this headline"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datahub.ingestion.transformer.html" class="btn btn-neutral float-left" title="datahub.ingestion.transformer package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, DataHub Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

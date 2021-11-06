@@ -1,0 +1,14 @@
+{
+  "type" : "record",
+  "name" : "ConjunctiveCriterion",
+  "namespace" : "com.linkedin.metadata.query.filter",
+  "doc" : "A list of criterion and'd together.",
+  "fields" : [ {
+    "name" : "and",
+    "type" : {
+      "type" : "array",
+      "items" : "Criterion"
+    },
+    "doc" : "A list of and criteria the filter applies to the query"
+  } ]
+}

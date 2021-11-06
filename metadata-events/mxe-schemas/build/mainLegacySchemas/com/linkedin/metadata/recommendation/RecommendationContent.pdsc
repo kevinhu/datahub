@@ -1,0 +1,21 @@
+{
+  "type" : "record",
+  "name" : "RecommendationContent",
+  "namespace" : "com.linkedin.metadata.recommendation",
+  "doc" : "Content to display within each recommendation module",
+  "fields" : [ {
+    "name" : "value",
+    "type" : "string",
+    "doc" : "String representation of content"
+  }, {
+    "name" : "entity",
+    "type" : "com.linkedin.common.Urn",
+    "doc" : "Entity being recommended. Empty if the content being recommended is not an entity",
+    "optional" : true
+  }, {
+    "name" : "params",
+    "type" : "RecommendationParams",
+    "doc" : "Additional context required to generate the the recommendation",
+    "optional" : true
+  } ]
+}

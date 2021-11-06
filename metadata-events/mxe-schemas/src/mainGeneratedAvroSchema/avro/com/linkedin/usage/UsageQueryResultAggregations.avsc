@@ -1,0 +1,59 @@
+{
+  "type" : "record",
+  "name" : "UsageQueryResultAggregations",
+  "namespace" : "com.linkedin.usage",
+  "fields" : [ {
+    "name" : "uniqueUserCount",
+    "type" : [ "null", "int" ],
+    "default" : null
+  }, {
+    "name" : "totalSqlQueries",
+    "type" : [ "null", "int" ],
+    "default" : null
+  }, {
+    "name" : "users",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "UserUsageCounts",
+        "doc" : " Records a single user's usage counts for a given resource ",
+        "fields" : [ {
+          "name" : "user",
+          "type" : [ "null", "string" ],
+          "default" : null,
+          "java" : {
+            "class" : "com.linkedin.common.urn.Urn"
+          }
+        }, {
+          "name" : "count",
+          "type" : "int"
+        }, {
+          "name" : "userEmail",
+          "type" : [ "null", "string" ],
+          "doc" : " If user_email is set, we attempt to resolve the user's urn upon ingest ",
+          "default" : null
+        } ]
+      }
+    } ],
+    "default" : null
+  }, {
+    "name" : "fields",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "FieldUsageCounts",
+        "doc" : " Records field-level usage counts for a given resource ",
+        "fields" : [ {
+          "name" : "fieldName",
+          "type" : "string"
+        }, {
+          "name" : "count",
+          "type" : "int"
+        } ]
+      }
+    } ],
+    "default" : null
+  } ]
+}

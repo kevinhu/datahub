@@ -1,0 +1,72 @@
+{
+  "type" : "record",
+  "name" : "UsageAggregationMetrics",
+  "namespace" : "com.linkedin.usage",
+  "doc" : "Metrics for usage data for a given resource and bucket. Not all fields\nmake sense for all buckets, so every field is optional.",
+  "fields" : [ {
+    "name" : "uniqueUserCount",
+    "type" : [ "null", "int" ],
+    "doc" : " Unique user count ",
+    "default" : null
+  }, {
+    "name" : "users",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "UserUsageCounts",
+        "doc" : " Records a single user's usage counts for a given resource ",
+        "fields" : [ {
+          "name" : "user",
+          "type" : [ "null", "string" ],
+          "default" : null,
+          "java" : {
+            "class" : "com.linkedin.common.urn.Urn"
+          }
+        }, {
+          "name" : "count",
+          "type" : "int"
+        }, {
+          "name" : "userEmail",
+          "type" : [ "null", "string" ],
+          "doc" : " If user_email is set, we attempt to resolve the user's urn upon ingest ",
+          "default" : null
+        } ]
+      }
+    } ],
+    "doc" : " Users within this bucket, with frequency counts ",
+    "default" : null
+  }, {
+    "name" : "totalSqlQueries",
+    "type" : [ "null", "int" ],
+    "doc" : " Total SQL query count ",
+    "default" : null
+  }, {
+    "name" : "topSqlQueries",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : "string"
+    } ],
+    "doc" : " Frequent SQL queries; mostly makes sense for datasets in SQL databases ",
+    "default" : null
+  }, {
+    "name" : "fields",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : {
+        "type" : "record",
+        "name" : "FieldUsageCounts",
+        "doc" : " Records field-level usage counts for a given resource ",
+        "fields" : [ {
+          "name" : "fieldName",
+          "type" : "string"
+        }, {
+          "name" : "count",
+          "type" : "int"
+        } ]
+      }
+    } ],
+    "doc" : " Field-level usage stats ",
+    "default" : null
+  } ]
+}

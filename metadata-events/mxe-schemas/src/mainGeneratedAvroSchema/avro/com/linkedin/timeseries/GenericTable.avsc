@@ -1,0 +1,32 @@
+{
+  "type" : "record",
+  "name" : "GenericTable",
+  "namespace" : "com.linkedin.timeseries",
+  "doc" : "Defines a generic table.",
+  "fields" : [ {
+    "name" : "columnNames",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "The names of the columns."
+  }, {
+    "name" : "columnTypes",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "The types of the columns."
+  }, {
+    "name" : "rows",
+    "type" : [ "null", {
+      "type" : "array",
+      "items" : {
+        "type" : "array",
+        "items" : "string"
+      }
+    } ],
+    "doc" : "The data rows.",
+    "default" : null
+  } ]
+}

@@ -1,0 +1,12 @@
+{
+  "type" : "record",
+  "name" : "Quantile",
+  "namespace" : "com.linkedin.pegasus2avro.dataset",
+  "fields" : [ {
+    "name" : "quantile",
+    "type" : "string"
+  }, {
+    "name" : "value",
+    "type" : "string"
+  } ]
+}

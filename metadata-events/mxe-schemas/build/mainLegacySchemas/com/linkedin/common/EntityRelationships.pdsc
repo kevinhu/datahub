@@ -1,0 +1,26 @@
+{
+  "type" : "record",
+  "name" : "EntityRelationships",
+  "namespace" : "com.linkedin.common",
+  "doc" : "Downstream lineage of a dataset",
+  "fields" : [ {
+    "name" : "relationships",
+    "type" : {
+      "type" : "array",
+      "items" : "EntityRelationship"
+    },
+    "doc" : "List of related entities"
+  }, {
+    "name" : "start",
+    "type" : "int",
+    "doc" : "The start of the result set"
+  }, {
+    "name" : "count",
+    "type" : "int",
+    "doc" : "The start of the result set"
+  }, {
+    "name" : "total",
+    "type" : "int",
+    "doc" : "Total number of edges found."
+  } ]
+}

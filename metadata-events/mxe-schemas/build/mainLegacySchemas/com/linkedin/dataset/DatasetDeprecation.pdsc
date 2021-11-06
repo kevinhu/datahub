@@ -1,0 +1,34 @@
+{
+  "type" : "record",
+  "name" : "DatasetDeprecation",
+  "namespace" : "com.linkedin.dataset",
+  "doc" : "Dataset deprecation status",
+  "fields" : [ {
+    "name" : "deprecated",
+    "type" : "boolean",
+    "doc" : "Whether the dataset is deprecated by owner.",
+    "Searchable" : {
+      "fieldType" : "BOOLEAN",
+      "weightsPerFieldValue" : {
+        "true" : 0.5
+      }
+    }
+  }, {
+    "name" : "decommissionTime",
+    "type" : "long",
+    "doc" : "The time user plan to decommission this dataset.",
+    "optional" : true
+  }, {
+    "name" : "note",
+    "type" : "string",
+    "doc" : "Additional information about the dataset deprecation plan, such as the wiki, doc, RB."
+  }, {
+    "name" : "actor",
+    "type" : "com.linkedin.common.Urn",
+    "doc" : "The corpuser URN which will be credited for modifying this deprecation content.",
+    "optional" : true
+  } ],
+  "Aspect" : {
+    "name" : "datasetDeprecation"
+  }
+}

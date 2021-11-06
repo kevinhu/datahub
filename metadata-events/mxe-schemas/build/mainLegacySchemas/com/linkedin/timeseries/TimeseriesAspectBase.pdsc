@@ -1,0 +1,20 @@
+{
+  "type" : "record",
+  "name" : "TimeseriesAspectBase",
+  "namespace" : "com.linkedin.timeseries",
+  "fields" : [ {
+    "name" : "timestampMillis",
+    "type" : "long",
+    "doc" : "The event timestamp field as epoch at UTC in milli seconds."
+  }, {
+    "name" : "eventGranularity",
+    "type" : "TimeWindowSize",
+    "doc" : "Granularity of the event if applicable",
+    "optional" : true
+  }, {
+    "name" : "partitionSpec",
+    "type" : "PartitionSpec",
+    "doc" : "The optional partition specification.",
+    "optional" : true
+  } ]
+}

@@ -1,0 +1,15 @@
+{
+  "type" : "record",
+  "name" : "IngestionRunSummary",
+  "namespace" : "com.linkedin.pegasus2avro.metadata.run",
+  "fields" : [ {
+    "name" : "runId",
+    "type" : "string"
+  }, {
+    "name" : "timestamp",
+    "type" : "long"
+  }, {
+    "name" : "rows",
+    "type" : "long"
+  } ]
+}

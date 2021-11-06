@@ -1,0 +1,7 @@
+{
+  "type" : "enum",
+  "name" : "UsageTimeRange",
+  "namespace" : "com.linkedin.usage",
+  "doc" : " The range of data buckets that should be returned ",
+  "symbols" : [ "HOUR", "DAY", "WEEK", "MONTH", "QUARTER", "YEAR", "ALL" ]
+}

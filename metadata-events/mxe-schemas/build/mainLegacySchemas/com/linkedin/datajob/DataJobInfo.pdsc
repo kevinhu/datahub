@@ -1,0 +1,43 @@
+{
+  "type" : "record",
+  "name" : "DataJobInfo",
+  "namespace" : "com.linkedin.datajob",
+  "doc" : "Information about a Data processing job",
+  "include" : [ "com.linkedin.common.CustomProperties", "com.linkedin.common.ExternalReference" ],
+  "fields" : [ {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Job name",
+    "Searchable" : {
+      "boostScore" : 10.0,
+      "enableAutocomplete" : true,
+      "fieldType" : "TEXT_PARTIAL"
+    }
+  }, {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Job description",
+    "optional" : true,
+    "Searchable" : {
+      "fieldType" : "TEXT",
+      "hasValuesFieldName" : "hasDescription"
+    }
+  }, {
+    "name" : "type",
+    "type" : [ "com.linkedin.datajob.azkaban.AzkabanJobType", "string" ],
+    "doc" : "Datajob type\n**NOTE**: AzkabanJobType is deprecated. Please use strings instead."
+  }, {
+    "name" : "flowUrn",
+    "type" : "com.linkedin.common.DataFlowUrn",
+    "doc" : "DataFlow urn that this job is part of",
+    "optional" : true
+  }, {
+    "name" : "status",
+    "type" : "JobStatus",
+    "doc" : "Status of the job",
+    "optional" : true
+  } ],
+  "Aspect" : {
+    "name" : "dataJobInfo"
+  }
+}

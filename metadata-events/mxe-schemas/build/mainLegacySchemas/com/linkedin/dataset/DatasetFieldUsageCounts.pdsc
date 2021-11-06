@@ -1,0 +1,16 @@
+{
+  "type" : "record",
+  "name" : "DatasetFieldUsageCounts",
+  "namespace" : "com.linkedin.dataset",
+  "doc" : "Records field-level usage counts for a given dataset",
+  "fields" : [ {
+    "name" : "fieldPath",
+    "type" : "string",
+    "doc" : "The name of the field."
+  }, {
+    "name" : "count",
+    "type" : "int",
+    "doc" : "Number of times the field has been used.",
+    "TimeseriesField" : { }
+  } ]
+}

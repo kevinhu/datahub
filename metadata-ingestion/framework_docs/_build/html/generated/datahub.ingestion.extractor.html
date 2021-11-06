@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>datahub.ingestion.extractor package &mdash; DataHub 0.0.0.dev0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="datahub.ingestion.graph package" href="datahub.ingestion.graph.html" />
+    <link rel="prev" title="datahub.ingestion.api package" href="datahub.ingestion.api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> DataHub
+          </a>
+              <div class="version">
+                0.0.0.dev0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="datahub.emitter.html">Emitters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.metadata.html">Metadata Schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.integrations.html">Integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.cli.html">CLI</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="datahub.ingestion.html">Ingestion</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="datahub.ingestion.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.api.html">datahub.ingestion.api package</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">datahub.ingestion.extractor package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-datahub.ingestion.extractor.extractor_registry">datahub.ingestion.extractor.extractor_registry module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-datahub.ingestion.extractor.mce_extractor">datahub.ingestion.extractor.mce_extractor module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-datahub.ingestion.extractor.schema_util">datahub.ingestion.extractor.schema_util module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-datahub.ingestion.extractor">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.graph.html">datahub.ingestion.graph package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.run.html">datahub.ingestion.run package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.sink.html">datahub.ingestion.sink package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.source.html">datahub.ingestion.source package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="datahub.ingestion.transformer.html">datahub.ingestion.transformer package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datahub.ingestion.html#module-datahub.ingestion">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datahub.configuration.html">Configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">DataHub</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="datahub.ingestion.html">datahub.ingestion package</a> &raquo;</li>
+      <li>datahub.ingestion.extractor package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/generated/datahub.ingestion.extractor.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="datahub-ingestion-extractor-package">
+<h1>datahub.ingestion.extractor package<a class="headerlink" href="#datahub-ingestion-extractor-package" title="Permalink to this headline"></a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-datahub.ingestion.extractor.extractor_registry">
+<span id="datahub-ingestion-extractor-extractor-registry-module"></span><h2>datahub.ingestion.extractor.extractor_registry module<a class="headerlink" href="#module-datahub.ingestion.extractor.extractor_registry" title="Permalink to this headline"></a></h2>
+</div>
+<div class="section" id="module-datahub.ingestion.extractor.mce_extractor">
+<span id="datahub-ingestion-extractor-mce-extractor-module"></span><h2>datahub.ingestion.extractor.mce_extractor module<a class="headerlink" href="#module-datahub.ingestion.extractor.mce_extractor" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.extractor.mce_extractor.WorkUnitRecordExtractor">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.extractor.mce_extractor.</span></span><span class="sig-name descname"><span class="pre">WorkUnitRecordExtractor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwds</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/extractor/mce_extractor.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.extractor.mce_extractor.WorkUnitRecordExtractor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">datahub.ingestion.api.source.WorkUnitType</span></code>], <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.closeable.Closeable" title="datahub.ingestion.api.closeable.Closeable"><code class="xref py py-class docutils literal notranslate"><span class="pre">datahub.ingestion.api.closeable.Closeable</span></code></a></p>
+<p>An extractor that simply returns the data inside workunits back as records.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.extractor.mce_extractor.WorkUnitRecordExtractor.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/extractor/mce_extractor.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.extractor.mce_extractor.WorkUnitRecordExtractor.close" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.extractor.mce_extractor.WorkUnitRecordExtractor.configure">
+<span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/extractor/mce_extractor.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.extractor.mce_extractor.WorkUnitRecordExtractor.configure" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.extractor.mce_extractor.WorkUnitRecordExtractor.ctx">
+<span class="sig-name descname"><span class="pre">ctx</span></span><em class="property"><span class="pre">:</span> <a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.PipelineContext" title="datahub.ingestion.api.common.PipelineContext"><span class="pre">datahub.ingestion.api.common.PipelineContext</span></a></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/extractor/mce_extractor.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.extractor.mce_extractor.WorkUnitRecordExtractor.ctx" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.extractor.mce_extractor.WorkUnitRecordExtractor.get_records">
+<span class="sig-name descname"><span class="pre">get_records</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">workunit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.WorkUnit" title="datahub.ingestion.api.common.WorkUnit"><span class="pre">datahub.ingestion.api.common.WorkUnit</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.ingestion.api.html#datahub.ingestion.api.common.RecordEnvelope" title="datahub.ingestion.api.common.RecordEnvelope"><span class="pre">datahub.ingestion.api.common.RecordEnvelope</span></a><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.MetadataChangeEventClass" title="datahub.metadata.schema_classes.MetadataChangeEventClass"><span class="pre">datahub.metadata.schema_classes.MetadataChangeEventClass</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.MetadataChangeProposalClass" title="datahub.metadata.schema_classes.MetadataChangeProposalClass"><span class="pre">datahub.metadata.schema_classes.MetadataChangeProposalClass</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="datahub.emitter.html#datahub.emitter.mcp.MetadataChangeProposalWrapper" title="datahub.emitter.mcp.MetadataChangeProposalWrapper"><span class="pre">datahub.emitter.mcp.MetadataChangeProposalWrapper</span></a><span class="p"><span class="pre">,</span> </span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.UsageAggregationClass" title="datahub.metadata.schema_classes.UsageAggregationClass"><span class="pre">datahub.metadata.schema_classes.UsageAggregationClass</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/extractor/mce_extractor.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.extractor.mce_extractor.WorkUnitRecordExtractor.get_records" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.ingestion.extractor.schema_util">
+<span id="datahub-ingestion-extractor-schema-util-module"></span><h2>datahub.ingestion.extractor.schema_util module<a class="headerlink" href="#module-datahub.ingestion.extractor.schema_util" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">datahub.ingestion.extractor.schema_util.</span></span><span class="sig-name descname"><span class="pre">AvroToMceSchemaConverter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">is_key_schema</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_nullable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/extractor/schema_util.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Converts an AVRO schema in JSON to MCE SchemaFields.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter.SchemaFieldEmissionContextManager">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">SchemaFieldEmissionContextManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">avro.schema.Schema</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actual_schema</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">avro.schema.Schema</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">converter</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><a class="reference internal" href="#datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter" title="datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter"><span class="pre">datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/extractor/schema_util.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter.SchemaFieldEmissionContextManager" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Context Manager for MCE SchemaFiled emission
+- handles prefix name stack management and AVRO record-field generation for non-complex types.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter.SchemaFieldEmissionContextManager.emit">
+<span class="sig-name descname"><span class="pre">emit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.SchemaFieldClass" title="datahub.metadata.schema_classes.SchemaFieldClass"><span class="pre">datahub.metadata.schema_classes.SchemaFieldClass</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/extractor/schema_util.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter.SchemaFieldEmissionContextManager.emit" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter.field_logical_type_mapping">
+<span class="sig-name descname"><span class="pre">field_logical_type_mapping</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">{'date':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.DateTypeClass'&gt;,</span> <span class="pre">'decimal':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.NumberTypeClass'&gt;,</span> <span class="pre">'timestamp-millis':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.TimeTypeClass'&gt;}</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/extractor/schema_util.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter.field_logical_type_mapping" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter.field_type_mapping">
+<span class="sig-name descname"><span class="pre">field_type_mapping</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">{'array':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.ArrayTypeClass'&gt;,</span> <span class="pre">'bool':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.BooleanTypeClass'&gt;,</span> <span class="pre">'boolean':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.BooleanTypeClass'&gt;,</span> <span class="pre">'bytes':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.BytesTypeClass'&gt;,</span> <span class="pre">'double':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.NumberTypeClass'&gt;,</span> <span class="pre">'enum':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.EnumTypeClass'&gt;,</span> <span class="pre">'fixed':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.FixedTypeClass'&gt;,</span> <span class="pre">'float':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.NumberTypeClass'&gt;,</span> <span class="pre">'int':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.NumberTypeClass'&gt;,</span> <span class="pre">'long':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.NumberTypeClass'&gt;,</span> <span class="pre">'map':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.MapTypeClass'&gt;,</span> <span class="pre">'null':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.NullTypeClass'&gt;,</span> <span class="pre">'record':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.RecordTypeClass'&gt;,</span> <span class="pre">'string':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.StringTypeClass'&gt;,</span> <span class="pre">'union':</span> <span class="pre">&lt;class</span> <span class="pre">'datahub.metadata.schema_classes.UnionTypeClass'&gt;}</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/extractor/schema_util.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter.field_type_mapping" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter.to_mce_fields">
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">to_mce_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">avro_schema_string</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_key_schema</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_nullable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.SchemaFieldClass" title="datahub.metadata.schema_classes.SchemaFieldClass"><span class="pre">datahub.metadata.schema_classes.SchemaFieldClass</span></a><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/extractor/schema_util.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter.to_mce_fields" title="Permalink to this definition"></a></dt>
+<dd><p>Converts a key or value type AVRO schema string to appropriate MCE SchemaFields.
+:param avro_schema_string: String representation of the AVRO schema.
+:param is_key_schema: True if it is a key-schema.
+:return: An MCE SchemaField generator.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter.version_string">
+<span class="sig-name descname"><span class="pre">version_string</span></span><em class="property"><span class="pre">:</span> <span class="pre">str</span></em><em class="property"> <span class="pre">=</span> <span class="pre">'[version=2.0]'</span></em><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/extractor/schema_util.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.extractor.schema_util.AvroToMceSchemaConverter.version_string" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="datahub.ingestion.extractor.schema_util.avro_schema_to_mce_fields">
+<span class="sig-prename descclassname"><span class="pre">datahub.ingestion.extractor.schema_util.</span></span><span class="sig-name descname"><span class="pre">avro_schema_to_mce_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">avro_schema_string</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_key_schema</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_nullable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="datahub.metadata.html#datahub.metadata.schema_classes.SchemaFieldClass" title="datahub.metadata.schema_classes.SchemaFieldClass"><span class="pre">datahub.metadata.schema_classes.SchemaFieldClass</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference external" href="https://github.com/linkedin/datahub/blob/master/metadata-ingestion/src/datahub/ingestion/extractor/schema_util.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#datahub.ingestion.extractor.schema_util.avro_schema_to_mce_fields" title="Permalink to this definition"></a></dt>
+<dd><p>Converts an avro schema into schema fields compatible with MCE.
+:param avro_schema_string: String representation of the AVRO schema.
+:param is_key_schema: True if it is a key-schema. Default is False (value-schema).
+:return: The list of MCE compatible SchemaFields.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-datahub.ingestion.extractor">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datahub.ingestion.extractor" title="Permalink to this headline"></a></h2>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datahub.ingestion.api.html" class="btn btn-neutral float-left" title="datahub.ingestion.api package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datahub.ingestion.graph.html" class="btn btn-neutral float-right" title="datahub.ingestion.graph package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, DataHub Authors.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

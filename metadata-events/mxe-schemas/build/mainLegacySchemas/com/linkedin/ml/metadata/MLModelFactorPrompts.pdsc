@@ -1,0 +1,26 @@
+{
+  "type" : "record",
+  "name" : "MLModelFactorPrompts",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "Prompts which affect the performance of the MLModel",
+  "fields" : [ {
+    "name" : "relevantFactors",
+    "type" : {
+      "type" : "array",
+      "items" : "MLModelFactors"
+    },
+    "doc" : "What are foreseeable salient factors for which MLModel performance may vary, and how were these determined?",
+    "optional" : true
+  }, {
+    "name" : "evaluationFactors",
+    "type" : {
+      "type" : "array",
+      "items" : "MLModelFactors"
+    },
+    "doc" : "Which factors are being reported, and why were these chosen?",
+    "optional" : true
+  } ],
+  "Aspect" : {
+    "name" : "mlModelFactorPrompts"
+  }
+}

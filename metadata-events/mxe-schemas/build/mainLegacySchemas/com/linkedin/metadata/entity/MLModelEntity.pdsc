@@ -1,0 +1,27 @@
+{
+  "type" : "record",
+  "name" : "MLModelEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a ML Model entity",
+  "include" : [ "BaseEntity" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.MLModelUrn",
+    "doc" : "Urn for the ML Model"
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "ML Model native name",
+    "optional" : true
+  }, {
+    "name" : "platform",
+    "type" : "com.linkedin.common.DataPlatformUrn",
+    "doc" : "Platform urn for the ML Model in the form of urn:li:platform:{platform_name}",
+    "optional" : true
+  }, {
+    "name" : "origin",
+    "type" : "com.linkedin.common.FabricType",
+    "doc" : "Fabric type where ML Model belongs to or where it was generated.",
+    "optional" : true
+  } ]
+}

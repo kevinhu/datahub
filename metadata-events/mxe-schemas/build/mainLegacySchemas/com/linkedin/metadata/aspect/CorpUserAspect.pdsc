@@ -1,0 +1,7 @@
+{
+  "type" : "typeref",
+  "name" : "CorpUserAspect",
+  "namespace" : "com.linkedin.metadata.aspect",
+  "doc" : "A union of all supported metadata aspects for a CorpUser",
+  "ref" : [ "com.linkedin.metadata.key.CorpUserKey", "com.linkedin.identity.CorpUserInfo", "com.linkedin.identity.CorpUserEditableInfo", "com.linkedin.identity.CorpUserStatus", "com.linkedin.identity.GroupMembership", "com.linkedin.common.GlobalTags", "com.linkedin.common.Status" ]
+}

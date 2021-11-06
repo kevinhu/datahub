@@ -1,0 +1,17 @@
+{
+  "type" : "record",
+  "name" : "TagDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for tag entity search",
+  "include" : [ "BaseDocument" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.TagUrn",
+    "doc" : "Urn for the dataset"
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Tag name e.g. `Legacy`",
+    "optional" : true
+  } ]
+}

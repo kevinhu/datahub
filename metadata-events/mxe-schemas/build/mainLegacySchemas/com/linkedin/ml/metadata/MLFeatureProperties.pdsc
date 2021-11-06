@@ -1,0 +1,39 @@
+{
+  "type" : "record",
+  "name" : "MLFeatureProperties",
+  "namespace" : "com.linkedin.ml.metadata",
+  "doc" : "Properties associated with a MLFeature",
+  "fields" : [ {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Documentation of the MLFeature",
+    "optional" : true
+  }, {
+    "name" : "dataType",
+    "type" : "com.linkedin.common.MLFeatureDataType",
+    "doc" : "Data Type of the MLFeature",
+    "optional" : true
+  }, {
+    "name" : "version",
+    "type" : "com.linkedin.common.VersionTag",
+    "doc" : "Version of the MLFeature",
+    "optional" : true
+  }, {
+    "name" : "sources",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.Urn"
+    },
+    "doc" : "Source of the MLFeature",
+    "optional" : true,
+    "Relationship" : {
+      "/*" : {
+        "entityTypes" : [ "dataset" ],
+        "name" : "DerivedFrom"
+      }
+    }
+  } ],
+  "Aspect" : {
+    "name" : "mlFeatureProperties"
+  }
+}

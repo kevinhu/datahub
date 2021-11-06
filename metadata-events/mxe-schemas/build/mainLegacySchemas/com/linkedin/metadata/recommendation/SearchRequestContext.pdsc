@@ -1,0 +1,19 @@
+{
+  "type" : "record",
+  "name" : "SearchRequestContext",
+  "namespace" : "com.linkedin.metadata.recommendation",
+  "doc" : "Context that defines a search page requesting recommendations",
+  "fields" : [ {
+    "name" : "query",
+    "type" : "string",
+    "doc" : "Search query"
+  }, {
+    "name" : "filters",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.metadata.query.filter.Criterion"
+    },
+    "doc" : "filters applied to search results",
+    "default" : [ ]
+  } ]
+}

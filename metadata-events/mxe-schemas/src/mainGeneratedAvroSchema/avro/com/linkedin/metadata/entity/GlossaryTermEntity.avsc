@@ -1,0 +1,24 @@
+{
+  "type" : "record",
+  "name" : "GlossaryTermEntity",
+  "namespace" : "com.linkedin.metadata.entity",
+  "doc" : "Data model for a GlossaryTerm entity",
+  "fields" : [ {
+    "name" : "removed",
+    "type" : [ "boolean", "null" ],
+    "doc" : "Whether the entity has been removed or not",
+    "default" : false
+  }, {
+    "name" : "urn",
+    "type" : "string",
+    "doc" : "Urn for the GlossaryTerm",
+    "java" : {
+      "class" : "com.linkedin.common.urn.GlossaryTermUrn"
+    }
+  }, {
+    "name" : "name",
+    "type" : [ "null", "string" ],
+    "doc" : "Business term name",
+    "default" : null
+  } ]
+}

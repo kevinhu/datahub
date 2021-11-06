@@ -1,0 +1,83 @@
+{
+  "type" : "record",
+  "name" : "DataJobDocument",
+  "namespace" : "com.linkedin.metadata.search",
+  "doc" : "Data model for DataJob entity search",
+  "include" : [ "BaseDocument" ],
+  "fields" : [ {
+    "name" : "urn",
+    "type" : "com.linkedin.common.DataJobUrn"
+  }, {
+    "name" : "description",
+    "type" : "string",
+    "doc" : "Optional description of the job",
+    "optional" : true
+  }, {
+    "name" : "name",
+    "type" : "string",
+    "doc" : "Optional name of the job",
+    "optional" : true
+  }, {
+    "name" : "dataFlow",
+    "type" : "string",
+    "doc" : "Name of the associated data flow",
+    "optional" : true
+  }, {
+    "name" : "jobId",
+    "type" : "string",
+    "doc" : "Id of the job",
+    "optional" : true
+  }, {
+    "name" : "owners",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "LDAP usernames of corp users who are the owners of this job",
+    "optional" : true
+  }, {
+    "name" : "hasOwners",
+    "type" : "boolean",
+    "doc" : "Flag to indicate if the job has non empty corp users as owners or not.",
+    "optional" : true
+  }, {
+    "name" : "numInputDatasets",
+    "type" : "long",
+    "doc" : "Lineage information represented by the number of immediate input datasets of this job.",
+    "optional" : true
+  }, {
+    "name" : "numOutputDatasets",
+    "type" : "long",
+    "doc" : "Lineage information represented by the number of immediate output datasets of this job.",
+    "optional" : true
+  }, {
+    "name" : "inputs",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.DatasetUrn"
+    },
+    "doc" : "List of inputs for this job",
+    "optional" : true
+  }, {
+    "name" : "outputs",
+    "type" : {
+      "type" : "array",
+      "items" : "com.linkedin.common.DatasetUrn"
+    },
+    "doc" : "List of outputs for this job",
+    "optional" : true
+  }, {
+    "name" : "orchestrator",
+    "type" : "string",
+    "doc" : "Workflow orchestrator ex: Azkaban, Airflow",
+    "optional" : true
+  }, {
+    "name" : "tags",
+    "type" : {
+      "type" : "array",
+      "items" : "string"
+    },
+    "doc" : "List of tags for this dataset",
+    "optional" : true
+  } ]
+}

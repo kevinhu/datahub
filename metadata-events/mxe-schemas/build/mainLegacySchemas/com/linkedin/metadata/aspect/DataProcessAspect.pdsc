@@ -1,0 +1,8 @@
+{
+  "type" : "typeref",
+  "name" : "DataProcessAspect",
+  "namespace" : "com.linkedin.metadata.aspect",
+  "doc" : "A union of all supported metadata aspects for a data process",
+  "ref" : [ "com.linkedin.metadata.key.DataProcessKey", "com.linkedin.common.Ownership", "com.linkedin.dataprocess.DataProcessInfo", "com.linkedin.common.Status" ],
+  "deprecated" : "Use DataJob instead."
+}
