@@ -1,9 +1,11 @@
+from collections import defaultdict, namedtuple
 import logging
 import os
 from datetime import datetime
 from enum import Enum
 from math import log10
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from pathlib import Path
+from typing import Any, DefaultDict, Dict, Iterable, List, Optional, Tuple
 
 import parse
 import pydeequ
@@ -143,6 +145,18 @@ profiling_flags_to_report = [
 S3_PREFIXES = ["s3://", "s3n://", "s3a://"]
 
 
+PathDetails = namedtuple("PathDetails", "full_path relative_path")
+
+class FileType(Enum):
+    """
+    Enum for file types
+    """
+    CSV = "csv"
+    TSV = "tsv"
+    JSON = "json"
+    AVRO = "avro"
+    PARQUET = "parquet"
+
 class DataLakeSource(Source):
     source_config: DataLakeSourceConfig
     report: DataLakeSourceReport
@@ -251,44 +265,45 @@ class DataLakeSource(Source):
 
         return cls(config, ctx)
 
-    def read_file_spark(self, file: str, is_aws: bool) -> Optional[DataFrame]:
+    def read_files_spark(self, files: List[str], is_aws: bool) -> Optional[DataFrame]:
 
         if is_aws:
-            file = f"s3a://{file}"
+            
+            files = [f"s3a://{file}" for file in files]
 
-        extension = os.path.splitext(file)[1]
+        extension = os.path.splitext(files[0])[1]
 
         telemetry.telemetry_instance.ping("data_lake_file", {"extension": extension})
 
-        if file.endswith(".parquet"):
-            df = self.spark.read.parquet(file)
-        elif file.endswith(".csv"):
+        if extension == ".parquet":
+            df = self.spark.read.parquet(files)
+        elif extension == ".csv":
             # see https://sparkbyexamples.com/pyspark/pyspark-read-csv-file-into-dataframe
             df = self.spark.read.csv(
-                file,
+                files,
                 header="True",
                 inferSchema="True",
                 sep=",",
                 ignoreLeadingWhiteSpace=True,
                 ignoreTrailingWhiteSpace=True,
             )
-        elif file.endswith(".tsv"):
+        elif extension == ".tsv":
             df = self.spark.read.csv(
-                file,
+                files,
                 header="True",
                 inferSchema="True",
                 sep="\t",
                 ignoreLeadingWhiteSpace=True,
                 ignoreTrailingWhiteSpace=True,
             )
-        elif file.endswith(".json"):
-            df = self.spark.read.json(file)
-        elif file.endswith(".avro"):
+        elif extension == ".json":
+            df = self.spark.read.json(files)
+        elif extension == ".avro":
             try:
-                df = self.spark.read.format("avro").load(file)
+                df = self.spark.read.format("avro").load(files)
             except AnalysisException:
                 self.report.report_warning(
-                    file,
+                    files[0],
                     "To ingest avro files, please install the spark-avro package: https://mvnrepository.com/artifact/org.apache.spark/spark-avro_2.12/3.0.3",
                 )
                 return None
@@ -297,7 +312,7 @@ class DataLakeSource(Source):
         # elif file.endswith(".orc"):
         # df = self.spark.read.orc(file)
         else:
-            self.report.report_warning(file, f"file {file} has unsupported extension")
+            self.report.report_warning(files[0], f"file(s) {files} contain unsupported extension")
             return None
 
         # replace periods in names because they break PyDeequ
@@ -389,10 +404,10 @@ class DataLakeSource(Source):
         self.report.report_workunit(wu)
         yield wu
 
-    def get_table_name(self, relative_path: str, full_path: str) -> str:
+    def get_table_name(self, path: PathDetails) -> str:
 
         if self.source_config.path_spec is None:
-            name, extension = os.path.splitext(full_path)
+            name, extension = os.path.splitext(path.full_path)
 
             if extension != "":
                 extension = extension[1:]  # remove the dot
@@ -402,19 +417,19 @@ class DataLakeSource(Source):
 
         def warn():
             self.report.report_warning(
-                relative_path,
-                f"Unable to determine table name from provided path spec {self.source_config.path_spec} for file {relative_path}",
+                path.relative_path,
+                f"Unable to determine table name from provided path spec {self.source_config.path_spec} for file {path.relative_path}",
             )
 
-        name_matches = parse.parse(self.source_config.path_spec, relative_path)
+        name_matches = parse.parse(self.source_config.path_spec, path.relative_path)
 
         if name_matches is None:
             warn()
-            return relative_path
+            return path.relative_path
 
         if "name" not in name_matches:
             warn()
-            return relative_path
+            return path.relative_path
 
         name_matches_dict = name_matches["name"]
 
@@ -424,52 +439,24 @@ class DataLakeSource(Source):
         ]
 
         return ".".join(name_components)
-
-    def ingest_table(
-        self,
-        full_path: str,
-        relative_path: str,
-        is_aws: bool,
-        properties: Optional[Dict[str, str]] = None,
-    ) -> Iterable[MetadataWorkUnit]:
-
-        table_name = self.get_table_name(relative_path, full_path)
-
-        # yield the table schema first
-        logger.debug(
-            f"Ingesting {full_path}: making table schemas {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}"
-        )
-        yield from self.get_table_schema(full_path, table_name, is_aws, properties)
-
-        # If profiling is not enabled, skip the rest
-        if not self.source_config.profiling.enabled:
-            return
-
-        # read in the whole table with Spark for profiling
-        table = self.read_file_spark(full_path, is_aws)
-
-        # if table is not readable, skip
-        if table is None:
-            self.report.report_warning(
-                table_name, f"unable to read table {table_name} from file {full_path}"
-            )
-            return
-
+    
+    
+    def profile_pyspark_table(self, table: DataFrame, table_name: str):
         with PerfTimer() as timer:
             # init PySpark analysis object
             logger.debug(
-                f"Profiling {full_path}: reading file and computing nulls+uniqueness {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}"
+                f"Profiling {table_name}: reading file and computing nulls+uniqueness {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}"
             )
             table_profiler = _SingleTableProfiler(
                 table,
                 self.spark,
                 self.source_config.profiling,
                 self.report,
-                full_path,
+                table_name,
             )
 
             logger.debug(
-                f"Profiling {full_path}: preparing profilers to run {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}"
+                f"Profiling {table_name}: preparing profilers to run {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}"
             )
             # instead of computing each profile individually, we run them all in a single analyzer.run() call
             # we use a single call because the analyzer optimizes the number of calls to the underlying profiler
@@ -478,7 +465,7 @@ class DataLakeSource(Source):
 
             # compute the profiles
             logger.debug(
-                f"Profiling {full_path}: computing profiles {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}"
+                f"Profiling {table_name}: computing profiles {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}"
             )
             analysis_result = table_profiler.analyzer.run()
             analysis_metrics = AnalyzerContext.successMetricsAsDataFrame(
@@ -486,14 +473,14 @@ class DataLakeSource(Source):
             )
 
             logger.debug(
-                f"Profiling {full_path}: extracting profiles {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}"
+                f"Profiling {table_name}: extracting profiles {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}"
             )
             table_profiler.extract_table_profiles(analysis_metrics)
 
             time_taken = timer.elapsed_seconds()
 
             logger.info(
-                f"Finished profiling {full_path}; took {time_taken:.3f} seconds"
+                f"Finished profiling {table_name}; took {time_taken:.3f} seconds"
             )
 
             self.profiling_times_taken.append(time_taken)
@@ -508,10 +495,77 @@ class DataLakeSource(Source):
             aspect=table_profiler.profile,
         )
         wu = MetadataWorkUnit(
-            id=f"profile-{self.source_config.platform}-{full_path}", mcp=mcp
+            id=f"profile-{self.source_config.platform}-{table_name}", mcp=mcp
         )
         self.report.report_workunit(wu)
         yield wu
+
+    def ingest_table(
+        self,
+        path: PathDetails,
+        is_aws: bool,
+        properties: Optional[Dict[str, str]] = None,
+    ) -> Iterable[MetadataWorkUnit]:
+
+        table_name = self.get_table_name(path)
+
+        # yield the table schema first
+        logger.debug(
+            f"Ingesting {path.full_path}: making table schemas {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}"
+        )
+        yield from self.get_table_schema(path.full_path, table_name, is_aws, properties)
+
+        # If profiling is not enabled, skip the rest
+        if not self.source_config.profiling.enabled:
+            return
+
+        # read in the whole table with Spark for profiling
+        table = self.read_files_spark(path.full_path, is_aws)
+
+        # if table is not readable, skip
+        if table is None:
+            self.report.report_warning(
+                table_name, f"unable to read table {table_name} from file {path.full_path}"
+            )
+            return
+
+        yield from self.profile_pyspark_table(table, table_name)
+        
+    def ingest_table_partitioned(
+        self,
+        partition_key: Tuple[str, ...],
+        paths: List[PathDetails],
+        is_aws: bool,
+        properties: Optional[Dict[str, str]] = None,
+    ) -> Iterable[MetadataWorkUnit]:
+        
+        # use the first partition
+        relative_path = paths[0].relative_path
+        full_path = paths[0].full_path
+
+        table_name = ".".join([x for x in partition_key if not x.endswith("=")])
+
+        # yield the table schema first
+        logger.debug(
+            f"Ingesting {table_name} (partitioned): making table schemas {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}"
+        )
+        yield from self.get_table_schema(full_path, table_name, is_aws, properties)
+
+        # If profiling is not enabled, skip the rest
+        if not self.source_config.profiling.enabled:
+            return
+
+        # read in the whole table with Spark for profiling
+        table = self.read_files_spark([x.full_path for x in paths], is_aws)
+
+        # if table is not readable, skip
+        if table is None:
+            self.report.report_warning(
+                table_name, f"unable to read table {table_name} from file {full_path}"
+            )
+            return
+
+        yield from self.profile_pyspark_table(table, table_name)
 
     def get_workunits_s3(self) -> Iterable[MetadataWorkUnit]:
 
@@ -562,19 +616,40 @@ class DataLakeSource(Source):
             }
             logger.debug(f"Adding file {base_obj_path} for ingestion")
             base_obj_paths.append((base_obj_path, properties))
+            
+        partitions: DefaultDict[Tuple[str, ...], List[PathDetails]] = defaultdict(list)
 
         for aws_file in sorted(base_obj_paths, key=lambda a: a[0]):
-            path = aws_file[0]
+            full_path = aws_file[0]
             properties = aws_file[1]
-            relative_path = "./" + path[len(plain_base_path) :]
+            relative_path = "./" + full_path[len(plain_base_path) :]
+            
+            path = PathDetails(full_path, relative_path)
+            
+            # if table patterns do not allow this file, skip
+            if not self.source_config.schema_patterns.allowed(full_path):
+                continue
+            
+            if self.source_config.detect_partitions:
+                self.append_to_partitions(partitions, path)
+                continue
 
             # pass in the same relative_path as the full_path for S3 files
             yield from self.ingest_table(
-                path, relative_path, is_aws=True, properties=properties
+                path, is_aws=True, properties=properties
+            )
+            
+        for partition_key, paths in partitions.items():
+            yield from self.ingest_table_partitioned(
+                partition_key, paths=paths, is_aws=True,
             )
 
     def get_workunits_local(self) -> Iterable[MetadataWorkUnit]:
+
+        partitions: DefaultDict[Tuple[str, ...], List[PathDetails]] = defaultdict(list)
+
         for root, dirs, files in os.walk(self.source_config.base_path):
+
             for file in sorted(files):
 
                 if self.source_config.ignore_dotfiles and file.startswith("."):
@@ -585,12 +660,47 @@ class DataLakeSource(Source):
                 relative_path = "./" + os.path.relpath(
                     full_path, self.source_config.base_path
                 )
+                
+                path = PathDetails(full_path, relative_path)
 
                 # if table patterns do not allow this file, skip
                 if not self.source_config.schema_patterns.allowed(full_path):
                     continue
 
-                yield from self.ingest_table(full_path, relative_path, is_aws=False)
+                if self.source_config.detect_partitions:
+                    self.append_to_partitions(partitions, path)
+                    continue
+
+                yield from self.ingest_table(path, is_aws=False)
+                
+        for partition_key, paths in partitions.items():
+            yield from self.ingest_table_partitioned(
+                partition_key, paths=paths, is_aws=False,
+            )
+
+    @classmethod
+    def append_to_partitions(self, partitions: DefaultDict[Tuple[str, ...], List[PathDetails]], path: PathDetails):
+        """
+        Given a list of files, collapse them by partition.
+
+        Two files belong to the same partition if they have the same parent format.
+        """
+        
+        # TODO: group by extensions
+
+        file = Path(PathDetails.relative_path)
+
+        parent_components = [file.name] + [x.name for x in file.parents]
+
+        # strip the partition parameters for key identification
+        parent_components_key = tuple(
+            [x if "=" not in x else x.split("=")[0] + "=" for x in parent_components]
+        )
+
+        # is_partitioned = any(x.endswith("=") for x in parent_components)
+
+        # append the file to its partition
+        partitions[parent_components_key].append(path)
 
     def get_workunits(self) -> Iterable[MetadataWorkUnit]:
 

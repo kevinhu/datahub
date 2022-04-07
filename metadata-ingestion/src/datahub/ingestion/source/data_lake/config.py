@@ -25,6 +25,9 @@ class DataLakeSourceConfig(ConfigModel):
     profile_patterns: AllowDenyPattern = AllowDenyPattern.allow_all()
 
     path_spec: Optional[str] = None
+    
+    detect_partitions: bool = True
+    partition_by_filename: bool = False
 
     profiling: DataLakeProfilerConfig = DataLakeProfilerConfig()
 

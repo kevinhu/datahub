@@ -133,7 +133,7 @@ class _SingleTableProfiler:
     column_specs: List[_SingleColumnSpec]
     row_count: int
     profiling_config: DataLakeProfilerConfig
-    file_path: str
+    table_name: str
     columns_to_profile: List[str]
     ignored_columns: List[str]
     profile: DatasetProfileClass
@@ -153,7 +153,7 @@ class _SingleTableProfiler:
         self.column_specs = []
         self.row_count = dataframe.count()
         self.profiling_config = profiling_config
-        self.file_path = file_path
+        self.table_name = file_path
         self.columns_to_profile = []
         self.ignored_columns = []
         self.profile = DatasetProfileClass(timestampMillis=get_sys_time())
@@ -192,7 +192,7 @@ class _SingleTableProfiler:
                 ]
 
                 self.report.report_file_dropped(
-                    f"The max_number_of_fields_to_profile={self.profiling_config.max_number_of_fields_to_profile} reached. Profile of columns {self.file_path}({', '.join(sorted(columns_being_dropped))})"
+                    f"The max_number_of_fields_to_profile={self.profiling_config.max_number_of_fields_to_profile} reached. Profile of columns {self.table_name}({', '.join(sorted(columns_being_dropped))})"
                 )
 
         analysis_result = self.analyzer.run()
